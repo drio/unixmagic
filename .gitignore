@@ -4,3 +4,4 @@ node_modules
 .env*
 *.mp4
 public
+.hugo_build.lock
