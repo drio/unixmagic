@@ -23,6 +23,18 @@
             overflow-y: auto;
             border-left: 2px solid #ccc;
             background: #f8f8f8;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Coordinate display */
+        .coordinates {
+            padding: 10px;
+            background: #ddd;
+            font-size: 14px;
+            margin-bottom: 10px;
+            text-align: center;
+            display: none; /* Hidden by default */
         }
 
         /* Main container for image */
@@ -41,6 +53,7 @@
             width: auto;
             height: auto;
             object-fit: contain;
+            cursor: crosshair; /* Indicates interactivity */
         }
 
         /* Markers for annotations */
@@ -87,6 +100,7 @@
 
     <!-- Sidebar for annotations -->
     <div class="sidebar">
+        <div class="coordinates">Cursor Position: <span id="coord-text">0%, 0%</span></div>
         <h2>Annotations</h2>
         <div id="annotation-1" class="annotation default">
             <strong>Marker 1:</strong> This is an important part of the Unix poster.
@@ -97,18 +111,20 @@
     </div>
 
     <script>
+        const poster = document.getElementById('poster');
+        const coordText = document.getElementById('coord-text');
+        const coordBox = document.querySelector('.coordinates');
+        let showCoordinates = false; // Track toggle state
+
         // Function to update the annotation display
         function showAnnotation(id) {
-            // Hide all annotations
             document.querySelectorAll('.annotation').forEach(ann => ann.style.display = 'none');
-
-            // Show the selected annotation
             document.getElementById("annotation-" + id).style.display = 'block';
         }
 
         // Show the first annotation by default
         document.addEventListener("DOMContentLoaded", function() {
-            showAnnotation(1); // Ensure annotation 1 is shown initially
+            showAnnotation(1);
         });
 
         // Event listener for markers
@@ -117,6 +133,37 @@
                 showAnnotation(this.dataset.id);
             });
         });
+
+        // Function to calculate percentage-based coordinates
+        function getCursorPosition(event) {
+            if (!showCoordinates) return; // Don't update if coordinates are hidden
+            
+            const rect = poster.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+
+            // Convert to percentages
+            const leftPercent = ((x / rect.width) * 100).toFixed(2);
+            const topPercent = ((y / rect.height) * 100).toFixed(2);
+
+            // Display the coordinates
+            coordText.textContent = `${leftPercent}%, ${topPercent}%`;
+
+            // Log to console for easy copying
+            console.log(`Marker Position -> left: ${leftPercent}%; top: ${topPercent}%;`);
+        }
+
+        // Toggle coordinate display when 'T' is pressed
+        document.addEventListener('keydown', function(event) {
+            if (event.key.toLowerCase() === 't') {
+                showCoordinates = !showCoordinates; // Toggle state
+                coordBox.style.display = showCoordinates ? 'block' : 'none';
+                console.log(`Cursor tracking ${showCoordinates ? 'enabled' : 'disabled'}`);
+            }
+        });
+
+        // Attach event listener for cursor tracking
+        poster.addEventListener('mousemove', getCursorPosition);
     </script>
 
 </body>
