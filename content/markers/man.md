@@ -1,8 +1,8 @@
 ---
 title: "man"
-number: "3"
+number: "2"
 position:
-  left: "32%"
+  left: "24%"
   top: "47%"
 description: "The man page"
 ---
