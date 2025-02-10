@@ -2,8 +2,8 @@
 title: "memory leaks"
 number: "4"
 position:
-  left: "33%"
-  top: "56%"
+  left: "25%"
+  top: "25%"
 description: "memory leaks"
 ---
 
