@@ -1,0 +1,5 @@
+ump.*
+node_modules
+*.vim
+.env*
+*.mp4
