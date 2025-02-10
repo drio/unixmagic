@@ -1,0 +1,10 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Unix Poster Annotations"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+

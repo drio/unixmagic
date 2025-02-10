@@ -1,9 +1,9 @@
-.PHONY: all info
+.PHONY: all info serve
 all: 
 	@cat Makefile
 
-serve: umn.webp index.html
-	python3 -m http.server 8000
+serve:
+	hugo server --buildDrafts
 
 info:
 	identify ump.webp
