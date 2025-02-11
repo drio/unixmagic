@@ -3,7 +3,7 @@ all:
 	@cat Makefile
 
 serve:
-	hugo server --buildDrafts --bind 0.0.0.0
+	hugo server --buildDrafts --bind 0.0.0.0 --baseURL=http://localhost:1313/
 
 info:
 	identify ump.webp
