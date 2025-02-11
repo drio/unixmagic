@@ -3,6 +3,9 @@ all:
 	@cat Makefile
 
 serve:
+	hugo server --buildDrafts --baseURL=http://localhost:1313/
+
+serve/all:
 	hugo server --buildDrafts --bind 0.0.0.0 --baseURL=http://localhost:1313/
 
 info:
