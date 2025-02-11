@@ -22,6 +22,25 @@
             /* Enables smooth scrolling */
         }
 
+        .header {
+            padding-top: 15px;
+            /* Adds space above the logo */
+            text-align: center;
+            /* Keeps the logo centered */
+        }
+
+        .header img {
+            width: 20px;
+            max-width: 10vw;
+            height: auto;
+            transition: filter 0.3s ease-in-out;
+            opacity: 0.5;
+        }
+
+        .header img:hover {
+            opacity: 1;
+        }
+
         /* Center image and keep it responsive */
         .image-container {
             position: relative;
@@ -96,16 +115,34 @@
             margin-bottom: 10px;
         }
 
-        /* Back to Top link */
         .back-to-top {
             text-decoration: none;
             font-size: 20px;
             display: inline-block;
         }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: salmon;
+            font-weight: bold;
+        }
     </style>
 </head>
 
 <body>
+    <div class="header">
+        <a href="https://github.com/drio/unixmagic" target="_blank">
+            <img src="github.svg" alt="github" />
+        </a>
+    </div>
+
     <div class="image-container">
         <!-- to avoid formatting issues -->
         {{ $image := "ump.webp" }}
@@ -120,7 +157,6 @@
     </div>
 
     <div class="annotations">
-        <h2>Annotations</h2>
         {{ range sort (where .Site.RegularPages "Section" "markers") ".Params.number" }}
         <div id="annotation-{{ .File.BaseFileName }}" class="annotation">
             <p>
@@ -135,6 +171,10 @@
             <a href="#" class="back-to-top">🔝</a> <!-- No underline, just the emoji -->
         </div>
         {{ end }}
+    </div>
+
+    <div class="footer">
+        Made with ❤️ by <a href="https://driohq.net" target="_blank">drio</a>
     </div>
 
     <script>
