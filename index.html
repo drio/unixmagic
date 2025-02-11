@@ -1,35 +1,34 @@
-<!doctype html><html lang=en><head><meta name=generator content="Hugo 0.143.1"><meta charset=UTF-8><link rel=icon type=image/x-icon href=/unixmagic/favicon.ico><meta name=viewport content="width=device-width,initial-scale=1"><title>Unix Poster Annotations</title><style>html,body{margin:0;padding:0;width:100vw;min-height:100vh;font-family:Arial,sans-serif;background-color:#fff;scroll-behavior:smooth}.image-container{position:relative;width:100%;display:flex;justify-content:center}img{max-width:100%;max-height:100vh;display:block;margin:auto}.marker{position:absolute;width:22px;height:22px;background:red;color:#fff;font-size:14px;font-weight:700;text-align:center;line-height:22px;border-radius:50%;cursor:pointer;transform:translate(-50%,-50%)}.annotations{padding:20px;max-width:800px;margin:0 auto}.annotation{margin-bottom:15px;padding:10px;background:#f8f8f8;border-radius:5px}.annotation-number{display:inline-block;width:22px;height:22px;background:red;color:#fff;font-size:14px;font-weight:700;text-align:center;line-height:22px;border-radius:50%;margin-right:10px}.annotation-title{font-weight:700;font-size:1.1rem}.annotation p:nth-child(2){font-style:italic;color:#333;margin-bottom:10px}.back-to-top{text-decoration:none;font-size:20px;display:inline-block}</style></head><body><div class=image-container><img id=poster src=/unixmagic/ump.webp alt="Unix Magic Poster"><div class=marker data-left=56% data-top=25% data-id=annotation-Brian>5</div><div class=marker data-left=24% data-top=47% data-id=annotation-man>2</div><div class=marker data-left=25% data-top=25% data-id=annotation-leak>4</div><div class=marker data-left=45% data-top=20% data-id=annotation-pipe>3</div><div class=marker data-left=90% data-top=67% data-id=annotation-c>6</div><div class=marker data-left=48% data-top=30% data-id=annotation-su>1</div></div><div class=annotations><h2>Annotations</h2><div id=annotation-su class=annotation><p><span class=annotation-number>1</span>
-<span class=annotation-title>su</span></p><p>su or sudo</p><div><pre>
-$ su
-</pre></div><a href=# class=back-to-top>🔝</a></div><div id=annotation-man class=annotation><p><span class=annotation-number>2</span>
-<span class=annotation-title>man</span></p><p>The man page</p><div><pre>
-
-MAN(1)
-
-NAME
-       man - an interface to the system reference manuals
-
-SYNOPSIS
-       man [man options] [[section] page ...] ...
-       man -k [apropos options] regexp ...
-       man -K [man options] [section] term ...
-       man -f [whatis options] page ...
-       man -l [man options] file ...
-       man -w|-W [man options] page ...
-
-DESCRIPTION 
-  man is the system's manual pager.  Each page argument given to man
-  is normally the name of a program, utility or function.  The manual page
-  associated with each of these arguments is then found and displayed.  A
-  section,  if provided, will direct man to look only in that section of the
-  manual.  The default action is to search in all of the available sections
-  following a pre-defined order (see DEFAULTS), and to show only the first page
-  found, even if page exists in several sections.
-
-</pre></div><a href=# class=back-to-top>🔝</a></div><div id=annotation-pipe class=annotation><p><span class=annotation-number>3</span>
-<span class=annotation-title>pipes</span></p><p>pipes here</p><div><p>Pipes are great</p></div><a href=# class=back-to-top>🔝</a></div><div id=annotation-leak class=annotation><p><span class=annotation-number>4</span>
-<span class=annotation-title>memory leaks</span></p><p>memory leaks</p><div><p>Memory leaks.</p></div><a href=# class=back-to-top>🔝</a></div><div id=annotation-Brian class=annotation><p><span class=annotation-number>5</span>
-<span class=annotation-title>Brian W. Kernighan and Unix Berkeley</span></p><p>unix Berkeley and Brian</p><div><p>Brian and Unix, Dennis Ritchei.</p></div><a href=# class=back-to-top>🔝</a></div><div id=annotation-c class=annotation><p><span class=annotation-number>6</span>
-<span class=annotation-title>su</span></p><p>c programming</p><div><pre>
-c programming hello world
-</pre></div><a href=# class=back-to-top>🔝</a></div></div><script>function positionMarkers(){const t=document.getElementById("poster"),n=document.querySelectorAll(".marker");if(!t.complete){t.onload=positionMarkers;return}const e=t.getBoundingClientRect();n.forEach(t=>{const n=parseFloat(t.getAttribute("data-left")),s=parseFloat(t.getAttribute("data-top"));t.style.left=`${n/100*e.width+e.left}px`,t.style.top=`${s/100*e.height+e.top}px`})}window.addEventListener("load",positionMarkers),window.addEventListener("resize",positionMarkers),document.querySelectorAll(".marker").forEach(e=>{e.addEventListener("click",function(){const t=this.getAttribute("data-id"),e=document.getElementById(t);e&&e.scrollIntoView({behavior:"smooth"})})}),document.querySelectorAll(".back-to-top").forEach(e=>{e.addEventListener("click",function(e){e.preventDefault(),window.scrollTo({top:0,behavior:"smooth"})})})</script></body></html>
+<!doctype html><html lang=en><head><meta name=generator content="Hugo 0.143.1"><meta charset=UTF-8><link rel=icon type=image/x-icon href=/unixmagic/favicon.ico><meta name=viewport content="width=device-width,initial-scale=1"><title>Unix Poster Annotations</title><style>html,body{margin:0;padding:0;width:100vw;min-height:100vh;font-family:Arial,sans-serif;background-color:#fff;scroll-behavior:smooth}.image-container{position:relative;width:100%;display:flex;justify-content:center}img{max-width:100%;max-height:100vh;display:block;margin:auto}.marker{position:absolute;width:22px;height:22px;background:red;color:#fff;font-size:14px;font-weight:700;text-align:center;line-height:22px;border-radius:50%;cursor:pointer;transform:translate(-50%,-50%)}.annotations{padding:20px;max-width:800px;margin:0 auto}.annotation{margin-bottom:15px;padding:10px;background:#f8f8f8;border-radius:5px}.annotation-number{display:inline-block;width:22px;height:22px;background:red;color:#fff;font-size:14px;font-weight:700;text-align:center;line-height:22px;border-radius:50%;margin-right:10px}.annotation-title{font-weight:700;font-size:1.1rem}.annotation p:nth-child(2){font-style:italic;color:#333;margin-bottom:10px}.back-to-top{text-decoration:none;font-size:20px;display:inline-block}</style></head><body><div class=image-container><img id=poster src=/unixmagic/ump.webp alt="Unix Magic Poster"><div class=marker data-left=56% data-top=25% data-id=annotation-05-kandr>5</div><div class=marker data-left=15% data-top=47% data-id=annotation-02-man>2</div><div class=marker data-left=25% data-top=25% data-id=annotation-04-leak>4</div><div class=marker data-left=45% data-top=20% data-id=annotation-03-pipes>3</div><div class=marker data-left=48% data-top=30% data-id=annotation-01-su>1</div><div class=marker data-left=90% data-top=67% data-id=annotation-06-c>6</div></div><div class=annotations><h2>Annotations</h2><div id=annotation-01-su class=annotation><p><span class=annotation-number>1</span>
+<span class=annotation-title>su</span></p><p>Command to switch your identity</p><div><p>The <a href=https://www.man7.org/linux/man-pages/man1/su.1.html>su</a> command (short for “substitute user” or
+“switch user”) is used to start a shell under a different user account.
+Typically, one of the most common uses of su is switching to the superuser
+(root) account to gain administrative privileges.</p></div><a href=# class=back-to-top>🔝</a></div><div id=annotation-02-man class=annotation><p><span class=annotation-number>2</span>
+<span class=annotation-title>man</span></p><p>Command to get detailed documentation of different unix components, including other cmds.</p><div><p>The <a href=https://man7.org/linux/man-pages/man1/man.1.html>man(1)</a>
+command (short for manual) is used to display online reference manuals (man
+pages) for commands, system calls, configuration files, and other aspects of
+the system. man provides detailed documentation on how to use a command,
+including its options, usage examples, related files, and other pertinent
+details.</p></div><a href=# class=back-to-top>🔝</a></div><div id=annotation-03-pipes class=annotation><p><span class=annotation-number>3</span>
+<span class=annotation-title>Pipes</span></p><p>Connect cmd outputs to cmd inputs to create complex pipelines</p><div><p><a href=https://en.wikipedia.org/wiki/Pipeline_(Unix)>Pipes</a> are a
+foundational feature in Unix that enable you to combine simple utilities into
+more powerful workflows. By passing data from one command’s output to another
+command’s input, pipes allow you to quickly create flexible, efficient, and
+maintainable solutions directly at the command line. They are denoted in the
+shell by the vertical bar character (|).</p></div><a href=# class=back-to-top>🔝</a></div><div id=annotation-04-leak class=annotation><p><span class=annotation-number>4</span>
+<span class=annotation-title>Memory leaks</span></p><p>Improper managing of memory by a computer program</p><div><p>A memory leak occurs when a computer program improperly manages memory
+allocation, failing to release memory that’s no longer needed. Over time, these
+un-freed allocations accumulate, reducing the amount of available memory for
+other processes and potentially leading to slowdowns or crashes.</p></div><a href=# class=back-to-top>🔝</a></div><div id=annotation-05-kandr class=annotation><p><span class=annotation-number>5</span>
+<span class=annotation-title>Legendary figures</span></p><p>Legendary figures in Unix history</p><div><p>In the context of Unix history these three sets of initials refer to legendary
+figures in the creation and development of Unix:</p><p>dmr: Dennis M. Ritchie, co-creator of Unix and creator of the C programming
+language.</p><p>kt: Ken Thompson (often just “ken” in historical Unix references), co-creator
+of Unix alongside Ritchie.</p><p>bwk: Brian W. Kernighan, co-author of several influential Unix programs and
+books (including “The C Programming Language” and “The UNIX Programming
+Environment”).</p></div><a href=# class=back-to-top>🔝</a></div><div id=annotation-06-c class=annotation><p><span class=annotation-number>6</span>
+<span class=annotation-title>The c programming language</span></p><p>A key programming language in the creation of Unix</p><div><p>C is deeply intertwined with the history and development of the Unix operating
+system. Created by Dennis M. Ritchie at Bell Labs in the early 1970s, C was
+used to rewrite Unix from low-level assembly into a higher-level language. This
+shift made Unix significantly more portable across different hardware
+platforms, fueling its rapid adoption in academia and industry. Over time, C
+evolved into one of the most influential and widely used programming languages
+in history.</p></div><a href=# class=back-to-top>🔝</a></div></div><script>function positionMarkers(){const t=document.getElementById("poster"),n=document.querySelectorAll(".marker");if(!t.complete){t.onload=positionMarkers;return}const e=t.getBoundingClientRect();n.forEach(t=>{const n=parseFloat(t.getAttribute("data-left")),s=parseFloat(t.getAttribute("data-top"));t.style.left=`${n/100*e.width+e.left}px`,t.style.top=`${s/100*e.height+e.top}px`})}window.addEventListener("load",positionMarkers),window.addEventListener("resize",positionMarkers),document.querySelectorAll(".marker").forEach(e=>{e.addEventListener("click",function(){const t=this.getAttribute("data-id"),e=document.getElementById(t);e&&e.scrollIntoView({behavior:"smooth"})})}),document.querySelectorAll(".back-to-top").forEach(e=>{e.addEventListener("click",function(e){e.preventDefault(),window.scrollTo({top:0,behavior:"smooth"})})})</script></body></html>

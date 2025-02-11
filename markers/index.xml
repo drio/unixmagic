@@ -1,29 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Markers on Unix Poster Annotations</title><link>https://drio.github.io/unixmagic/markers/</link><description>Recent content in Markers on Unix Poster Annotations</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://drio.github.io/unixmagic/markers/index.xml" rel="self" type="application/rss+xml"/><item><title>Brian W. Kernighan and Unix Berkeley</title><link>https://drio.github.io/unixmagic/markers/brian/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://drio.github.io/unixmagic/markers/brian/</guid><description>&lt;p>Brian and Unix, Dennis Ritchei.&lt;/p></description></item><item><title>man</title><link>https://drio.github.io/unixmagic/markers/man/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://drio.github.io/unixmagic/markers/man/</guid><description>&lt;pre>
-
-MAN(1)
-
-NAME
- man - an interface to the system reference manuals
-
-SYNOPSIS
- man [man options] [[section] page ...] ...
- man -k [apropos options] regexp ...
- man -K [man options] [section] term ...
- man -f [whatis options] page ...
- man -l [man options] file ...
- man -w|-W [man options] page ...
-
-DESCRIPTION 
- man is the system's manual pager. Each page argument given to man
- is normally the name of a program, utility or function. The manual page
- associated with each of these arguments is then found and displayed. A
- section, if provided, will direct man to look only in that section of the
- manual. The default action is to search in all of the available sections
- following a pre-defined order (see DEFAULTS), and to show only the first page
- found, even if page exists in several sections.
-
-&lt;/pre></description></item><item><title>memory leaks</title><link>https://drio.github.io/unixmagic/markers/leak/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://drio.github.io/unixmagic/markers/leak/</guid><description>&lt;p>Memory leaks.&lt;/p></description></item><item><title>pipes</title><link>https://drio.github.io/unixmagic/markers/pipe/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://drio.github.io/unixmagic/markers/pipe/</guid><description>&lt;p>Pipes are great&lt;/p></description></item><item><title>su</title><link>https://drio.github.io/unixmagic/markers/c/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://drio.github.io/unixmagic/markers/c/</guid><description>&lt;pre>
-c programming hello world
-&lt;/pre></description></item><item><title>su</title><link>https://drio.github.io/unixmagic/markers/su/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://drio.github.io/unixmagic/markers/su/</guid><description>&lt;pre>
-$ su
-&lt;/pre></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Markers on Unix Poster Annotations</title><link>https://drio.github.io/unixmagic/markers/</link><description>Recent content in Markers on Unix Poster Annotations</description><generator>Hugo</generator><language>en-us</language><atom:link href="https://drio.github.io/unixmagic/markers/index.xml" rel="self" type="application/rss+xml"/><item><title>Legendary figures</title><link>https://drio.github.io/unixmagic/markers/05-kandr/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://drio.github.io/unixmagic/markers/05-kandr/</guid><description>&lt;p>In the context of Unix history these three sets of initials refer to legendary
+figures in the creation and development of Unix:&lt;/p>
+&lt;p>dmr: Dennis M. Ritchie, co-creator of Unix and creator of the C programming
+language.&lt;/p>
+&lt;p>kt: Ken Thompson (often just “ken” in historical Unix references), co-creator
+of Unix alongside Ritchie.&lt;/p>
+&lt;p>bwk: Brian W. Kernighan, co-author of several influential Unix programs and
+books (including “The C Programming Language” and “The UNIX Programming
+Environment”).&lt;/p></description></item><item><title>man</title><link>https://drio.github.io/unixmagic/markers/02-man/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://drio.github.io/unixmagic/markers/02-man/</guid><description>&lt;p>The &lt;a href="https://man7.org/linux/man-pages/man1/man.1.html">man(1)&lt;/a>
+command (short for manual) is used to display online reference manuals (man
+pages) for commands, system calls, configuration files, and other aspects of
+the system. man provides detailed documentation on how to use a command,
+including its options, usage examples, related files, and other pertinent
+details.&lt;/p></description></item><item><title>Memory leaks</title><link>https://drio.github.io/unixmagic/markers/04-leak/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://drio.github.io/unixmagic/markers/04-leak/</guid><description>&lt;p>A memory leak occurs when a computer program improperly manages memory
+allocation, failing to release memory that’s no longer needed. Over time, these
+un-freed allocations accumulate, reducing the amount of available memory for
+other processes and potentially leading to slowdowns or crashes.&lt;/p></description></item><item><title>Pipes</title><link>https://drio.github.io/unixmagic/markers/03-pipes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://drio.github.io/unixmagic/markers/03-pipes/</guid><description>&lt;p>&lt;a href="https://en.wikipedia.org/wiki/Pipeline_(Unix)">Pipes&lt;/a> are a
+foundational feature in Unix that enable you to combine simple utilities into
+more powerful workflows. By passing data from one command’s output to another
+command’s input, pipes allow you to quickly create flexible, efficient, and
+maintainable solutions directly at the command line. They are denoted in the
+shell by the vertical bar character (|).&lt;/p></description></item><item><title>su</title><link>https://drio.github.io/unixmagic/markers/01-su/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://drio.github.io/unixmagic/markers/01-su/</guid><description>&lt;p>The &lt;a href="https://www.man7.org/linux/man-pages/man1/su.1.html">su&lt;/a> command (short for “substitute user” or
+“switch user”) is used to start a shell under a different user account.
+Typically, one of the most common uses of su is switching to the superuser
+(root) account to gain administrative privileges.&lt;/p></description></item><item><title>The c programming language</title><link>https://drio.github.io/unixmagic/markers/06-c/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://drio.github.io/unixmagic/markers/06-c/</guid><description>&lt;p>C is deeply intertwined with the history and development of the Unix operating
+system. Created by Dennis M. Ritchie at Bell Labs in the early 1970s, C was
+used to rewrite Unix from low-level assembly into a higher-level language. This
+shift made Unix significantly more portable across different hardware
+platforms, fueling its rapid adoption in academia and industry. Over time, C
+evolved into one of the most influential and widely used programming languages
+in history.&lt;/p></description></item></channel></rss>
