@@ -17,3 +17,7 @@ static/ump.png: static
 
 static: 
 	mkdir static
+
+static/favicon.ico:
+	convert static/ump.webp -resize 48x48 static/favicon.ico
+
