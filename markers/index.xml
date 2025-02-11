@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Markers on Unix Poster Annotations</title><link>/markers/</link><description>Recent content in Markers on Unix Poster Annotations</description><generator>Hugo</generator><language>en-us</language><atom:link href="/markers/index.xml" rel="self" type="application/rss+xml"/><item><title>Brian W. Kernighan and Unix Berkeley</title><link>/markers/brian/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/markers/brian/</guid><description>&lt;p>Brian and Unix, Dennis Ritchei.&lt;/p></description></item><item><title>man</title><link>/markers/man/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/markers/man/</guid><description>&lt;pre>
+
+MAN(1)
+
+NAME
+ man - an interface to the system reference manuals
+
+SYNOPSIS
+ man [man options] [[section] page ...] ...
+ man -k [apropos options] regexp ...
+ man -K [man options] [section] term ...
+ man -f [whatis options] page ...
+ man -l [man options] file ...
+ man -w|-W [man options] page ...
+
+DESCRIPTION 
+ man is the system's manual pager. Each page argument given to man
+ is normally the name of a program, utility or function. The manual page
+ associated with each of these arguments is then found and displayed. A
+ section, if provided, will direct man to look only in that section of the
+ manual. The default action is to search in all of the available sections
+ following a pre-defined order (see DEFAULTS), and to show only the first page
+ found, even if page exists in several sections.
+
+&lt;/pre></description></item><item><title>memory leaks</title><link>/markers/leak/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/markers/leak/</guid><description>&lt;p>Memory leaks.&lt;/p></description></item><item><title>pipes</title><link>/markers/pipe/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/markers/pipe/</guid><description>&lt;p>Pipes are great&lt;/p></description></item><item><title>su</title><link>/markers/c/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/markers/c/</guid><description>&lt;pre>
+c programming hello world
+&lt;/pre></description></item><item><title>su</title><link>/markers/su/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/markers/su/</guid><description>&lt;pre>
+$ su
+&lt;/pre></description></item></channel></rss>
