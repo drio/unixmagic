@@ -2,7 +2,7 @@
 title: "man"
 number: "2"
 position:
-  left: "24%"
+  left: "15%"
   top: "47%"
 description: "The man page"
 ---
