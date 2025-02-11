@@ -104,8 +104,7 @@
 
 <body>
     <div class="image-container">
-        <img id="poster" src="{{ " ump.webp" | relURL }}" alt="Unix Magic Poster">
-
+        <img id="poster" src="{{ " ump.webp" | absURL }}" alt="Unix Magic Poster">
 
         {{ range where .Site.RegularPages "Section" "markers" }}
         <div class="marker" data-left="{{ .Params.position.left }}" data-top="{{ .Params.position.top }}"
