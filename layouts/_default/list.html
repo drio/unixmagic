@@ -15,6 +15,8 @@
             min-height: 100vh;
             font-family: Arial, sans-serif;
             background-color: #fff;
+            scroll-behavior: smooth;
+            /* Enables smooth scrolling */
         }
 
         /* Center image and keep it responsive */
@@ -90,6 +92,13 @@
             color: #333;
             margin-bottom: 10px;
         }
+
+        /* Back to Top link */
+        .back-to-top {
+            text-decoration: none;
+            font-size: 20px;
+            display: inline-block;
+        }
     </style>
 </head>
 
@@ -99,7 +108,7 @@
 
         {{ range where .Site.RegularPages "Section" "markers" }}
         <div class="marker" data-left="{{ .Params.position.left }}" data-top="{{ .Params.position.top }}"
-            data-id="{{ .File.BaseFileName }}">
+            data-id="annotation-{{ .File.BaseFileName }}">
             {{ .Params.number }}
         </div>
         {{ end }}
@@ -117,6 +126,8 @@
             <div>
                 {{ .Content | safeHTML }}
             </div>
+
+            <a href="#" class="back-to-top">🔝</a> <!-- No underline, just the emoji -->
         </div>
         {{ end }}
     </div>
@@ -148,6 +159,25 @@
         // Reposition markers when image loads and when window resizes
         window.addEventListener('load', positionMarkers);
         window.addEventListener('resize', positionMarkers);
+
+        // Add click event to markers to scroll to corresponding annotation
+        document.querySelectorAll('.marker').forEach(marker => {
+            marker.addEventListener('click', function () {
+                const annotationId = this.getAttribute('data-id');
+                const annotation = document.getElementById(annotationId);
+                if (annotation) {
+                    annotation.scrollIntoView({behavior: 'smooth'});
+                }
+            });
+        });
+
+        // Add event listener to "Back to Top" links
+        document.querySelectorAll('.back-to-top').forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+        });
     </script>
 
 </body>
