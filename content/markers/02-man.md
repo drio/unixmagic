@@ -4,31 +4,13 @@ number: "2"
 position:
   left: "15%"
   top: "47%"
-description: "The man page"
+description: "Command to get detailed documentation of different unix components, including other cmds."
 ---
 
-<pre>
+The <a href="https://man7.org/linux/man-pages/man1/man.1.html">man(1)</a>
+command (short for manual) is used to display online reference manuals (man
+pages) for commands, system calls, configuration files, and other aspects of
+the system. man provides detailed documentation on how to use a command,
+including its options, usage examples, related files, and other pertinent
+details.
 
-MAN(1)
-
-NAME
-       man - an interface to the system reference manuals
-
-SYNOPSIS
-       man [man options] [[section] page ...] ...
-       man -k [apropos options] regexp ...
-       man -K [man options] [section] term ...
-       man -f [whatis options] page ...
-       man -l [man options] file ...
-       man -w|-W [man options] page ...
-
-DESCRIPTION 
-  man is the system's manual pager.  Each page argument given to man
-  is normally the name of a program, utility or function.  The manual page
-  associated with each of these arguments is then found and displayed.  A
-  section,  if provided, will direct man to look only in that section of the
-  manual.  The default action is to search in all of the available sections
-  following a pre-defined order (see DEFAULTS), and to show only the first page
-  found, even if page exists in several sections.
-
-</pre>
