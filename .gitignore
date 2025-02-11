@@ -5,3 +5,4 @@ node_modules
 *.mp4
 public
 .hugo_build.lock
+!static/ump.webp
