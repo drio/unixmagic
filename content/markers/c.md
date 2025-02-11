@@ -1,0 +1,13 @@
+---
+title: "su"
+number: "6"
+position:
+  left: "90%"
+  top: "67%"
+description: "c programming"
+---
+
+<pre>
+c programming hello world
+</pre>
+

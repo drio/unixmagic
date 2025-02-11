@@ -1,196 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ .Site.Title }}</title>
     <style>
-        html, body {
+        /* Ensure full-screen layout */
+        html,
+        body {
             margin: 0;
             padding: 0;
             width: 100vw;
-            height: 100vh;
-            display: flex;
-            background-color: #fff;
+            min-height: 100vh;
             font-family: Arial, sans-serif;
+            background-color: #fff;
         }
 
-        .sidebar {
-            width: 50vw;
-            height: 95vh;
-            padding: 15px;
-            overflow-y: auto;
-            border-left: 0px solid #ccc;
-            background: #fff;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .coordinates {
-            padding: 10px;
-            background: #ddd;
-            font-size: 14px;
-            margin-bottom: 10px;
-            text-align: center;
-            display: none; /* Hidden by default */
-        }
-
-        .main-container {
-            flex-grow: 1;
+        /* Center image and keep it responsive */
+        .image-container {
+            position: relative;
+            width: 100%;
             display: flex;
             justify-content: center;
-            align-items: center;
-            position: relative;
         }
 
         img {
-            max-width: 100vw;
+            max-width: 100%;
             max-height: 100vh;
-            width: auto;
-            height: auto;
-            object-fit: contain;
-            cursor: default; /* Regular cursor by default */
+            display: block;
+            margin: auto;
         }
 
+        /* Position markers relative to the image */
         .marker {
             position: absolute;
-            width: 20px;
-            height: 20px;
+            width: 22px;
+            height: 22px;
             background: red;
             color: white;
             font-size: 14px;
             font-weight: bold;
             text-align: center;
-            line-height: 20px;
+            line-height: 22px;
             border-radius: 50%;
             cursor: pointer;
             transform: translate(-50%, -50%);
         }
 
-        .annotation {
-            display: none;
-            padding: 10px;
-            margin-bottom: 10px;
-            background: #fff;
-            /*border-left: 5px solid red;*/
-            font-size: 1rem;
+        /* Annotations are always below the image */
+        .annotations {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .annotation.default {
-            display: block;
+        /* Updated annotation styling */
+        .annotation {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #f8f8f8;
+            border-radius: 5px;
+        }
+
+        /* Number style in annotations (matching marker style) */
+        .annotation-number {
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            background: red;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 22px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* Make title stand out */
+        .annotation-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Italicize the description */
+        .annotation p:nth-child(2) {
+            font-style: italic;
+            color: #333;
+            margin-bottom: 10px;
         }
     </style>
 </head>
-<body>
 
-    <div class="main-container">
+<body>
+    <div class="image-container">
         <img id="poster" src="/ump.webp" alt="Unix Magic Poster">
 
         {{ range where .Site.RegularPages "Section" "markers" }}
-        <div class="marker" style="top: {{ .Params.position.top }}; left: {{ .Params.position.left }};" data-id="{{ .File.BaseFileName }}">
-            {{ .Params.Number }}
+        <div class="marker" data-left="{{ .Params.position.left }}" data-top="{{ .Params.position.top }}"
+            data-id="{{ .File.BaseFileName }}">
+            {{ .Params.number }}
         </div>
         {{ end }}
     </div>
 
-    <div class="sidebar">
-        <div class="coordinates">Cursor Position: <span id="coord-text">0%, 0%</span></div>
-
-        <div id="default-content" class="annotation-content">
-            <h3>Welcome!</h3>
-            <p>Click on a marker to view the annotation.</p>
-        </div>
-
-        {{ range where .Site.RegularPages "Section" "markers" }}
+    <div class="annotations">
+        <h2>Annotations</h2>
+        {{ range sort (where .Site.RegularPages "Section" "markers") ".Params.number" }}
         <div id="annotation-{{ .File.BaseFileName }}" class="annotation">
-            <strong>{{ .Title }}:</strong> {{ .Params.description }}
-            {{ .Content | safeHTML }}
+            <p>
+                <span class="annotation-number">{{ .Params.number }}</span>
+                <span class="annotation-title">{{ .Title }}</span>
+            </p>
+            <p>{{ .Params.description }}</p>
+            <div>
+                {{ .Content | safeHTML }}
+            </div>
         </div>
         {{ end }}
     </div>
 
     <script>
-        const poster = document.getElementById('poster');
-        const coordText = document.getElementById('coord-text');
-        const coordBox = document.querySelector('.coordinates');
-        let showCoordinates = false; // Track toggle state
-        let naturalWidth, naturalHeight;
+        // Function to place markers correctly on the image
+        function positionMarkers() {
+            const poster = document.getElementById('poster');
+            const markers = document.querySelectorAll('.marker');
 
-        // Ensure we get the full-resolution dimensions of the image
-        poster.onload = function () {
-            naturalWidth = poster.naturalWidth;
-            naturalHeight = poster.naturalHeight;
-        };
-
-        // Function to update the annotation display
-        function showAnnotation(id) {
-            document.querySelectorAll('.annotation').forEach(ann => ann.style.display = 'none');
-            document.getElementById("annotation-" + id).style.display = 'block';
-            document.getElementById("default-content").remove();
-        }
-
-        // Toggle cursor tracking state
-        function toggleCursorTracking() {
-            showCoordinates = !showCoordinates;
-            coordBox.style.display = showCoordinates ? 'block' : 'none';
-            console.log(`Cursor tracking ${showCoordinates ? 'enabled' : 'disabled'}`);
-
-            // Change the cursor style based on the tracking state
-            poster.style.cursor = showCoordinates ? 'crosshair' : 'default';
-        }
-
-        // Show the first annotation by default
-        document.addEventListener("DOMContentLoaded", function() {
-          
-        });
-
-        // Event listener for markers
-        document.querySelectorAll('.marker').forEach(marker => {
-            marker.addEventListener('click', function () {
-                showAnnotation(this.dataset.id);
-            });
-        });
-
-        // Function to calculate the accurate marker position
-        function getCursorPosition(event) {
-            if (!showCoordinates) return; // Don't update if coordinates are hidden
-
-            const rect = poster.getBoundingClientRect(); // Get the scaled image position
-            const x = event.clientX - rect.left; // Adjust for image's position in viewport
-            const y = event.clientY - rect.top;
-
-            // Get the scaling factors based on the displayed vs. natural size
-            const scaleX = naturalWidth / rect.width;
-            const scaleY = naturalHeight / rect.height;
-
-            // Convert to the correct percentage based on the full-resolution image
-            const leftPercent = ((x * scaleX) / naturalWidth) * 100;
-            const topPercent = ((y * scaleY) / naturalHeight) * 100;
-
-            // Ensure markers only appear within the image bounds
-            if (x < 0 || y < 0 || x > rect.width || y > rect.height) {
-                coordText.textContent = "Outside image";
+            if (!poster.complete) {
+                poster.onload = positionMarkers;
                 return;
             }
 
-            // Display the corrected coordinates
-            coordText.textContent = `${leftPercent.toFixed(2)}%, ${topPercent.toFixed(2)}%`;
+            // Get image dimensions
+            const rect = poster.getBoundingClientRect();
 
-            // Log to console for easy copying
-            console.log(`Marker Position -> left: ${leftPercent.toFixed(2)}%; top: ${topPercent.toFixed(2)}%;`);
+            markers.forEach(marker => {
+                const leftPercent = parseFloat(marker.getAttribute("data-left"));
+                const topPercent = parseFloat(marker.getAttribute("data-top"));
+
+                // Convert percentage-based positions to actual positions
+                marker.style.left = `${(leftPercent / 100) * rect.width + rect.left}px`;
+                marker.style.top = `${(topPercent / 100) * rect.height + rect.top}px`;
+            });
         }
 
-        // Toggle coordinate display when 'T' is pressed
-        document.addEventListener('keydown', function(event) {
-            if (event.key.toLowerCase() === 't') {
-                toggleCursorTracking();
-            }
-        });
-
-        // Attach event listener for cursor tracking
-        poster.addEventListener('mousemove', getCursorPosition);
+        // Reposition markers when image loads and when window resizes
+        window.addEventListener('load', positionMarkers);
+        window.addEventListener('resize', positionMarkers);
     </script>
 
 </body>
-</html>
 
+</html>
