@@ -1,9 +1,9 @@
 ---
 title: "Daemons"
-number: "7"
+number: "8"
 position:
-  left: "69%"
-  top: "31%"
+  left: "66%"
+  top: "25%"
 description: "Service processes that run in the background and supervise the system or provide functionality to other processes"
 ---
 
