@@ -10,6 +10,6 @@ poster, making it a valuable reference for Unix enthusiasts.
 Contributions welcome!
 
 <div align="center">
-<img src="static/ump.png" width="400">
+<img src="static/ump.webp" width="400">
 </div>
 
