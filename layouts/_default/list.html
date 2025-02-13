@@ -32,12 +32,15 @@
 
         .header-link {
             text-decoration: none;
-            color: #bc4f5f;
             font-size: 14px;
+            color: #666;
+            /* Muted gray */
+            transition: color 0.2s ease-in-out;
         }
 
         .header-link:hover {
-            text-decoration: underline;
+            color: #bc4f5f;
+            /* Red on hover */
         }
 
         .header img {
@@ -180,7 +183,7 @@
         </a>
         {{ $i := "index.xml" }}
         <a href="{{ $i | relURL }}" class="rss-link" title="RSS Feed"><img src="rss.svg"> </a>
-        <a href="#poster-info" class="header-link">About</a>
+        <a href="#poster-info" class="header-link">about</a>
     </div>
 
 
