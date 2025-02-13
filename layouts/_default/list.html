@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <!-- to avoid formatting issues -->
     {{ $ico := "favicon.ico" }}
+    {{ $icop := "favicon.png" }}
     <link rel="icon" type="image/x-icon" href="{{ $ico | relURL }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ $icop | relURL }}">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ .Site.Title }}</title>
     <style>
