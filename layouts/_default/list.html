@@ -19,14 +19,25 @@
             font-family: Arial, sans-serif;
             background-color: #fff;
             scroll-behavior: smooth;
-            /* Enables smooth scrolling */
         }
 
+
         .header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            justify-content: center;
             padding-top: 15px;
-            /* Adds space above the logo */
-            text-align: center;
-            /* Keeps the logo centered */
+        }
+
+        .header-link {
+            text-decoration: none;
+            color: #bc4f5f;
+            font-size: 14px;
+        }
+
+        .header-link:hover {
+            text-decoration: underline;
         }
 
         .header img {
@@ -48,7 +59,7 @@
         }
 
         .poster-info {
-            max-width: 600px;
+            max-width: 800px;
             text-align: center;
             font-size: 15px;
             color: #333;
@@ -65,7 +76,6 @@
         }
 
 
-        /* Center image and keep it responsive */
         .image-container {
             position: relative;
             width: 100%;
@@ -102,22 +112,21 @@
             transform: translate(-50%, -50%) scale(1.2);
         }
 
-        /* Annotations are always below the image */
         .annotations {
-            padding: 20px;
             max-width: 800px;
             margin: 0 auto;
+            background:
         }
 
-        /* Updated annotation styling */
         .annotation {
+            background-color: #f3f4f6;
+            border-radius: 8px;
+            padding: 12px;
             margin-bottom: 15px;
-            padding: 10px;
-            background: #f8f8f8;
-            border-radius: 5px;
+            border: 1px solid #e0e0e0;
         }
 
-        /* Number style in annotations (matching marker style) */
+
         .annotation-number {
             display: inline-block;
             width: 22px;
@@ -132,13 +141,11 @@
             margin-right: 10px;
         }
 
-        /* Make title stand out */
         .annotation-title {
             font-weight: bold;
             font-size: 1.1rem;
         }
 
-        /* Italicize the description */
         .annotation p:nth-child(2) {
             font-style: italic;
             color: #333;
@@ -171,20 +178,9 @@
         <a href="https://github.com/drio/unixmagic" target="_blank">
             <img src="github.svg" alt="github" />
         </a>
+        <a href="#poster-info" class="header-link">About</a>
     </div>
 
-    <div class="poster-info-container">
-        <div class="poster-info">
-            <p>
-                This is the <strong>Unix Magic Poster</strong>, originally created by <strong>Gary Overacre</strong> for
-                a past
-                <a href="https://www.usenix.org/" target="_blank">USENIX Conference</a>.
-                Head over to the <a href="https://github.com/drio/unixmagic" target="_blank">repo</a> if you’d like to
-                contribute!
-            </p>
-
-        </div>
-    </div>
 
     <div class="image-container">
         <!-- to avoid formatting issues -->
@@ -198,6 +194,20 @@
         </div>
         {{ end }}
     </div>
+
+    <div id="poster-info" class="poster-info-container">
+        <div class="poster-info">
+            <p>
+                This is the <strong>Unix Magic Poster</strong>, originally created by <strong>Gary Overacre</strong> for
+                a past
+                <a href="https://www.usenix.org/" target="_blank">USENIX Conference</a>.
+                Head over to the <a href="https://github.com/drio/unixmagic" target="_blank">repo</a> if you’d like to
+                contribute!
+            </p>
+
+        </div>
+    </div>
+
 
     <div class="annotations">
         {{ range sort (where .Site.RegularPages "Section" "markers") ".Params.number" }}
