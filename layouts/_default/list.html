@@ -56,20 +56,26 @@
             margin: auto;
         }
 
-        /* Position markers relative to the image */
         .marker {
             position: absolute;
-            width: 22px;
-            height: 22px;
-            background: red;
+            width: 18px;
+            height: 18px;
+            background: rgba(220, 53, 69, 0.75);
             color: white;
-            font-size: 14px;
+            font-size: 12px;
             font-weight: bold;
             text-align: center;
-            line-height: 22px;
+            line-height: 18px;
             border-radius: 50%;
             cursor: pointer;
             transform: translate(-50%, -50%);
+            transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+            opacity: 0.8;
+        }
+
+        .marker:hover {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.2);
         }
 
         /* Annotations are always below the image */
