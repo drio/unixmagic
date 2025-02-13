@@ -5,6 +5,8 @@ position:
   left: "40%"
   top: "65%"
 description: "A gateway to controlling the system"
+date: 2025-02-13T12:00:00Z
+lastmod: 2025-02-13T12:00:00Z
 ---
 
 The prominent position of the shell in the UNIX Magic poster reflects its
