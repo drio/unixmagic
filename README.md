@@ -12,6 +12,14 @@ Software, Inc. in the 1980s.
 
 Contributions welcome!
 
+When contributing, remember that this is an opportunity to dig deep into the
+history behind what you’re describing. Feel free to share what this particular
+component means to you personally, but also aim to frame the explanation within
+the context of Unix’s early days. How did this functionality compare to other
+operating systems at the time? What made it special or innovative? This project
+is not just about explaining what things are, but understanding why they
+mattered—both technically and culturally—in the evolution of Unix.
+
 <div align="center">
 <img src="static/ump.webp" width="400">
 </div>
