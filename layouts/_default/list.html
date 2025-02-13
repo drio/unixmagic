@@ -43,6 +43,7 @@
             /* Red on hover */
         }
 
+
         .header img {
             width: 20px;
             max-width: 10vw;
@@ -58,16 +59,17 @@
         .poster-info-container {
             display: flex;
             justify-content: center;
-            margin: 0px 5px 0px 10px;
+            margin: 0 auto;
+            max-width: 800px;
         }
 
         .poster-info {
             max-width: 800px;
-            text-align: center;
             font-size: 15px;
             color: #333;
             text-align: justify;
         }
+
 
         .poster-info a {
             color: #bc4f5f;
@@ -129,25 +131,40 @@
             border: 1px solid #e0e0e0;
         }
 
+        .annotation-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
 
         .annotation-number {
-            display: inline-block;
-            width: 22px;
-            height: 22px;
-            background: red;
+            background-color: #bc4f5f;
             color: white;
             font-size: 14px;
-            font-weight: bold;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
             text-align: center;
-            line-height: 22px;
             border-radius: 50%;
-            margin-right: 10px;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        .annotation-text {
+            display: flex;
+            flex-direction: column;
         }
 
         .annotation-title {
-            font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 16px;
         }
+
+        .annotation-description {
+            font-size: 14px;
+            color: #333;
+        }
+
 
         .back-to-top {
             text-decoration: none;
@@ -211,16 +228,19 @@
     <div class="annotations">
         {{ range sort (where .Site.RegularPages "Section" "markers") ".Params.number" }}
         <div id="annotation-{{ .File.BaseFileName }}" class="annotation">
-            <p>
+            <div class="annotation-header">
                 <span class="annotation-number">{{ .Params.number }}</span>
-                <span class="annotation-title">{{ .Title }}</span>
-            </p>
-            <p>{{ .Params.description }}</p>
-            <div>
+                <div class="annotation-text">
+                    <div class="annotation-title"><strong>{{ .Title }}</strong></div>
+                    <div class="annotation-description">{{ .Params.description }}</div>
+                </div>
+            </div>
+
+            <div class="annotation-body">
                 {{ .Content | safeHTML }}
             </div>
 
-            <a href="#" class="back-to-top">🔝</a> <!-- No underline, just the emoji -->
+            <a href="#" class="back-to-top">🔝</a>
         </div>
         {{ end }}
     </div>
