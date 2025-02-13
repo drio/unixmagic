@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <!-- to avoid formatting issues -->
     {{ $ico := "favicon.ico" }}
+    {{ $icop := "favicon.png" }}
     <link rel="icon" type="image/x-icon" href="{{ $ico | relURL }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ $icop | relURL }}">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ .Site.Title }}</title>
     <style>
@@ -19,15 +22,41 @@
             font-family: Arial, sans-serif;
             background-color: #fff;
             scroll-behavior: smooth;
-            /* Enables smooth scrolling */
         }
 
-        .header {
-            padding-top: 15px;
-            /* Adds space above the logo */
-            text-align: center;
-            /* Keeps the logo centered */
+        a {
+            color: #bc4f5f;
+            text-decoration: none;
         }
+
+        a:hover {
+            text-decoration: underline;
+            color: #a53f4f;
+            /* Optional: Darker shade on hover */
+        }
+
+
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+            padding-top: 15px;
+        }
+
+        .header-link {
+            text-decoration: none;
+            font-size: 14px;
+            color: #666;
+            /* Muted gray */
+            transition: color 0.2s ease-in-out;
+        }
+
+        .header-link:hover {
+            color: #bc4f5f;
+            /* Red on hover */
+        }
+
 
         .header img {
             width: 20px;
@@ -41,7 +70,31 @@
             opacity: 1;
         }
 
-        /* Center image and keep it responsive */
+        .poster-info-container {
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        .poster-info {
+            max-width: 800px;
+            font-size: 15px;
+            color: #333;
+            text-align: justify;
+        }
+
+
+        .poster-info a {
+            color: #bc4f5f;
+            text-decoration: none;
+        }
+
+        .poster-info a:hover {
+            text-decoration: underline;
+        }
+
+
         .image-container {
             position: relative;
             width: 100%;
@@ -56,64 +109,77 @@
             margin: auto;
         }
 
-        /* Position markers relative to the image */
         .marker {
             position: absolute;
-            width: 22px;
-            height: 22px;
-            background: red;
+            width: 18px;
+            height: 18px;
+            background: rgba(220, 53, 69, 0.75);
             color: white;
-            font-size: 14px;
+            font-size: 12px;
             font-weight: bold;
             text-align: center;
-            line-height: 22px;
+            line-height: 18px;
             border-radius: 50%;
             cursor: pointer;
             transform: translate(-50%, -50%);
+            transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+            opacity: 0.8;
         }
 
-        /* Annotations are always below the image */
+        .marker:hover {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+
         .annotations {
-            padding: 20px;
             max-width: 800px;
             margin: 0 auto;
-        }
-
-        /* Updated annotation styling */
-        .annotation {
-            margin-bottom: 15px;
             padding: 10px;
-            background: #f8f8f8;
-            border-radius: 5px;
         }
 
-        /* Number style in annotations (matching marker style) */
+        .annotation {
+            background-color: #e8e8e8;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .annotation-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
         .annotation-number {
-            display: inline-block;
-            width: 22px;
-            height: 22px;
-            background: red;
+            background-color: #bc4f5f;
             color: white;
             font-size: 14px;
-            font-weight: bold;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
             text-align: center;
-            line-height: 22px;
             border-radius: 50%;
-            margin-right: 10px;
+            display: inline-block;
+            flex-shrink: 0;
         }
 
-        /* Make title stand out */
+        .annotation-text {
+            display: flex;
+            flex-direction: column;
+        }
+
         .annotation-title {
+            font-size: 16px;
             font-weight: bold;
-            font-size: 1.1rem;
         }
 
-        /* Italicize the description */
-        .annotation p:nth-child(2) {
-            font-style: italic;
+        .annotation-description {
+            font-size: 14px;
             color: #333;
-            margin-bottom: 10px;
         }
+
 
         .back-to-top {
             text-decoration: none;
@@ -141,7 +207,11 @@
         <a href="https://github.com/drio/unixmagic" target="_blank">
             <img src="github.svg" alt="github" />
         </a>
+        {{ $i := "index.xml" }}
+        <a href="{{ $i | relURL }}" class="rss-link" title="RSS Feed"><img src="rss.svg"> </a>
+        <a href="#poster-info" class="header-link">about</a>
     </div>
+
 
     <div class="image-container">
         <!-- to avoid formatting issues -->
@@ -156,19 +226,36 @@
         {{ end }}
     </div>
 
+    <div id="poster-info" class="poster-info-container">
+        <div class="poster-info">
+            <p>
+                This is the <strong>Unix Magic Poster</strong>, originally created by <strong>Gary Overacre</strong> for
+                a past
+                <a href="https://www.usenix.org/" target="_blank">USENIX Conference</a>.
+                Head over to the <a href="https://github.com/drio/unixmagic" target="_blank">repo</a> if you’d like to
+                contribute!
+            </p>
+
+        </div>
+    </div>
+
+
     <div class="annotations">
         {{ range sort (where .Site.RegularPages "Section" "markers") ".Params.number" }}
         <div id="annotation-{{ .File.BaseFileName }}" class="annotation">
-            <p>
+            <div class="annotation-header">
                 <span class="annotation-number">{{ .Params.number }}</span>
-                <span class="annotation-title">{{ .Title }}</span>
-            </p>
-            <p>{{ .Params.description }}</p>
-            <div>
+                <div class="annotation-text">
+                    <div class="annotation-title">{{ .Title }}</div>
+                    <div class="annotation-description">{{ .Params.description }}</div>
+                </div>
+            </div>
+
+            <div class="annotation-body">
                 {{ .Content | safeHTML }}
             </div>
 
-            <a href="#" class="back-to-top">🔝</a> <!-- No underline, just the emoji -->
+            <a href="#" class="back-to-top">🔝</a>
         </div>
         {{ end }}
     </div>
@@ -178,7 +265,6 @@
     </div>
 
     <script>
-        // Function to place markers correctly on the image
         function positionMarkers() {
             const poster = document.getElementById('poster');
             const markers = document.querySelectorAll('.marker');
@@ -188,39 +274,37 @@
                 return;
             }
 
-            // Get image dimensions
             const rect = poster.getBoundingClientRect();
 
             markers.forEach(marker => {
                 const leftPercent = parseFloat(marker.getAttribute("data-left"));
                 const topPercent = parseFloat(marker.getAttribute("data-top"));
 
-                // Convert percentage-based positions to actual positions
                 marker.style.left = `${(leftPercent / 100) * rect.width + rect.left}px`;
                 marker.style.top = `${(topPercent / 100) * rect.height + rect.top}px`;
             });
         }
 
-        // Reposition markers when image loads and when window resizes
-        window.addEventListener('load', positionMarkers);
-        window.addEventListener('resize', positionMarkers);
+        document.addEventListener('DOMContentLoaded', function () {
+            positionMarkers();
 
-        // Add click event to markers to scroll to corresponding annotation
-        document.querySelectorAll('.marker').forEach(marker => {
-            marker.addEventListener('click', function () {
-                const annotationId = this.getAttribute('data-id');
-                const annotation = document.getElementById(annotationId);
-                if (annotation) {
-                    annotation.scrollIntoView({behavior: 'smooth'});
-                }
+            window.addEventListener('resize', positionMarkers);
+
+            document.querySelectorAll('.marker').forEach(marker => {
+                marker.addEventListener('click', function () {
+                    const annotationId = this.getAttribute('data-id');
+                    const annotation = document.getElementById(annotationId);
+                    if (annotation) {
+                        annotation.scrollIntoView({behavior: 'smooth'});
+                    }
+                });
             });
-        });
 
-        // Add event listener to "Back to Top" links
-        document.querySelectorAll('.back-to-top').forEach(link => {
-            link.addEventListener('click', function (event) {
-                event.preventDefault();
-                window.scrollTo({top: 0, behavior: 'smooth'});
+            document.querySelectorAll('.back-to-top').forEach(link => {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                });
             });
         });
     </script>

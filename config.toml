@@ -1,6 +1,7 @@
 baseURL = "https://drio.github.io/unixmagic/"
 languageCode = "en-us"
 title = "Unix Poster Annotations"
+enableGitInfo = true
 
 [markup]
   [markup.goldmark]
