@@ -25,7 +25,7 @@
         .header {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 10px;
             justify-content: center;
             padding-top: 15px;
         }
@@ -178,6 +178,8 @@
         <a href="https://github.com/drio/unixmagic" target="_blank">
             <img src="github.svg" alt="github" />
         </a>
+        {{ $i := "index.xml" }}
+        <a href="{{ $i | relURL }}" class="rss-link" title="RSS Feed"><img src="rss.svg"> </a>
         <a href="#poster-info" class="header-link">About</a>
     </div>
 
