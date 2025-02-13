@@ -250,7 +250,6 @@
     </div>
 
     <script>
-        // Function to place markers correctly on the image
         function positionMarkers() {
             const poster = document.getElementById('poster');
             const markers = document.querySelectorAll('.marker');
@@ -260,39 +259,37 @@
                 return;
             }
 
-            // Get image dimensions
             const rect = poster.getBoundingClientRect();
 
             markers.forEach(marker => {
                 const leftPercent = parseFloat(marker.getAttribute("data-left"));
                 const topPercent = parseFloat(marker.getAttribute("data-top"));
 
-                // Convert percentage-based positions to actual positions
                 marker.style.left = `${(leftPercent / 100) * rect.width + rect.left}px`;
                 marker.style.top = `${(topPercent / 100) * rect.height + rect.top}px`;
             });
         }
 
-        // Reposition markers when image loads and when window resizes
-        window.addEventListener('load', positionMarkers);
-        window.addEventListener('resize', positionMarkers);
+        document.addEventListener('DOMContentLoaded', function () {
+            positionMarkers();
 
-        // Add click event to markers to scroll to corresponding annotation
-        document.querySelectorAll('.marker').forEach(marker => {
-            marker.addEventListener('click', function () {
-                const annotationId = this.getAttribute('data-id');
-                const annotation = document.getElementById(annotationId);
-                if (annotation) {
-                    annotation.scrollIntoView({behavior: 'smooth'});
-                }
+            window.addEventListener('resize', positionMarkers);
+
+            document.querySelectorAll('.marker').forEach(marker => {
+                marker.addEventListener('click', function () {
+                    const annotationId = this.getAttribute('data-id');
+                    const annotation = document.getElementById(annotationId);
+                    if (annotation) {
+                        annotation.scrollIntoView({behavior: 'smooth'});
+                    }
+                });
             });
-        });
 
-        // Add event listener to "Back to Top" links
-        document.querySelectorAll('.back-to-top').forEach(link => {
-            link.addEventListener('click', function (event) {
-                event.preventDefault();
-                window.scrollTo({top: 0, behavior: 'smooth'});
+            document.querySelectorAll('.back-to-top').forEach(link => {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    window.scrollTo({top: 0, behavior: 'smooth'});
+                });
             });
         });
     </script>
