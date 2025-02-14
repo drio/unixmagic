@@ -16,6 +16,5 @@ foundational to modern networking, and the socket API was adopted by all
 major operating systems, shaping how network programming is done today.
 For more on the history of BSD sockets, see [Berkeley Sockets –
 Wikipedia](https://en.wikipedia.org/wiki/Berkeley_sockets), or read the
-official Linux man page for `socket()`
-[here](https://man7.org/linux/man-pages/man2/socket.2.html).
+official Linux man page for [socket()](https://man7.org/linux/man-pages/man2/socket.2.html).
 
