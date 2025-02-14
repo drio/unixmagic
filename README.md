@@ -22,5 +22,6 @@ mattered—both technically and culturally—in the evolution of Unix.
 
 <div align="center">
 <img src="static/ump.webp" width="400">
+<img src="static/puzzle.webp" width="400">
 </div>
 
