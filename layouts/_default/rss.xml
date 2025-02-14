@@ -1,5 +1,5 @@
 {{- with .OutputFormats.Get "RSS" }}
-<rss version="2.0">
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>{{ site.Title }}</title>
     <link>{{ site.BaseURL }}</link>
@@ -9,6 +9,7 @@
       <title>{{ .Title }}</title>
       <link>{{ site.BaseURL }}#annotation-{{ .File.BaseFileName }}</link>
       <description>{{ .Params.description | html }}</description>
+      <content:encoded>{{ .Content | safeHTML | htmlEscape }}</content:encoded>
     </item>
     {{ end }}
   </channel>
