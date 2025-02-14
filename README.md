@@ -12,6 +12,8 @@ Software, Inc. in the 1980s.
 
 Contributions welcome!
 
+Hacker news [discussion](https://news.ycombinator.com/item?id=43019136).
+
 When contributing, remember that this is an opportunity to dig deep into the
 history behind what you’re describing. Feel free to share what this particular
 component means to you personally, but also aim to frame the explanation within
