@@ -35,10 +35,22 @@ and are often started at system boot time. They respond to network requests, har
 or other programs by performing some task. Daemons such as cron may also perform
 defined tasks at scheduled times.&amp;lt;/p&amp;gt;
 &amp;lt;p&amp;gt;The term was coined by the programmers at MIT&amp;amp;rsquo;s Project MAC. It is inspired by Maxwell&amp;amp;rsquo;s demon and
-greek mythology, acting as a metaphor for a supernatural being working in the background.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>fork</title><link>https://drio.github.io/unixmagic/#annotation-13-fork</link><description>An operation whereby a process creates a copy of itself</description><content:encoded>&amp;lt;p&amp;gt;In multitasking operating systems, processes need a way to create new processes.
+greek mythology, acting as a metaphor for a supernatural being working in the background.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>dates</title><link>https://drio.github.io/unixmagic/#annotation-26-dates</link><description>A command to display and set the system date</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;date&amp;lt;/code&amp;gt; is a command to display and set a UNIX system date.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;Unix time is currently defined as the number of non-leap seconds which have passed since 00:00:00 UTC on Thursday, 1 January 1970,
+which is referred to as the Unix epoch.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;The earliest versions of Unix time had a 32-bit integer incrementing at a rate of 60 Hz, which was the rate of the system clock
+on the hardware of the early Unix systems.
+Timestamps stored this way could only represent a range of a little over two and a quarter years.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;The current epoch of 1 January 1970 00:00:00 UTC was selected arbitrarily by Unix engineers because it was considered a
+convenient date to work with.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>fork</title><link>https://drio.github.io/unixmagic/#annotation-13-fork</link><description>An operation whereby a process creates a copy of itself</description><content:encoded>&amp;lt;p&amp;gt;In multitasking operating systems, processes need a way to create new processes.
 &amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Fork_(system_call)&amp;#34;&amp;gt;Forking&amp;lt;/a&amp;gt; a process is typically the
 only way of doing so in Unix-like systems.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;One of the earliest references to a fork concept appeared in A Multiprocessor System Design by Melvin Conway, published in 1962.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>Legendary figures</title><link>https://drio.github.io/unixmagic/#annotation-05-kandr</link><description>Legendary figures in Unix history</description><content:encoded>&amp;lt;p&amp;gt;In the context of Unix history these three sets of initials refer to legendary
+&amp;lt;p&amp;gt;One of the earliest references to a fork concept appeared in A Multiprocessor System Design by Melvin Conway, published in 1962.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>Jfo nroff</title><link>https://drio.github.io/unixmagic/#annotation-24-jfo-nroff</link><description>A text formatting program that produces fixed width output for printers and terminals</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;[nroff](https://en.wikipedia.org/wiki/Nroff)&amp;lt;/code&amp;gt;, short for &amp;amp;ldquo;new roff&amp;amp;rdquo;
+is a text-formatting program produces output suitable for simple fixed-width
+printers and terminal windows.
+It is an integral part of the Unix help system, being used to format man pages for display.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;The letters &amp;lt;em&amp;gt;Jfo&amp;lt;/em&amp;gt; stand for Joseph Frank Ossanna
+who created the original version of &amp;lt;code&amp;gt;nroff&amp;lt;/code&amp;gt; for Version 2 Unix.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>Legendary figures</title><link>https://drio.github.io/unixmagic/#annotation-05-kandr</link><description>Legendary figures in Unix history</description><content:encoded>&amp;lt;p&amp;gt;In the context of Unix history these three sets of initials refer to legendary
 figures in the creation and development of Unix:&amp;lt;/p&amp;gt;
 &amp;lt;p&amp;gt;dmr: Dennis M. Ritchie, co-creator of Unix and creator of the C programming
 language.&amp;lt;/p&amp;gt;
@@ -46,7 +58,13 @@ language.&amp;lt;/p&amp;gt;
 of Unix alongside Ritchie.&amp;lt;/p&amp;gt;
 &amp;lt;p&amp;gt;bwk: Brian W. Kernighan, co-author of several influential Unix programs and
 books (including “The C Programming Language” and “The UNIX Programming
-Environment”).&amp;lt;/p&amp;gt;</content:encoded></item><item><title>man</title><link>https://drio.github.io/unixmagic/#annotation-02-man</link><description>Command to get detailed documentation of different unix components, including other cmds.</description><content:encoded>&amp;lt;p&amp;gt;The &amp;lt;a href=&amp;#34;https://man7.org/linux/man-pages/man1/man.1.html&amp;#34;&amp;gt;man(1)&amp;lt;/a&amp;gt;
+Environment”).&amp;lt;/p&amp;gt;</content:encoded></item><item><title>make</title><link>https://drio.github.io/unixmagic/#annotation-22-make</link><description>A software development tool to perform ordered actions and manage dependencies</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Make_(software)&amp;#34;&amp;gt;Make&amp;lt;/a&amp;gt; is a command line interface
+that reads in a configuration &amp;lt;code&amp;gt;Makefile&amp;lt;/code&amp;gt; that is often used in code executable
+compilation and automation.
+Before Make, building on Unix mostly consisted of shell scripts written for each program&amp;amp;rsquo;s codebase.
+Make&amp;amp;rsquo;s dependency ordering and out-of-date checking makes the build process more robust and more efficient.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;Stuart Feldman was the original author of Make, completing an early version in April 1976 at
+Bell Labs.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>man</title><link>https://drio.github.io/unixmagic/#annotation-02-man</link><description>Command to get detailed documentation of different unix components, including other cmds.</description><content:encoded>&amp;lt;p&amp;gt;The &amp;lt;a href=&amp;#34;https://man7.org/linux/man-pages/man1/man.1.html&amp;#34;&amp;gt;man(1)&amp;lt;/a&amp;gt;
 command (short for manual) is used to display online reference manuals (man
 pages) for commands, system calls, configuration files, and other aspects of
 the system. man provides detailed documentation on how to use a command,
@@ -67,7 +85,12 @@ foundational feature in Unix that enable you to combine simple utilities into
 more powerful workflows. By passing data from one command’s output to another
 command’s input, pipes allow you to quickly create flexible, efficient, and
 maintainable solutions directly at the command line. They are denoted in the
-shell by the vertical bar character (|).&amp;lt;/p&amp;gt;</content:encoded></item><item><title>Shell script</title><link>https://drio.github.io/unixmagic/#annotation-14-shell-script</link><description>An operation whereby a process creates a copy of itself</description><content:encoded>&amp;lt;p&amp;gt;A &amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Shell_script&amp;#34;&amp;gt;shell script&amp;lt;/a&amp;gt; is a computer program designed to be run by a Unix shell.
+shell by the vertical bar character (|).&amp;lt;/p&amp;gt;</content:encoded></item><item><title>root</title><link>https://drio.github.io/unixmagic/#annotation-25-root</link><description>The administrator account on UNIX systems</description><content:encoded>&amp;lt;p&amp;gt;The root user is the name often given to the administrator or superuser account
+on UNIX systems.
+In Unix-like systems, root is the conventional name of the user who has all rights or
+permissions to all files and programs in all modes (e.g. single- or multi-user).
+The root user can do many things an ordinary user cannot, such as changing the
+ownership of files and binding to network ports numbered below 1024.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>Shell script</title><link>https://drio.github.io/unixmagic/#annotation-14-shell-script</link><description>An operation whereby a process creates a copy of itself</description><content:encoded>&amp;lt;p&amp;gt;A &amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Shell_script&amp;#34;&amp;gt;shell script&amp;lt;/a&amp;gt; is a computer program designed to be run by a Unix shell.
 The term is also used more generally to mean the automated mode of running an operating system shell.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>sockets</title><link>https://drio.github.io/unixmagic/#annotation-21-socket</link><description>Networking sockets</description><content:encoded>&amp;lt;p&amp;gt;The &amp;lt;strong&amp;gt;socket&amp;lt;/strong&amp;gt; is a reference to &amp;lt;strong&amp;gt;network sockets&amp;lt;/strong&amp;gt;,
 an abstraction pioneered by UNIX in BSD UNIX (4.2BSD, 1983). Sockets
 provided a unified interface for interprocess communication (IPC), enabling
@@ -77,7 +100,13 @@ foundational to modern networking, and the socket API was adopted by all
 major operating systems, shaping how network programming is done today.
 For more on the history of BSD sockets, see &amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Berkeley_sockets&amp;#34;&amp;gt;Berkeley Sockets –
 Wikipedia&amp;lt;/a&amp;gt;, or read the
-official Linux man page for &amp;lt;a href=&amp;#34;https://man7.org/linux/man-pages/man2/socket.2.html&amp;#34;&amp;gt;socket()&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>su</title><link>https://drio.github.io/unixmagic/#annotation-09-su</link><description>Command to switch your identity</description><content:encoded>&amp;lt;p&amp;gt;The &amp;lt;a href=&amp;#34;https://www.man7.org/linux/man-pages/man1/su.1.html&amp;#34;&amp;gt;su&amp;lt;/a&amp;gt; command (short for “substitute user” or
+official Linux man page for &amp;lt;a href=&amp;#34;https://man7.org/linux/man-pages/man2/socket.2.html&amp;#34;&amp;gt;socket()&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>spawn</title><link>https://drio.github.io/unixmagic/#annotation-23-spawn</link><description>An operation in which a new child process is created</description><content:encoded>&amp;lt;p&amp;gt;Spawning is the process of loading and executing a new child process.
+Closely related is the idea of &amp;lt;code&amp;gt;fork&amp;lt;/code&amp;gt; and &amp;lt;code&amp;gt;exec&amp;lt;/code&amp;gt; that can be used
+to simulate spawning, by forking a process, having the parent terminate
+and &amp;lt;code&amp;gt;exec&amp;lt;/code&amp;gt;ing the child into the desired spawn process.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;POSIX allow for the concept of spawning by itself that can be made
+to be more efficient than &amp;lt;code&amp;gt;fork&amp;lt;/code&amp;gt; and &amp;lt;code&amp;gt;exec&amp;lt;/code&amp;gt;.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;The spawn metaphor had its early use in the VMS operating system from 1977.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>su</title><link>https://drio.github.io/unixmagic/#annotation-09-su</link><description>Command to switch your identity</description><content:encoded>&amp;lt;p&amp;gt;The &amp;lt;a href=&amp;#34;https://www.man7.org/linux/man-pages/man1/su.1.html&amp;#34;&amp;gt;su&amp;lt;/a&amp;gt; command (short for “substitute user” or
 “switch user”) is used to start a shell under a different user account.
 Typically, one of the most common uses of su is switching to the superuser
 (root) account to gain administrative privileges.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>tar</title><link>https://drio.github.io/unixmagic/#annotation-12-tar</link><description>A software utility for collecting multiple files into a single archive file.</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Tar_(computing)&amp;#34;&amp;gt;Tar&amp;lt;/a&amp;gt; is a software tool for collecting multiple
@@ -95,4 +124,9 @@ Troff stands for &amp;amp;ldquo;typesetter roff&amp;amp;rdquo;, where &amp;lt;co
 A typical distribution of troff includes macros for many document styles, including ones for the Unix &amp;lt;code&amp;gt;man&amp;lt;/code&amp;gt; pages.&amp;lt;/p&amp;gt;
 &amp;lt;p&amp;gt;Troff was developed by Bell Labs in th 1970s, where Joseph Ossanna created &amp;lt;code&amp;gt;troff&amp;lt;/code&amp;gt; by modifying &amp;lt;code&amp;gt;nroff&amp;lt;/code&amp;gt; to support multiple fonts and proportional spacing.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>usr</title><link>https://drio.github.io/unixmagic/#annotation-16-usr</link><description>A directory holding user home directories.</description><content:encoded>&amp;lt;p&amp;gt;The &amp;amp;ldquo;user file system&amp;amp;rdquo; (&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Unix_filesystem#Conventional_directory_layout&amp;#34;&amp;gt;&amp;lt;code&amp;gt;/usr&amp;lt;/code&amp;gt;&amp;lt;/a&amp;gt; ),
 is a directory holding user home directories, including executables, libraries and shared resources.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>uucp</title><link>https://drio.github.io/unixmagic/#annotation-20-uucp</link><description>A Unix program for file copy requests.</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/UUCP&amp;#34;&amp;gt;&amp;lt;code&amp;gt;uucp&amp;lt;/code&amp;gt;&amp;lt;/a&amp;gt; is one of the programs in the suite of Unix-to-Unix Copy programs.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;UUCP was originally written at AT&amp;amp;amp;T Bell Laboratories by Mike Lesk.&amp;lt;/p&amp;gt;</content:encoded></item></channel></rss>
+&amp;lt;p&amp;gt;UUCP was originally written at AT&amp;amp;amp;T Bell Laboratories by Mike Lesk.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>whoami</title><link>https://drio.github.io/unixmagic/#annotation-27-whoami</link><description>A command to provide the effective username of the current user</description><content:encoded>&amp;lt;p&amp;gt;Users on UNIX systems may want to
+switch to other accounts, allowing for switching roles, escalation or deescalation of
+privileges or might be logging into multiple machines across networks.
+The &amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Whoami&amp;#34;&amp;gt;&amp;lt;code&amp;gt;whoami&amp;lt;/code&amp;gt;&amp;lt;/a&amp;gt; is a command to tell the invoker
+what user they are logged in as.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;The earliest versions were created in 2.9 BSD.&amp;lt;/p&amp;gt;</content:encoded></item></channel></rss>
