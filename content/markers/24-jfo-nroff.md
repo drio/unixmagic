@@ -7,7 +7,7 @@ position:
 description: "A text formatting program that produces fixed width output for printers and terminals"
 ---
 
-`[nroff](https://en.wikipedia.org/wiki/Nroff)`, short for "new roff"
+[`nroff`](https://en.wikipedia.org/wiki/Nroff), short for "new roff"
 is a text-formatting program produces output suitable for simple fixed-width
 printers and terminal windows.
 It is an integral part of the Unix help system, being used to format man pages for display.
