@@ -3,7 +3,7 @@ title: "null"
 number: "10"
 position:
   left: "42.5%"
-  top: "79%"
+  top: "83%"
 description: "The null device is a device file that discards all data written to it but reports that the write operation succeeded."
 ---
 

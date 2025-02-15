@@ -3,7 +3,7 @@ title: "sockets"
 number: "21"
 position:
   left: "17%"
-  top: "56%"
+  top: "60%"
 description: "Networking sockets"
 ---
 

@@ -3,7 +3,7 @@ title: "uucp"
 number: "20"
 position:
   left: "77%"
-  top: "66%"
+  top: "69%"
 description: "A Unix program for file copy requests."
 ---
 
