@@ -28,7 +28,31 @@ buffer to temporarily store data if the producer sends data faster than the
 consumer can process it. However, if the buffer becomes full, the OS will block
 the producer until space is available.&amp;lt;/p&amp;gt;
 &amp;lt;p&amp;gt;Was that the intention of the artist? You decide—is the valve handle in the
-pipes a clever reference to UNIX back pressure, or is that a stretch?&amp;lt;/p&amp;gt;</content:encoded></item><item><title>cat</title><link>https://drio.github.io/unixmagic/#annotation-19-cat</link><description>A standard Unix utility that reads files sequentially, writing them to standard output.</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Cat_(Unix)&amp;#34;&amp;gt;&amp;lt;code&amp;gt;cat&amp;lt;/code&amp;gt;&amp;lt;/a&amp;gt; derives its name from its function of
+pipes a clever reference to UNIX back pressure, or is that a stretch?&amp;lt;/p&amp;gt;</content:encoded></item><item><title>boot (or sock?)</title><link>https://drio.github.io/unixmagic/#annotation-21-boot</link><description>The booting process (or nnix Networking Sockets)</description><content:encoded>&amp;lt;p&amp;gt;I have to admit, this object looks more like a boot than a sock, but I find it
+hard to believe that the author would leave out a reference to sockets,
+considering how important they are—not only in UNIX but in the history of
+operating systems.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;For that reason, I see two possibilities:&amp;lt;/p&amp;gt;
+&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;
+&amp;lt;p&amp;gt;If it is a boot, it may represent the booting process of the UNIX operating
+system, a fundamental part of bringing the system to life.&amp;lt;/p&amp;gt;
+&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;
+&amp;lt;p&amp;gt;Alternatively, if it is a sock (granted, a thick and oversized one! 😄), it
+is likely a playful reference to UNIX network sockets. Network sockets were an
+abstraction pioneered by UNIX in BSD UNIX (4.2BSD, 1983). Sockets provided a
+unified interface for interprocess communication (IPC), enabling processes to
+communicate both locally (on the same machine) via UNIX domain sockets, and
+over a network using TCP/IP. This innovation became foundational to modern
+networking, and the socket API was later adopted by all major operating
+systems, shaping how network programming is done today.&amp;lt;/p&amp;gt;
+&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&amp;lt;p&amp;gt;For more on the history of BSD sockets, see &amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Berkeley_sockets&amp;#34;&amp;gt;Berkeley Sockets –
+Wikipedia&amp;lt;/a&amp;gt;, or read the
+official Linux man page for
+&amp;lt;a href=&amp;#34;https://man7.org/linux/man-pages/man2/socket.2.html&amp;#34;&amp;gt;&amp;lt;code&amp;gt;socket()&amp;lt;/code&amp;gt;&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>cat</title><link>https://drio.github.io/unixmagic/#annotation-19-cat</link><description>A standard Unix utility that reads files sequentially, writing them to standard output.</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Cat_(Unix)&amp;#34;&amp;gt;&amp;lt;code&amp;gt;cat&amp;lt;/code&amp;gt;&amp;lt;/a&amp;gt; derives its name from its function of
 (con)&amp;lt;em&amp;gt;cat&amp;lt;/em&amp;gt;enating files together.&amp;lt;/p&amp;gt;
 &amp;lt;p&amp;gt;The original version of &amp;lt;code&amp;gt;cat&amp;lt;/code&amp;gt; was part of version 1 of Unix, and written by Ken Thompson and Dennis Ritchie.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>Daemons</title><link>https://drio.github.io/unixmagic/#annotation-08-daemons</link><description>Service processes that run in the background and supervise the system or provide functionality to other processes</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Daemon_(computing)&amp;#34;&amp;gt;Daemons&amp;lt;/a&amp;gt; are programs that run in the background
 and are often started at system boot time. They respond to network requests, hardware activity,
@@ -91,16 +115,7 @@ In Unix-like systems, root is the conventional name of the user who has all righ
 permissions to all files and programs in all modes (e.g. single- or multi-user).
 The root user can do many things an ordinary user cannot, such as changing the
 ownership of files and binding to network ports numbered below 1024.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>Shell script</title><link>https://drio.github.io/unixmagic/#annotation-14-shell-script</link><description>An operation whereby a process creates a copy of itself</description><content:encoded>&amp;lt;p&amp;gt;A &amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Shell_script&amp;#34;&amp;gt;shell script&amp;lt;/a&amp;gt; is a computer program designed to be run by a Unix shell.
-The term is also used more generally to mean the automated mode of running an operating system shell.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>sockets</title><link>https://drio.github.io/unixmagic/#annotation-21-socket</link><description>Networking sockets</description><content:encoded>&amp;lt;p&amp;gt;The &amp;lt;strong&amp;gt;socket&amp;lt;/strong&amp;gt; is a reference to &amp;lt;strong&amp;gt;network sockets&amp;lt;/strong&amp;gt;,
-an abstraction pioneered by UNIX in BSD UNIX (4.2BSD, 1983). Sockets
-provided a unified interface for interprocess communication (IPC), enabling
-processes to communicate both locally (on the same machine) via UNIX domain
-sockets and over a network using TCP/IP. This innovation became
-foundational to modern networking, and the socket API was adopted by all
-major operating systems, shaping how network programming is done today.
-For more on the history of BSD sockets, see &amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Berkeley_sockets&amp;#34;&amp;gt;Berkeley Sockets –
-Wikipedia&amp;lt;/a&amp;gt;, or read the
-official Linux man page for &amp;lt;a href=&amp;#34;https://man7.org/linux/man-pages/man2/socket.2.html&amp;#34;&amp;gt;socket()&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>spawn</title><link>https://drio.github.io/unixmagic/#annotation-23-spawn</link><description>An operation in which a new child process is created</description><content:encoded>&amp;lt;p&amp;gt;Spawning is the process of loading and executing a new child process.
+The term is also used more generally to mean the automated mode of running an operating system shell.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>spawn</title><link>https://drio.github.io/unixmagic/#annotation-23-spawn</link><description>An operation in which a new child process is created</description><content:encoded>&amp;lt;p&amp;gt;Spawning is the process of loading and executing a new child process.
 Closely related is the idea of &amp;lt;code&amp;gt;fork&amp;lt;/code&amp;gt; and &amp;lt;code&amp;gt;exec&amp;lt;/code&amp;gt; that can be used
 to simulate spawning, by forking a process, having the parent terminate
 and &amp;lt;code&amp;gt;exec&amp;lt;/code&amp;gt;ing the child into the desired spawn process.&amp;lt;/p&amp;gt;
