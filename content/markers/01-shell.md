@@ -3,7 +3,7 @@ title: "Shell"
 number: "1"
 position:
   left: "40%"
-  top: "65%"
+  top: "69%"
 description: "A gateway to controlling the system"
 date: 2025-02-13T12:00:00Z
 lastmod: 2025-02-13T12:00:00Z

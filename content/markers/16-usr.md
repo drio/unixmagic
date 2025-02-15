@@ -3,7 +3,7 @@ title: "usr"
 number: "16"
 position:
   left: "67%"
-  top: "81.5%"
+  top: "85.5%"
 description: "A directory holding user home directories."
 ---
 

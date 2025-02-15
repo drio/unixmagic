@@ -3,7 +3,7 @@ title: "Memory leaks"
 number: "4"
 position:
   left: "25%"
-  top: "25%"
+  top: "29%"
 description: "Improper managing of memory by a computer program"
 ---
 

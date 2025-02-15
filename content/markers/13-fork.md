@@ -3,7 +3,7 @@ title: "fork"
 number: "13"
 position:
   left: "25%"
-  top: "86%"
+  top: "90%"
 description: "An operation whereby a process creates a copy of itself"
 ---
 

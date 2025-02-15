@@ -3,7 +3,7 @@ title: "Legendary figures"
 number: "5"
 position:
   left: "56%"
-  top: "25%"
+  top: "29%"
 description: "Legendary figures in Unix history"
 ---
 

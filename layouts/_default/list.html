@@ -214,7 +214,7 @@
     </div>
 
 
-    <div class="image-container">
+    <div class="image-container" id='poster-container'>
         <!-- to avoid formatting issues -->
         {{ $image := "ump.webp" }}
         <img id="poster" src="{{ $image | relURL }}" alt="Unix Magic Poster">
@@ -267,6 +267,7 @@
 
     <script>
         function positionMarkers() {
+            const imgContainer = document.getElementById('poster-container');
             const poster = document.getElementById('poster');
             const markers = document.querySelectorAll('.marker');
 
@@ -275,18 +276,20 @@
                 return;
             }
 
+            const rectContainer = imgContainer.getBoundingClientRect();
             const rect = poster.getBoundingClientRect();
 
             markers.forEach(marker => {
                 const leftPercent = parseFloat(marker.getAttribute("data-left"));
                 const topPercent = parseFloat(marker.getAttribute("data-top"));
 
-                marker.style.left = `${(leftPercent / 100) * rect.width + rect.left}px`;
-                marker.style.top = `${(topPercent / 100) * rect.height + rect.top}px`;
+                marker.style.left = `${(leftPercent / 100) * rect.width + rect.left - rectContainer.left}px`;
+                marker.style.top = `${(topPercent / 100) * rect.height + rect.top - rectContainer.top}px`;
             });
         }
 
         document.addEventListener('DOMContentLoaded', function () {
+
             positionMarkers();
 
             window.addEventListener('resize', positionMarkers);

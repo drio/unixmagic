@@ -3,7 +3,7 @@ title: "man"
 number: "2"
 position:
   left: "15%"
-  top: "47%"
+  top: "51%"
 description: "Command to get detailed documentation of different unix components, including other cmds."
 ---
 

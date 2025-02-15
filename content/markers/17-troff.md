@@ -3,7 +3,7 @@ title: "troff"
 number: "17"
 position:
   left: "70.5%"
-  top: "78%"
+  top: "82%"
 description: "A program in formatting documents for the document processing system."
 ---
 

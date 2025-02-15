@@ -3,7 +3,7 @@ title: "Pipes"
 number: "3"
 position:
   left: "45%"
-  top: "20%"
+  top: "24%"
 description: "Connect cmd outputs to cmd inputs to create complex pipelines"
 ---
 
