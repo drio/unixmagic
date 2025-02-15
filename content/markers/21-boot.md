@@ -3,7 +3,7 @@ title: "boot (or sock?)"
 number: "21"
 position:
   left: "17%"
-  top: "56%"
+  top: "58%"
 description: "The booting process (or nnix Networking Sockets)"
 ---
 
