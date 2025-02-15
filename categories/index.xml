@@ -28,7 +28,7 @@ buffer to temporarily store data if the producer sends data faster than the
 consumer can process it. However, if the buffer becomes full, the OS will block
 the producer until space is available.&amp;lt;/p&amp;gt;
 &amp;lt;p&amp;gt;Was that the intention of the artist? You decide—is the valve handle in the
-pipes a clever reference to UNIX back pressure, or is that a stretch?&amp;lt;/p&amp;gt;</content:encoded></item><item><title>boot (or sock?)</title><link>https://drio.github.io/unixmagic/#annotation-21-boot</link><description>The booting process (or unix Networking Sockets)</description><content:encoded>&amp;lt;p&amp;gt;I have to admit, this object looks more like a boot than a sock, but I find it
+pipes a clever reference to UNIX back pressure, or is that a stretch?&amp;lt;/p&amp;gt;</content:encoded></item><item><title>boot (or sock?)</title><link>https://drio.github.io/unixmagic/#annotation-21-boot</link><description>The booting process (or Unix Networking Sockets)</description><content:encoded>&amp;lt;p&amp;gt;I have to admit, this object looks more like a boot than a sock, but I find it
 hard to believe that the author would leave out a reference to sockets,
 considering how important they are—not only in UNIX but in the history of
 operating systems.&amp;lt;/p&amp;gt;
