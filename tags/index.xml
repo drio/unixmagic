@@ -109,7 +109,18 @@ foundational feature in Unix that enable you to combine simple utilities into
 more powerful workflows. By passing data from one command’s output to another
 command’s input, pipes allow you to quickly create flexible, efficient, and
 maintainable solutions directly at the command line. They are denoted in the
-shell by the vertical bar character (|).&amp;lt;/p&amp;gt;</content:encoded></item><item><title>root</title><link>https://drio.github.io/unixmagic/#annotation-25-root</link><description>The administrator account on UNIX systems</description><content:encoded>&amp;lt;p&amp;gt;The root user is the name often given to the administrator or superuser account
+shell by the vertical bar character (|).&amp;lt;/p&amp;gt;</content:encoded></item><item><title>pwd</title><link>https://drio.github.io/unixmagic/#annotation-28-pwd</link><description>A cmd to determine your location in the filesystem</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;https://man7.org/linux/man-pages/man1/pwd.1.html&amp;#34;&amp;gt;&amp;lt;code&amp;gt;pwd&amp;lt;/code&amp;gt;&amp;lt;/a&amp;gt; is a simple command
+that shows your current location in the filesystem. Is it a coincidence that
+&amp;lt;code&amp;gt;pwd&amp;lt;/code&amp;gt; is visually presented in a box? Maybe. But perhaps it’s a visual clue,
+suggesting that &amp;lt;code&amp;gt;pwd&amp;lt;/code&amp;gt; is a small, self-contained tool—like many classic UNIX
+commands.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>pwd</title><link>https://drio.github.io/unixmagic/#annotation-29-mbox</link><description>The mail system format</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;mbox&amp;lt;/code&amp;gt; is a reference to the mail format from the early days of UNIX. UNIX was
+one of the first operating systems to come with built-in email capabilities,
+and it did so while staying true to its mantra: &amp;amp;ldquo;everything is a file.&amp;amp;rdquo; In the
+&amp;lt;code&amp;gt;mbox&amp;lt;/code&amp;gt; format, all email messages are stored in a single file, with new
+messages simply appended to the end. By default, users&amp;amp;rsquo; mail was stored in
+&amp;lt;code&amp;gt;/usr/mail/&amp;amp;lt;username&amp;amp;gt;&amp;lt;/code&amp;gt;. This design naturally enabled the integration of
+system logs and notifications to be sent via email—further embedding email as
+a core part of the UNIX experience.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>root</title><link>https://drio.github.io/unixmagic/#annotation-25-root</link><description>The administrator account on UNIX systems</description><content:encoded>&amp;lt;p&amp;gt;The root user is the name often given to the administrator or superuser account
 on UNIX systems.
 In Unix-like systems, root is the conventional name of the user who has all rights or
 permissions to all files and programs in all modes (e.g. single- or multi-user).
