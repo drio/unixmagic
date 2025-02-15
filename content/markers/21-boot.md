@@ -4,7 +4,7 @@ number: "21"
 position:
   left: "17%"
   top: "58%"
-description: "The booting process (or unix Networking Sockets)"
+description: "The booting process (or Unix Networking Sockets)"
 ---
 
 I have to admit, this object looks more like a boot than a sock, but I find it
