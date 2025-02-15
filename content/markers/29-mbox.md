@@ -1,5 +1,5 @@
 ---
-title: "pwd"
+title: "mbox"
 number: "29"
 position:
   left: "89%"
