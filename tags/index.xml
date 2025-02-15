@@ -82,7 +82,12 @@ language.&amp;lt;/p&amp;gt;
 of Unix alongside Ritchie.&amp;lt;/p&amp;gt;
 &amp;lt;p&amp;gt;bwk: Brian W. Kernighan, co-author of several influential Unix programs and
 books (including “The C Programming Language” and “The UNIX Programming
-Environment”).&amp;lt;/p&amp;gt;</content:encoded></item><item><title>make</title><link>https://drio.github.io/unixmagic/#annotation-22-make</link><description>A software development tool to perform ordered actions and manage dependencies</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Make_(software)&amp;#34;&amp;gt;Make&amp;lt;/a&amp;gt; is a command line interface
+Environment”).&amp;lt;/p&amp;gt;</content:encoded></item><item><title>login</title><link>https://drio.github.io/unixmagic/#annotation-30-login</link><description>The gateway into the system</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;login&amp;lt;/code&amp;gt; is the gateway into the system. It authenticates the user, initializes
+the environment by changing to the user’s home directory, and spawns a process
+running as the user (with their &amp;lt;code&amp;gt;uid&amp;lt;/code&amp;gt; and &amp;lt;code&amp;gt;gid&amp;lt;/code&amp;gt;), using their shell of choice.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;Additionally, the standard input and output need to be attached to a terminal:
+this could be a &amp;lt;strong&amp;gt;pseudo-terminal&amp;lt;/strong&amp;gt; (if you are in a graphical interface or
+using &amp;lt;code&amp;gt;ssh&amp;lt;/code&amp;gt;), or a &amp;lt;strong&amp;gt;physical terminal&amp;lt;/strong&amp;gt; (as was common at the time).&amp;lt;/p&amp;gt;</content:encoded></item><item><title>make</title><link>https://drio.github.io/unixmagic/#annotation-22-make</link><description>A software development tool to perform ordered actions and manage dependencies</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Make_(software)&amp;#34;&amp;gt;Make&amp;lt;/a&amp;gt; is a command line interface
 that reads in a configuration &amp;lt;code&amp;gt;Makefile&amp;lt;/code&amp;gt; that is often used in code executable
 compilation and automation.
 Before Make, building on Unix mostly consisted of shell scripts written for each program&amp;amp;rsquo;s codebase.
