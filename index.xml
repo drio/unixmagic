@@ -93,7 +93,14 @@ command (short for manual) is used to display online reference manuals (man
 pages) for commands, system calls, configuration files, and other aspects of
 the system. man provides detailed documentation on how to use a command,
 including its options, usage examples, related files, and other pertinent
-details.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>Memory leaks</title><link>https://drio.github.io/unixmagic/#annotation-04-leak</link><description>Improper managing of memory by a computer program</description><content:encoded>&amp;lt;p&amp;gt;A memory leak occurs when a computer program improperly manages memory
+details.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>mbox</title><link>https://drio.github.io/unixmagic/#annotation-29-mbox</link><description>The mail system format</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;mbox&amp;lt;/code&amp;gt; is a reference to the mail format from the early days of UNIX. UNIX was
+one of the first operating systems to come with built-in email capabilities,
+and it did so while staying true to its mantra: &amp;amp;ldquo;everything is a file.&amp;amp;rdquo; In the
+&amp;lt;code&amp;gt;mbox&amp;lt;/code&amp;gt; format, all email messages are stored in a single file, with new
+messages simply appended to the end. By default, users&amp;amp;rsquo; mail was stored in
+&amp;lt;code&amp;gt;/usr/mail/&amp;amp;lt;username&amp;amp;gt;&amp;lt;/code&amp;gt;. This design naturally enabled the integration of
+system logs and notifications to be sent via email—further embedding email as
+a core part of the UNIX experience.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>Memory leaks</title><link>https://drio.github.io/unixmagic/#annotation-04-leak</link><description>Improper managing of memory by a computer program</description><content:encoded>&amp;lt;p&amp;gt;A memory leak occurs when a computer program improperly manages memory
 allocation, failing to release memory that’s no longer needed. Over time, these
 un-freed allocations accumulate, reducing the amount of available memory for
 other processes and potentially leading to slowdowns or crashes.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>null</title><link>https://drio.github.io/unixmagic/#annotation-10-null</link><description>The null device is a device file that discards all data written to it but reports that the write operation succeeded.</description><content:encoded>&amp;lt;p&amp;gt;The &amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Null_device&amp;#34;&amp;gt;Null device&amp;lt;/a&amp;gt; is a device file that discards all data written
@@ -113,14 +120,7 @@ shell by the vertical bar character (|).&amp;lt;/p&amp;gt;</content:encoded></it
 that shows your current location in the filesystem. Is it a coincidence that
 &amp;lt;code&amp;gt;pwd&amp;lt;/code&amp;gt; is visually presented in a box? Maybe. But perhaps it’s a visual clue,
 suggesting that &amp;lt;code&amp;gt;pwd&amp;lt;/code&amp;gt; is a small, self-contained tool—like many classic UNIX
-commands.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>pwd</title><link>https://drio.github.io/unixmagic/#annotation-29-mbox</link><description>The mail system format</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;mbox&amp;lt;/code&amp;gt; is a reference to the mail format from the early days of UNIX. UNIX was
-one of the first operating systems to come with built-in email capabilities,
-and it did so while staying true to its mantra: &amp;amp;ldquo;everything is a file.&amp;amp;rdquo; In the
-&amp;lt;code&amp;gt;mbox&amp;lt;/code&amp;gt; format, all email messages are stored in a single file, with new
-messages simply appended to the end. By default, users&amp;amp;rsquo; mail was stored in
-&amp;lt;code&amp;gt;/usr/mail/&amp;amp;lt;username&amp;amp;gt;&amp;lt;/code&amp;gt;. This design naturally enabled the integration of
-system logs and notifications to be sent via email—further embedding email as
-a core part of the UNIX experience.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>root</title><link>https://drio.github.io/unixmagic/#annotation-25-root</link><description>The administrator account on UNIX systems</description><content:encoded>&amp;lt;p&amp;gt;The root user is the name often given to the administrator or superuser account
+commands.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>root</title><link>https://drio.github.io/unixmagic/#annotation-25-root</link><description>The administrator account on UNIX systems</description><content:encoded>&amp;lt;p&amp;gt;The root user is the name often given to the administrator or superuser account
 on UNIX systems.
 In Unix-like systems, root is the conventional name of the user who has all rights or
 permissions to all files and programs in all modes (e.g. single- or multi-user).
