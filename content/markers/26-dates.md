@@ -7,7 +7,7 @@ position:
 description: "A command to display and set the system date"
 ---
 
-`date` is a command to display and set a UNIX system date.
+[`date`](https://man7.org/linux/man-pages/man1/date.1.html) is a command to display and set a UNIX system date.
 
 Unix time is currently defined as the number of non-leap seconds which have passed since 00:00:00 UTC on Thursday, 1 January 1970,
 which is referred to as the Unix epoch.
