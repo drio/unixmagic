@@ -59,7 +59,7 @@ and are often started at system boot time. They respond to network requests, har
 or other programs by performing some task. Daemons such as cron may also perform
 defined tasks at scheduled times.&amp;lt;/p&amp;gt;
 &amp;lt;p&amp;gt;The term was coined by the programmers at MIT&amp;amp;rsquo;s Project MAC. It is inspired by Maxwell&amp;amp;rsquo;s demon and
-greek mythology, acting as a metaphor for a supernatural being working in the background.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>dates</title><link>https://drio.github.io/unixmagic/#annotation-26-dates</link><description>A command to display and set the system date</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;date&amp;lt;/code&amp;gt; is a command to display and set a UNIX system date.&amp;lt;/p&amp;gt;
+greek mythology, acting as a metaphor for a supernatural being working in the background.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>dates</title><link>https://drio.github.io/unixmagic/#annotation-26-dates</link><description>A command to display and set the system date</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;https://man7.org/linux/man-pages/man1/date.1.html&amp;#34;&amp;gt;&amp;lt;code&amp;gt;date&amp;lt;/code&amp;gt;&amp;lt;/a&amp;gt; is a command to display and set a UNIX system date.&amp;lt;/p&amp;gt;
 &amp;lt;p&amp;gt;Unix time is currently defined as the number of non-leap seconds which have passed since 00:00:00 UTC on Thursday, 1 January 1970,
 which is referred to as the Unix epoch.&amp;lt;/p&amp;gt;
 &amp;lt;p&amp;gt;The earliest versions of Unix time had a 32-bit integer incrementing at a rate of 60 Hz, which was the rate of the system clock
