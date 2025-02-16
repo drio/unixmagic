@@ -150,11 +150,11 @@ permissions to all files and programs in all modes (e.g. single- or multi-user).
 The root user can do many things an ordinary user cannot, such as changing the
 ownership of files and binding to network ports numbered below 1024.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>Shell script</title><link>https://drio.github.io/unixmagic/#annotation-14-shell-script</link><description>An operation whereby a process creates a copy of itself</description><content:encoded>&amp;lt;p&amp;gt;A &amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Shell_script&amp;#34;&amp;gt;shell script&amp;lt;/a&amp;gt; is a computer program designed to be run by a Unix shell.
 The term is also used more generally to mean the automated mode of running an operating system shell.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>Shell's symbols</title><link>https://drio.github.io/unixmagic/#annotation-35-shell-symbols</link><description>Symbols of the shell</description><content:encoded>&amp;lt;h3 id=&amp;#34;shell-symbols-on-the-wizards-cloak&amp;#34;&amp;gt;Shell Symbols on the Wizard&amp;amp;rsquo;s Cloak&amp;lt;/h3&amp;gt;
-&amp;lt;p&amp;gt;The wizard’s cloak in the &amp;lt;em&amp;gt;UNIX Magic&amp;lt;/em&amp;gt; poster is decorated with symbols that
-represent some of the most important special characters used in the UNIX shell.
-These symbols are the &amp;amp;ldquo;runes&amp;amp;rdquo; of UNIX power, allowing users to combine commands,
-redirect input and output, and control processes with precision. Mastery of these
-symbols is part of what transforms a regular user into a &amp;amp;ldquo;UNIX wizard.&amp;amp;rdquo;&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;The wizard’s cloak is decorated with symbols that represent some of the most
+important special characters used in the UNIX shell. These symbols are the
+&amp;amp;ldquo;runes&amp;amp;rdquo; of UNIX power, allowing users to combine commands, redirect input and
+output, and control processes with precision. Mastery of these symbols is part
+of what transforms a regular user into a &amp;amp;ldquo;UNIX wizard.&amp;amp;rdquo;&amp;lt;/p&amp;gt;
 &amp;lt;h4 id=&amp;#34;--job-control&amp;#34;&amp;gt;&amp;lt;code&amp;gt;%&amp;lt;/code&amp;gt; – Job Control&amp;lt;/h4&amp;gt;
 &amp;lt;p&amp;gt;Used to &amp;lt;strong&amp;gt;refer to background jobs in the shell&amp;lt;/strong&amp;gt;.&amp;lt;/p&amp;gt;
 &amp;lt;ul&amp;gt;
