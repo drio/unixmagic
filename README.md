@@ -13,7 +13,11 @@ Software, Inc. in the 1980s.
 
 Contributions welcome!
 
-Hacker news [discussion](https://news.ycombinator.com/item?id=43019136).
+### References
+- Hacker news [discussion](https://news.ycombinator.com/item?id=43019136).
+- Previous HN [discussion](https://news.ycombinator.com/item?id=27029196).
+
+### Contributions welcome!
 
 When contributing, remember that this is an opportunity to dig deep into the
 history behind what you’re describing. Feel free to share what this particular
