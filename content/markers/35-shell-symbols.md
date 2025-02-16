@@ -9,11 +9,11 @@ description: "Symbols of the shell"
 
 ### Shell Symbols on the Wizard's Cloak
 
-The wizard’s cloak in the *UNIX Magic* poster is decorated with symbols that 
-represent some of the most important special characters used in the UNIX shell.
-These symbols are the "runes" of UNIX power, allowing users to combine commands, 
-redirect input and output, and control processes with precision. Mastery of these 
-symbols is part of what transforms a regular user into a "UNIX wizard."
+The wizard’s cloak is decorated with symbols that represent some of the most
+important special characters used in the UNIX shell. These symbols are the
+"runes" of UNIX power, allowing users to combine commands, redirect input and
+output, and control processes with precision. Mastery of these symbols is part
+of what transforms a regular user into a "UNIX wizard."
 
 #### `%` – Job Control
 Used to **refer to background jobs in the shell**.
