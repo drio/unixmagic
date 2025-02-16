@@ -8,7 +8,8 @@ poster, making it a valuable reference for Unix enthusiasts.
 The UNIX Magic poster was created by *Gary Overacre* and published by UniTech
 Software, Inc. in the 1980s.
 
-🔗 You can find the latest build of this pipeline [here](https://drio.github.io/unixmagic/).
+- 🔗 You can find the latest build of this pipeline [here](https://drio.github.io/unixmagic/).
+- 📋 Marker [list](https://github.com/drio/unixmagic/issues/4) issue.
 
 Contributions welcome!
 
