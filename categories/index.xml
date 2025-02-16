@@ -149,7 +149,59 @@ In Unix-like systems, root is the conventional name of the user who has all righ
 permissions to all files and programs in all modes (e.g. single- or multi-user).
 The root user can do many things an ordinary user cannot, such as changing the
 ownership of files and binding to network ports numbered below 1024.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>Shell script</title><link>https://drio.github.io/unixmagic/#annotation-14-shell-script</link><description>An operation whereby a process creates a copy of itself</description><content:encoded>&amp;lt;p&amp;gt;A &amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Shell_script&amp;#34;&amp;gt;shell script&amp;lt;/a&amp;gt; is a computer program designed to be run by a Unix shell.
-The term is also used more generally to mean the automated mode of running an operating system shell.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>spawn</title><link>https://drio.github.io/unixmagic/#annotation-23-spawn</link><description>An operation in which a new child process is created</description><content:encoded>&amp;lt;p&amp;gt;Spawning is the process of loading and executing a new child process.
+The term is also used more generally to mean the automated mode of running an operating system shell.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>Shell's symbols</title><link>https://drio.github.io/unixmagic/#annotation-35-shell-symbols</link><description>Symbols of the shell</description><content:encoded>&amp;lt;h3 id=&amp;#34;shell-symbols-on-the-wizards-cloak&amp;#34;&amp;gt;Shell Symbols on the Wizard&amp;amp;rsquo;s Cloak&amp;lt;/h3&amp;gt;
+&amp;lt;p&amp;gt;The wizard’s cloak in the &amp;lt;em&amp;gt;UNIX Magic&amp;lt;/em&amp;gt; poster is decorated with symbols that
+represent some of the most important special characters used in the UNIX shell.
+These symbols are the &amp;amp;ldquo;runes&amp;amp;rdquo; of UNIX power, allowing users to combine commands,
+redirect input and output, and control processes with precision. Mastery of these
+symbols is part of what transforms a regular user into a &amp;amp;ldquo;UNIX wizard.&amp;amp;rdquo;&amp;lt;/p&amp;gt;
+&amp;lt;h4 id=&amp;#34;--job-control&amp;#34;&amp;gt;&amp;lt;code&amp;gt;%&amp;lt;/code&amp;gt; – Job Control&amp;lt;/h4&amp;gt;
+&amp;lt;p&amp;gt;Used to &amp;lt;strong&amp;gt;refer to background jobs in the shell&amp;lt;/strong&amp;gt;.&amp;lt;/p&amp;gt;
+&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;code&amp;gt;jobs&amp;lt;/code&amp;gt; → List background jobs.&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;code&amp;gt;fg %1&amp;lt;/code&amp;gt; → Bring &amp;lt;strong&amp;gt;job 1 to the foreground&amp;lt;/strong&amp;gt;.&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;code&amp;gt;bg %2&amp;lt;/code&amp;gt; → Resume &amp;lt;strong&amp;gt;job 2 in the background&amp;lt;/strong&amp;gt;.&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&amp;lt;h4 id=&amp;#34;--variable-expansion--shell-prompt&amp;#34;&amp;gt;&amp;lt;code&amp;gt;$&amp;lt;/code&amp;gt; – Variable Expansion &amp;amp;amp; Shell Prompt&amp;lt;/h4&amp;gt;
+&amp;lt;p&amp;gt;Represents &amp;lt;strong&amp;gt;variables and parameter substitution&amp;lt;/strong&amp;gt;.&amp;lt;/p&amp;gt;
+&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;code&amp;gt;$HOME&amp;lt;/code&amp;gt; → Expands to &amp;lt;strong&amp;gt;the value of the &amp;lt;code&amp;gt;HOME&amp;lt;/code&amp;gt; environment variable&amp;lt;/strong&amp;gt;.&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;code&amp;gt;$?&amp;lt;/code&amp;gt; → Shows &amp;lt;strong&amp;gt;the exit status of the last command&amp;lt;/strong&amp;gt;.&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&amp;lt;p&amp;gt;Also often &amp;lt;strong&amp;gt;appears as the shell prompt&amp;lt;/strong&amp;gt; for &amp;lt;strong&amp;gt;a regular user&amp;lt;/strong&amp;gt;.&amp;lt;/p&amp;gt;
+&amp;lt;h4 id=&amp;#34;--output-redirection&amp;#34;&amp;gt;&amp;lt;code&amp;gt;&amp;amp;gt;&amp;lt;/code&amp;gt; – Output Redirection&amp;lt;/h4&amp;gt;
+&amp;lt;p&amp;gt;Redirects &amp;lt;strong&amp;gt;standard output to a file&amp;lt;/strong&amp;gt;.&amp;lt;/p&amp;gt;
+&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;code&amp;gt;ls &amp;amp;gt; files.txt&amp;lt;/code&amp;gt; → Writes the &amp;lt;strong&amp;gt;output of &amp;lt;code&amp;gt;ls&amp;lt;/code&amp;gt; into &amp;lt;code&amp;gt;files.txt&amp;lt;/code&amp;gt;&amp;lt;/strong&amp;gt; (overwriting it).&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&amp;lt;h4 id=&amp;#34;--input-redirection&amp;#34;&amp;gt;&amp;lt;code&amp;gt;&amp;amp;lt;&amp;lt;/code&amp;gt; – Input Redirection&amp;lt;/h4&amp;gt;
+&amp;lt;p&amp;gt;Redirects &amp;lt;strong&amp;gt;standard input from a file&amp;lt;/strong&amp;gt;.&amp;lt;/p&amp;gt;
+&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;code&amp;gt;sort &amp;amp;lt; input.txt&amp;lt;/code&amp;gt; → Reads &amp;lt;strong&amp;gt;input from &amp;lt;code&amp;gt;input.txt&amp;lt;/code&amp;gt; instead of the keyboard&amp;lt;/strong&amp;gt;.&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&amp;lt;h4 id=&amp;#34;--wildcard-glob&amp;#34;&amp;gt;&amp;lt;code&amp;gt;*&amp;lt;/code&amp;gt; – Wildcard (Glob)&amp;lt;/h4&amp;gt;
+&amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;Matches any number of characters&amp;lt;/strong&amp;gt; in filenames.&amp;lt;/p&amp;gt;
+&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;code&amp;gt;ls *.txt&amp;lt;/code&amp;gt; → Lists &amp;lt;strong&amp;gt;all files ending in &amp;lt;code&amp;gt;.txt&amp;lt;/code&amp;gt;&amp;lt;/strong&amp;gt;.&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;code&amp;gt;rm *&amp;lt;/code&amp;gt; → &amp;lt;strong&amp;gt;Deletes all files in the current directory&amp;lt;/strong&amp;gt; (Dangerous!).&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&amp;lt;h4 id=&amp;#34;--history-expansion&amp;#34;&amp;gt;&amp;lt;code&amp;gt;!&amp;lt;/code&amp;gt; – History Expansion&amp;lt;/h4&amp;gt;
+&amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;Expands to previously executed commands&amp;lt;/strong&amp;gt;.&amp;lt;/p&amp;gt;
+&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;code&amp;gt;!!&amp;lt;/code&amp;gt; → Repeats &amp;lt;strong&amp;gt;the last command&amp;lt;/strong&amp;gt;.&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;code&amp;gt;!ls&amp;lt;/code&amp;gt; → Repeats &amp;lt;strong&amp;gt;the last command starting with &amp;lt;code&amp;gt;ls&amp;lt;/code&amp;gt;&amp;lt;/strong&amp;gt;.&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;code&amp;gt;!$&amp;lt;/code&amp;gt; → Expands &amp;lt;strong&amp;gt;to the last argument of the previous command&amp;lt;/strong&amp;gt;.&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&amp;lt;h4 id=&amp;#34;---test--conditional-expressions&amp;#34;&amp;gt;&amp;lt;code&amp;gt;[&amp;lt;/code&amp;gt; &amp;lt;code&amp;gt;]&amp;lt;/code&amp;gt; – Test / Conditional Expressions&amp;lt;/h4&amp;gt;
+&amp;lt;p&amp;gt;Used &amp;lt;strong&amp;gt;in shell conditionals&amp;lt;/strong&amp;gt; and &amp;lt;strong&amp;gt;&amp;lt;code&amp;gt;if&amp;lt;/code&amp;gt; statements&amp;lt;/strong&amp;gt;.&amp;lt;/p&amp;gt;
+&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;code&amp;gt;[ -f file.txt ]&amp;lt;/code&amp;gt; → &amp;lt;strong&amp;gt;Tests if &amp;lt;code&amp;gt;file.txt&amp;lt;/code&amp;gt; is a regular file&amp;lt;/strong&amp;gt;.&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;Common &amp;lt;strong&amp;gt;in shell scripting&amp;lt;/strong&amp;gt;:
+&amp;lt;div class=&amp;#34;highlight&amp;#34;&amp;gt;&amp;lt;pre tabindex=&amp;#34;0&amp;#34; style=&amp;#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&amp;#34;&amp;gt;&amp;lt;code class=&amp;#34;language-bash&amp;#34; data-lang=&amp;#34;bash&amp;#34;&amp;gt;&amp;lt;span style=&amp;#34;display:flex;&amp;#34;&amp;gt;&amp;lt;span&amp;gt;&amp;lt;span style=&amp;#34;color:#66d9ef&amp;#34;&amp;gt;if&amp;lt;/span&amp;gt; &amp;lt;span style=&amp;#34;color:#f92672&amp;#34;&amp;gt;[&amp;lt;/span&amp;gt; -f file.txt &amp;lt;span style=&amp;#34;color:#f92672&amp;#34;&amp;gt;]&amp;lt;/span&amp;gt;; &amp;lt;span style=&amp;#34;color:#66d9ef&amp;#34;&amp;gt;then&amp;lt;/span&amp;gt;
+&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;#34;display:flex;&amp;#34;&amp;gt;&amp;lt;span&amp;gt; echo &amp;lt;span style=&amp;#34;color:#e6db74&amp;#34;&amp;gt;&amp;amp;#34;File exists!&amp;amp;#34;&amp;lt;/span&amp;gt;
+&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;#34;display:flex;&amp;#34;&amp;gt;&amp;lt;span&amp;gt;&amp;lt;span style=&amp;#34;color:#66d9ef&amp;#34;&amp;gt;fi&amp;lt;/span&amp;gt;
+&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;</content:encoded></item><item><title>spawn</title><link>https://drio.github.io/unixmagic/#annotation-23-spawn</link><description>An operation in which a new child process is created</description><content:encoded>&amp;lt;p&amp;gt;Spawning is the process of loading and executing a new child process.
 Closely related is the idea of &amp;lt;code&amp;gt;fork&amp;lt;/code&amp;gt; and &amp;lt;code&amp;gt;exec&amp;lt;/code&amp;gt; that can be used
 to simulate spawning, by forking a process, having the parent terminate
 and &amp;lt;code&amp;gt;exec&amp;lt;/code&amp;gt;ing the child into the desired spawn process.&amp;lt;/p&amp;gt;
