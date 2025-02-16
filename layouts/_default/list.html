@@ -192,10 +192,22 @@
         }
 
 
+        .annotation-footer {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 8px;
+        }
+
         .back-to-top {
             text-decoration: none;
-            font-size: 20px;
+            font-size: 18px;
             display: inline-block;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        .back-to-top:hover {
+            text-decoration: none;
         }
 
         .footer {
@@ -266,7 +278,9 @@
                 {{ .Content | safeHTML }}
             </div>
 
-            <a href="#" class="back-to-top">🔝</a>
+            <div class="annotation-footer">
+                <a href="#" class="back-to-top">🔝</a>
+            </div>
         </div>
         {{ end }}
     </div>
