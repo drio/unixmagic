@@ -76,7 +76,21 @@ and displays the differences in the contents of files.
 of the same file.
 For example, &amp;lt;code&amp;gt;diff&amp;lt;/code&amp;gt; can be used to find which lines have changed in a source file,
 allowing for only transmission of the changes, rather than the whole file.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;diff&amp;lt;/code&amp;gt; as developed in the early 1970s at Bell Labs.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>fork</title><link>https://drio.github.io/unixmagic/#annotation-13-fork</link><description>An operation whereby a process creates a copy of itself</description><content:encoded>&amp;lt;p&amp;gt;In multitasking operating systems, processes need a way to create new processes.
+&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;diff&amp;lt;/code&amp;gt; as developed in the early 1970s at Bell Labs.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>Filesystem hierarchy</title><link>https://drio.github.io/unixmagic/#annotation-38-tree-graph</link><description>Navigating the filesystem</description><content:encoded>&amp;lt;p&amp;gt;The tree-like shape of the liquid the wizard is manipulating may be a reference to
+the UNIX filesystem hierarchy. UNIX organizes files and directories in a tree
+structure, starting from the root (&amp;lt;code&amp;gt;/&amp;lt;/code&amp;gt;) and branching into subdirectories.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;Navigating this structure is a fundamental part of working with UNIX, typically done
+through the shell using commands like &amp;lt;code&amp;gt;cd&amp;lt;/code&amp;gt;, &amp;lt;code&amp;gt;ls&amp;lt;/code&amp;gt;, and &amp;lt;code&amp;gt;pwd&amp;lt;/code&amp;gt;. The tree shape could
+symbolize this concept, visually representing how users move through directories,
+access files, and execute commands.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;Alternatively, the branching form could represent recursive operations or the
+parent-child relationships in process trees, both key concepts in UNIX systems.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;Some modern readers might associate the tree shape with version control systems like
+Git, where branching is a common visual metaphor. However, this is likely not the
+intended reference, as branching version control workflows were not as prevalent in
+the UNIX world at the time the poster was created. Tools like SCCS (1972) and RCS
+(1982) were available, but they focused more on linear versioning and file locking
+than the branching models popular today.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>fork</title><link>https://drio.github.io/unixmagic/#annotation-13-fork</link><description>An operation whereby a process creates a copy of itself</description><content:encoded>&amp;lt;p&amp;gt;In multitasking operating systems, processes need a way to create new processes.
 &amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Fork_(system_call)&amp;#34;&amp;gt;Forking&amp;lt;/a&amp;gt; a process is typically the
 only way of doing so in Unix-like systems.&amp;lt;/p&amp;gt;
 &amp;lt;p&amp;gt;One of the earliest references to a fork concept appeared in A Multiprocessor System Design by Melvin Conway, published in 1962.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>Jfo nroff</title><link>https://drio.github.io/unixmagic/#annotation-24-jfo-nroff</link><description>A text formatting program that produces fixed width output for printers and terminals</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Nroff&amp;#34;&amp;gt;&amp;lt;code&amp;gt;nroff&amp;lt;/code&amp;gt;&amp;lt;/a&amp;gt;, short for &amp;amp;ldquo;new roff&amp;amp;rdquo;
@@ -134,7 +148,16 @@ The null device is typically used for disposing of unwanted output streams of a 
 &amp;lt;p&amp;gt;The oregano is reputedly referring to an incident in which one of the
 original folks involved with BSD was hassled for coming across the
 Canadian/U.S. border with a bag of what was assumed to be an illegal
-substance, and turned out to be oregano.&amp;lt;/p&amp;gt;&amp;lt;/blockquote&amp;gt;</content:encoded></item><item><title>Pipes</title><link>https://drio.github.io/unixmagic/#annotation-03-pipes</link><description>Connect cmd outputs to cmd inputs to create complex pipelines</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Pipeline_(Unix)&amp;#34;&amp;gt;Pipes&amp;lt;/a&amp;gt; are a
+substance, and turned out to be oregano.&amp;lt;/p&amp;gt;&amp;lt;/blockquote&amp;gt;</content:encoded></item><item><title>Overflows</title><link>https://drio.github.io/unixmagic/#annotation-36-overflows</link><description>Buffer overflows</description><content:encoded>&amp;lt;p&amp;gt;This may be a bit of a stretch, but considering how prevalent buffer overflows
+have been in the history of UNIX, the imagery might be intentional. The
+overflowing liquid from the shell could be a visual reference to a buffer overflow.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;A buffer overflow occurs when a program writes more data into a buffer (a fixed
+block of memory) than it can hold. The excess data &amp;amp;ldquo;spills over&amp;amp;rdquo; into adjacent
+memory, often overwriting critical information like return addresses, which can
+cause crashes or open security vulnerabilities. Buffer overflows were (and still
+are) a classic type of exploit in C programming on UNIX systems.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;For more information, see
+&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Buffer_overflow&amp;#34;&amp;gt;Buffer overflow – Wikipedia&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>Pipes</title><link>https://drio.github.io/unixmagic/#annotation-03-pipes</link><description>Connect cmd outputs to cmd inputs to create complex pipelines</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Pipeline_(Unix)&amp;#34;&amp;gt;Pipes&amp;lt;/a&amp;gt; are a
 foundational feature in Unix that enable you to combine simple utilities into
 more powerful workflows. By passing data from one command’s output to another
 command’s input, pipes allow you to quickly create flexible, efficient, and
@@ -201,7 +224,11 @@ of what transforms a regular user into a &amp;amp;ldquo;UNIX wizard.&amp;amp;rdq
 &amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;#34;display:flex;&amp;#34;&amp;gt;&amp;lt;span&amp;gt; echo &amp;lt;span style=&amp;#34;color:#e6db74&amp;#34;&amp;gt;&amp;amp;#34;File exists!&amp;amp;#34;&amp;lt;/span&amp;gt;
 &amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;#34;display:flex;&amp;#34;&amp;gt;&amp;lt;span&amp;gt;&amp;lt;span style=&amp;#34;color:#66d9ef&amp;#34;&amp;gt;fi&amp;lt;/span&amp;gt;
 &amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/li&amp;gt;
-&amp;lt;/ul&amp;gt;</content:encoded></item><item><title>spawn</title><link>https://drio.github.io/unixmagic/#annotation-23-spawn</link><description>An operation in which a new child process is created</description><content:encoded>&amp;lt;p&amp;gt;Spawning is the process of loading and executing a new child process.
+&amp;lt;/ul&amp;gt;</content:encoded></item><item><title>shull</title><link>https://drio.github.io/unixmagic/#annotation-39-skull</link><description>todo</description><content:encoded>&amp;lt;p&amp;gt;The skull connected to the shell may symbolize &amp;lt;code&amp;gt;/dev/null&amp;lt;/code&amp;gt;, the special UNIX
+device that discards all data written to it. In UNIX, redirecting output to
+&amp;lt;code&amp;gt;/dev/null&amp;lt;/code&amp;gt; effectively sends it into a &amp;amp;ldquo;black hole,&amp;amp;rdquo; where it is lost
+forever.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;See the (&amp;lt;a href=&amp;#34;#annotation-10-null&amp;#34;&amp;gt;/dev/null&amp;lt;/a&amp;gt;) mark.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>spawn</title><link>https://drio.github.io/unixmagic/#annotation-23-spawn</link><description>An operation in which a new child process is created</description><content:encoded>&amp;lt;p&amp;gt;Spawning is the process of loading and executing a new child process.
 Closely related is the idea of &amp;lt;code&amp;gt;fork&amp;lt;/code&amp;gt; and &amp;lt;code&amp;gt;exec&amp;lt;/code&amp;gt; that can be used
 to simulate spawning, by forking a process, having the parent terminate
 and &amp;lt;code&amp;gt;exec&amp;lt;/code&amp;gt;ing the child into the desired spawn process.&amp;lt;/p&amp;gt;
@@ -216,7 +243,10 @@ Typically, one of the most common uses of su is switching to the superuser
 files into a single archive file, often called a tarball.
 The name is derived from &amp;amp;ldquo;tape archive&amp;amp;rdquo;, as it was originally developed to write
 data to sequential I/O devices with no file system of their own, such as devices that use magnetic tape.&amp;lt;/p&amp;gt;
-&amp;lt;p&amp;gt;The command-line utility was first introduced in the Version 7 Unix in January 1979, replacing the &amp;lt;code&amp;gt;tp&amp;lt;/code&amp;gt; program (which in turn replaced &amp;lt;code&amp;gt;tap&amp;lt;/code&amp;gt;).&amp;lt;/p&amp;gt;</content:encoded></item><item><title>The c programming language</title><link>https://drio.github.io/unixmagic/#annotation-06-c</link><description>A key programming language in the creation of Unix</description><content:encoded>&amp;lt;p&amp;gt;C is deeply intertwined with the history and development of the Unix operating
+&amp;lt;p&amp;gt;The command-line utility was first introduced in the Version 7 Unix in January 1979, replacing the &amp;lt;code&amp;gt;tp&amp;lt;/code&amp;gt; program (which in turn replaced &amp;lt;code&amp;gt;tap&amp;lt;/code&amp;gt;).&amp;lt;/p&amp;gt;</content:encoded></item><item><title>tee</title><link>https://drio.github.io/unixmagic/#annotation-37-tee</link><description>The T-junctions in the pipes, possibly a reference to the tee command.</description><content:encoded>&amp;lt;p&amp;gt;The T shape of the pipes may also reference the
+&amp;lt;a href=&amp;#34;https://man7.org/linux/man-pages/man1/tee.1.html&amp;#34;&amp;gt;&amp;lt;code&amp;gt;tee&amp;lt;/code&amp;gt;&amp;lt;/a&amp;gt; command, a classic
+utility in UNIX. The &amp;lt;code&amp;gt;tee&amp;lt;/code&amp;gt; command is used to split the output of a command,
+sending it to both a file and the next command in a pipeline.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>The c programming language</title><link>https://drio.github.io/unixmagic/#annotation-06-c</link><description>A key programming language in the creation of Unix</description><content:encoded>&amp;lt;p&amp;gt;C is deeply intertwined with the history and development of the Unix operating
 system. Created by Dennis M. Ritchie at Bell Labs in the early 1970s, C was
 used to rewrite Unix from low-level assembly into a higher-level language. This
 shift made Unix significantly more portable across different hardware
