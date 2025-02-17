@@ -32,3 +32,13 @@ mattered—both technically and culturally—in the evolution of Unix.
 <img src="static/puzzle.webp" width="400">
 </div>
 
+### The other posters
+
+Did you know Gary created two other posters that never "made it"? Not sure about you but prefer the "Unix Magic" one better.
+
+<div align="center">
+<img src="static/view.50.webp" width="400">
+<img src="static/feuds.50.webp" width="400">
+</div>
+
+
