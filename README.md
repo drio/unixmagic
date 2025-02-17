@@ -27,6 +27,9 @@ operating systems at the time? What made it special or innovative? This project
 is not just about explaining what things are, but understanding why they
 mattered—both technically and culturally—in the evolution of Unix.
 
+Here you have the original poster (first image) and a custom puzzle I ordered,
+featuring the poster's image.
+
 <div align="center">
 <img src="static/ump.webp" width="400">
 <img src="static/puzzle.webp" width="400">
