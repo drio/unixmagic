@@ -4,7 +4,7 @@ number: "39"
 position:
   left: "50%"
   top: "77%"
-description: "todo"
+description: "Redirecting to stdout/stdin"
 ---
 
 The skull connected to the shell may symbolize `/dev/null`, the special UNIX
