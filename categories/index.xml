@@ -224,7 +224,7 @@ of what transforms a regular user into a &amp;amp;ldquo;UNIX wizard.&amp;amp;rdq
 &amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;#34;display:flex;&amp;#34;&amp;gt;&amp;lt;span&amp;gt; echo &amp;lt;span style=&amp;#34;color:#e6db74&amp;#34;&amp;gt;&amp;amp;#34;File exists!&amp;amp;#34;&amp;lt;/span&amp;gt;
 &amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;#34;display:flex;&amp;#34;&amp;gt;&amp;lt;span&amp;gt;&amp;lt;span style=&amp;#34;color:#66d9ef&amp;#34;&amp;gt;fi&amp;lt;/span&amp;gt;
 &amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/li&amp;gt;
-&amp;lt;/ul&amp;gt;</content:encoded></item><item><title>shull</title><link>https://drio.github.io/unixmagic/#annotation-39-skull</link><description>todo</description><content:encoded>&amp;lt;p&amp;gt;The skull connected to the shell may symbolize &amp;lt;code&amp;gt;/dev/null&amp;lt;/code&amp;gt;, the special UNIX
+&amp;lt;/ul&amp;gt;</content:encoded></item><item><title>skull</title><link>https://drio.github.io/unixmagic/#annotation-39-skull</link><description>todo</description><content:encoded>&amp;lt;p&amp;gt;The skull connected to the shell may symbolize &amp;lt;code&amp;gt;/dev/null&amp;lt;/code&amp;gt;, the special UNIX
 device that discards all data written to it. In UNIX, redirecting output to
 &amp;lt;code&amp;gt;/dev/null&amp;lt;/code&amp;gt; effectively sends it into a &amp;amp;ldquo;black hole,&amp;amp;rdquo; where it is lost
 forever.&amp;lt;/p&amp;gt;
