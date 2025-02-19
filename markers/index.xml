@@ -225,9 +225,16 @@ of what transforms a regular user into a &amp;amp;ldquo;UNIX wizard.&amp;amp;rdq
 &amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;#34;display:flex;&amp;#34;&amp;gt;&amp;lt;span&amp;gt;&amp;lt;span style=&amp;#34;color:#66d9ef&amp;#34;&amp;gt;fi&amp;lt;/span&amp;gt;
 &amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/li&amp;gt;
 &amp;lt;/ul&amp;gt;</content:encoded></item><item><title>skull</title><link>https://drio.github.io/unixmagic/#annotation-39-skull</link><description>Redirecting to stdout/stdin</description><content:encoded>&amp;lt;p&amp;gt;The skull connected to the shell may symbolize &amp;lt;code&amp;gt;/dev/null&amp;lt;/code&amp;gt;, the special UNIX
-device that discards all data written to it. In UNIX, redirecting output to
+device that discards all data written to it.
+In UNIX, redirecting output to
 &amp;lt;code&amp;gt;/dev/null&amp;lt;/code&amp;gt; effectively sends it into a &amp;amp;ldquo;black hole,&amp;amp;rdquo; where it is lost
-forever.&amp;lt;/p&amp;gt;
+forever.
+Output redirection is part of a broader
+&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Standard_streams&amp;#34;&amp;gt;standard stream&amp;lt;/a&amp;gt; UNIX concept that
+allows outputs of one process to be redirected to the input of another.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;Another interpretation is that the spigot is reminiscent of a gargoyle, perhaps
+referencing a UNIX &amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Daemon_(computing)&amp;#34;&amp;gt;daemon&amp;lt;/a&amp;gt;
+process.&amp;lt;/p&amp;gt;
 &amp;lt;p&amp;gt;See the (&amp;lt;a href=&amp;#34;#annotation-10-null&amp;#34;&amp;gt;/dev/null&amp;lt;/a&amp;gt;) mark.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>spawn</title><link>https://drio.github.io/unixmagic/#annotation-23-spawn</link><description>An operation in which a new child process is created</description><content:encoded>&amp;lt;p&amp;gt;Spawning is the process of loading and executing a new child process.
 Closely related is the idea of &amp;lt;code&amp;gt;fork&amp;lt;/code&amp;gt; and &amp;lt;code&amp;gt;exec&amp;lt;/code&amp;gt; that can be used
 to simulate spawning, by forking a process, having the parent terminate
