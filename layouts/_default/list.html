@@ -210,6 +210,51 @@
             text-decoration: none;
         }
 
+        /* Side container: width relative to viewport */
+        .side-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: min(50vw, 500px);
+            max-height: 90vh;
+            background: white;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 1000;
+            visibility: hidden;
+            overflow: hidden;
+            /* Prevent content overflow */
+        }
+
+        /* Ensure the content inside can scroll if too large */
+        .side-container .side-content {
+            max-height: 85vh;
+            /* Prevent it from taking up full screen */
+            overflow-y: auto;
+            /* Scroll when necessary */
+        }
+
+        /* Show when active */
+        .side-container.active {
+            transform: translateX(0);
+            visibility: visible;
+        }
+
+
+        /* Close button */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border: none;
+            background: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+
         .footer {
             text-align: center;
             padding: 20px;
@@ -235,6 +280,10 @@
         <a href="#poster-info" class="header-link">about</a>
     </div>
 
+    <div class="side-container" id="side-container">
+        <button class="close-btn" id="close-btn">✖</button>
+        <p>This is a test panel.</p>
+    </div>
 
     <div class="image-container" id='poster-container'>
         <!-- to avoid formatting issues -->
@@ -248,6 +297,18 @@
         </div>
         {{ end }}
     </div>
+
+    <!-- Sliders for each annotation -->
+    {{ range where .Site.RegularPages "Section" "markers" }}
+    <div class="side-container" id="annotation-{{ .File.BaseFileName }}">
+        <button class="close-btn">✖</button>
+        <div class="side-content">
+            <strong>{{ .Title }}</strong>
+            <p>{{ .Params.description }}</p>
+            <div>{{ .Content | safeHTML }}</div>
+        </div>
+    </div>
+    {{ end }}
 
     <div id="poster-info" class="poster-info-container">
         <div class="poster-info">
@@ -312,54 +373,68 @@
         {{ end }}
     </div>
 
+
+
+
     <div class="footer">
         Made with Unix ❤️ by <a href="https://driohq.net" target="_blank">drio</a>
     </div>
 
     <script>
-        function positionMarkers() {
-            const imgContainer = document.getElementById('poster-container');
-            const poster = document.getElementById('poster');
+        document.addEventListener('DOMContentLoaded', function () {
             const markers = document.querySelectorAll('.marker');
+            const closeButtons = document.querySelectorAll('.close-btn');
 
-            if (!poster.complete) {
-                poster.onload = positionMarkers;
-                return;
+            // Function to position markers correctly on the image
+            function positionMarkers() {
+                const poster = document.getElementById('poster');
+                if (!poster.complete) {
+                    poster.onload = positionMarkers;
+                    return;
+                }
+
+                const rect = poster.getBoundingClientRect();
+                markers.forEach(marker => {
+                    const leftPercent = parseFloat(marker.getAttribute("data-left"));
+                    const topPercent = parseFloat(marker.getAttribute("data-top"));
+
+                    marker.style.left = `${(leftPercent / 100) * rect.width}px`;
+                    marker.style.top = `${(topPercent / 100) * rect.height}px`;
+                });
             }
 
-            const rectContainer = imgContainer.getBoundingClientRect();
-            const rect = poster.getBoundingClientRect();
-
-            markers.forEach(marker => {
-                const leftPercent = parseFloat(marker.getAttribute("data-left"));
-                const topPercent = parseFloat(marker.getAttribute("data-top"));
-
-                marker.style.left = `${(leftPercent / 100) * rect.width + rect.left - rectContainer.left}px`;
-                marker.style.top = `${(topPercent / 100) * rect.height + rect.top - rectContainer.top}px`;
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', function () {
-
+            // Reposition markers on image load and window resize
+            window.addEventListener('resize', positionMarkers);
             positionMarkers();
 
-            window.addEventListener('resize', positionMarkers);
-
-            document.querySelectorAll('.marker').forEach(marker => {
+            // Open the correct slider when a marker is clicked
+            markers.forEach(marker => {
                 marker.addEventListener('click', function () {
                     const annotationId = this.getAttribute('data-id');
-                    const annotation = document.getElementById(annotationId);
-                    if (annotation) {
-                        annotation.scrollIntoView({behavior: 'smooth'});
+                    const slider = document.getElementById(annotationId);
+
+                    if (slider) {
+                        // Hide all other sliders first
+                        document.querySelectorAll('.side-container').forEach(s => s.classList.remove('active'));
+
+                        // Show only the selected slider
+                        slider.classList.add('active');
                     }
                 });
             });
 
-            document.querySelectorAll('.back-to-top').forEach(link => {
-                link.addEventListener('click', function (event) {
-                    event.preventDefault();
-                    window.scrollTo({top: 0, behavior: 'smooth'});
+            // Close slider when clicking close button
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    this.parentElement.classList.remove('active');
                 });
+            });
+
+            // Close slider when clicking outside
+            document.addEventListener('click', function (event) {
+                if (!event.target.closest('.side-container') && !event.target.classList.contains('marker')) {
+                    document.querySelectorAll('.side-container').forEach(s => s.classList.remove('active'));
+                }
             });
         });
     </script>

@@ -7,3 +7,7 @@ public
 .hugo_build.lock
 !static/ump.webp
 !static/ump.png
+node_modules
+*.vim
+.env*
+*.mp4
