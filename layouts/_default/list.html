@@ -12,7 +12,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ .Site.Title }}</title>
     <style>
-        /* Ensure full-screen layout */
         html,
         body {
             margin: 0;
@@ -210,49 +209,76 @@
             text-decoration: none;
         }
 
-        /* Side container: width relative to viewport */
+        /* Side container: sliding panel with frosted glass effect */
         .side-container {
             position: fixed;
             top: 0;
             left: 0;
-            width: min(50vw, 500px);
+            width: min(70vw, 700px);
             max-height: 90vh;
-            background: white;
-            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
-            padding: 15px;
+            background: rgba(255, 255, 255, 0.85);
+            /* Transparent white */
+            box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
+            padding: 20px;
             transform: translateX(-100%);
             transition: transform 0.3s ease-in-out;
             z-index: 1000;
             visibility: hidden;
             overflow: hidden;
-            /* Prevent content overflow */
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            backdrop-filter: blur(12px);
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Ensure the content inside can scroll if too large */
-        .side-container .side-content {
-            max-height: 85vh;
-            /* Prevent it from taking up full screen */
-            overflow-y: auto;
-            /* Scroll when necessary */
-        }
-
-        /* Show when active */
+        /* Show the panel when active */
         .side-container.active {
             transform: translateX(0);
             visibility: visible;
         }
 
-
-        /* Close button */
+        /* Close button: more muted color */
         .close-btn {
             position: absolute;
             top: 10px;
             right: 10px;
             border: none;
             background: none;
-            font-size: 20px;
+            font-size: 22px;
+            font-weight: bold;
             cursor: pointer;
+            color: #777;
+            transition: color 0.2s ease-in-out;
+            z-index: 10;
+            /* Ensures it stays above content */
         }
+
+        .close-btn:hover {
+            color: #555;
+            /* Slightly darker gray on hover */
+        }
+
+        /* Content inside the panel */
+        .side-content {
+            max-height: 85vh;
+            overflow-y: auto;
+            padding-top: 10px;
+            padding-right: 10px;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #222;
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* IE/Edge */
+        }
+
+        /* Hide scrollbar for WebKit browsers (Chrome, Safari, Edge) */
+        .side-content::-webkit-scrollbar {
+            display: none;
+        }
+
 
 
         .footer {
