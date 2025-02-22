@@ -216,7 +216,7 @@
             left: 0;
             width: min(70vw, 700px);
             max-height: 90vh;
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 1);
             /* Transparent white */
             box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
             padding: 20px;
@@ -260,7 +260,7 @@
         }
 
         /* Content inside the panel */
-        .side-content {
+        .side-content .annotation {
             max-height: 85vh;
             overflow-y: auto;
             padding-top: 10px;
@@ -272,6 +272,8 @@
             /* Firefox */
             -ms-overflow-style: none;
             /* IE/Edge */
+            border: none;
+            background-color: #ffffff;
         }
 
         /* Hide scrollbar for WebKit browsers (Chrome, Safari, Edge) */
@@ -306,10 +308,6 @@
         <a href="#poster-info" class="header-link">about</a>
     </div>
 
-    <div class="side-container" id="side-container">
-        <button class="close-btn" id="close-btn">✖</button>
-        <p>This is a test panel.</p>
-    </div>
 
     <div class="image-container" id='poster-container'>
         <!-- to avoid formatting issues -->
@@ -329,9 +327,18 @@
     <div class="side-container" id="annotation-{{ .File.BaseFileName }}">
         <button class="close-btn">✖</button>
         <div class="side-content">
-            <strong>{{ .Title }}</strong>
-            <p>{{ .Params.description }}</p>
-            <div>{{ .Content | safeHTML }}</div>
+            <div class="annotation">
+                <div class="annotation-header">
+                    <span class="annotation-number">{{ .Params.number }}</span>
+                    <div class="annotation-text">
+                        <div class="annotation-title">{{ .Title }}</div>
+                        <div class="annotation-description">{{ .Params.description }}</div>
+                    </div>
+                </div>
+                <div class="annotation-body">
+                    {{ .Content | safeHTML }}
+                </div>
+            </div>
         </div>
     </div>
     {{ end }}
