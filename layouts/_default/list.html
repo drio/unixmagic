@@ -399,35 +399,36 @@
         {{ end }}
     </div>
 
-
-
-
     <div class="footer">
         Made with Unix ❤️ by <a href="https://driohq.net" target="_blank">drio</a>
     </div>
 
     <script>
+        function positionMarkers() {
+            const poster = document.getElementById('poster');
+            const imgContainer = document.getElementById('poster-container');
+            const markers = document.querySelectorAll('.marker');
+
+            if (!poster.complete) {
+                poster.onload = positionMarkers;
+                return;
+            }
+
+            const rect = poster.getBoundingClientRect();
+            const containerRect = imgContainer.getBoundingClientRect();
+
+            markers.forEach(marker => {
+                const leftPercent = parseFloat(marker.getAttribute("data-left"));
+                const topPercent = parseFloat(marker.getAttribute("data-top"));
+
+                marker.style.left = `${(leftPercent / 100) * rect.width + rect.left - containerRect.left}px`;
+                marker.style.top = `${(topPercent / 100) * rect.height + rect.top - containerRect.top}px`;
+            });
+        }
+
         document.addEventListener('DOMContentLoaded', function () {
             const markers = document.querySelectorAll('.marker');
             const closeButtons = document.querySelectorAll('.close-btn');
-
-            // Function to position markers correctly on the image
-            function positionMarkers() {
-                const poster = document.getElementById('poster');
-                if (!poster.complete) {
-                    poster.onload = positionMarkers;
-                    return;
-                }
-
-                const rect = poster.getBoundingClientRect();
-                markers.forEach(marker => {
-                    const leftPercent = parseFloat(marker.getAttribute("data-left"));
-                    const topPercent = parseFloat(marker.getAttribute("data-top"));
-
-                    marker.style.left = `${(leftPercent / 100) * rect.width}px`;
-                    marker.style.top = `${(topPercent / 100) * rect.height}px`;
-                });
-            }
 
             // Reposition markers on image load and window resize
             window.addEventListener('resize', positionMarkers);
@@ -440,10 +441,7 @@
                     const slider = document.getElementById(annotationId);
 
                     if (slider) {
-                        // Hide all other sliders first
                         document.querySelectorAll('.side-container').forEach(s => s.classList.remove('active'));
-
-                        // Show only the selected slider
                         slider.classList.add('active');
                     }
                 });
@@ -463,6 +461,7 @@
                 }
             });
         });
+
     </script>
 
 </body>
