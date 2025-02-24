@@ -1,4 +1,4 @@
-baseURL = "https://drio.github.io/unixmagic/"
+baseURL = "https://unixmagic.net"
 languageCode = "en-us"
 title = "Unix Poster Annotations"
 enableGitInfo = true
