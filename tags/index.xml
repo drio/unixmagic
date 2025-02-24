@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Unix Poster Annotations</title><link>https://unixmagic.net/</link><description>Unix Poster Annotations</description><item><title>Shell</title><link>https://unixmagic.net/#annotation-01-shell</link><description>A gateway to controlling the system</description><content:encoded>&amp;lt;p&amp;gt;The prominent position of the shell in the UNIX Magic poster reflects its
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Unix Magic Poster Annotations</title><link>https://unixmagic.net/</link><description>Unix Magic Poster Annotations</description><item><title>Shell</title><link>https://unixmagic.net/#annotation-01-shell</link><description>A gateway to controlling the system</description><content:encoded>&amp;lt;p&amp;gt;The prominent position of the shell in the UNIX Magic poster reflects its
 central role in UNIX systems. The shell was (and still is) the primary
 interface for interacting with the kernel, serving as the workbench of the UNIX
 user. It is an incredibly powerful tool, allowing users to launch and
