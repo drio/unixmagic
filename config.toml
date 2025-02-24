@@ -1,6 +1,6 @@
-baseURL = "https://unixmagic.net"
+baseURL = "https://unixmagic.net/"
 languageCode = "en-us"
-title = "Unix Poster Annotations"
+title = "Unix Magic Poster Annotations"
 enableGitInfo = true
 
 [markup]
