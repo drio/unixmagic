@@ -1,9 +1,9 @@
-name: Deploy Hugo Site v2
+name: Deploy Hugo Site
 
 on:
   push:
     branches:
-      - main
+      - main # Runs when code is pushed to main
 
 jobs:
   deploy:
@@ -24,7 +24,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          personal_token: ${{ secrets.GH_PAT }}
           publish_dir: ./public
-          force_orphan: true  # Ensures a clean `gh-pages` branch
 
