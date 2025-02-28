@@ -2,7 +2,7 @@
 title: "banner"
 number: "40"
 position:
-  left: "20%"
+  left: "21%"
   top: "10%"
 description: "A program that outputs ASCII art"
 ---
