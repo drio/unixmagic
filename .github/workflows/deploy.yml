@@ -3,7 +3,7 @@ name: Deploy Hugo Site
 on:
   push:
     branches:
-      - main # Runs when code is pushed to main
+      - main
 
 jobs:
   deploy:
@@ -21,9 +21,13 @@ jobs:
       - name: Build the site
         run: hugo --minify
 
+      - name: Ensure CNAME exists
+        run: echo "unixmagic.net" > ./public/CNAME
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          personal_token: ${{ secrets.GH_PAT }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+          force_orphan: true
 
