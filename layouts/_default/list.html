@@ -12,6 +12,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ .Site.Title }}</title>
     <style>
+        body {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        body.ready {
+            opacity: 1;
+        }
+
         html,
         body {
             margin: 0;
@@ -439,7 +448,15 @@
 
             // Reposition markers on image load and window resize
             window.addEventListener('resize', positionMarkers);
-            positionMarkers();
+            if (poster.complete) {
+                positionMarkers();
+                finishLoading();
+            } else {
+                poster.onload = () => {
+                    positionMarkers();
+                    finishLoading();
+                };
+            }
 
             // Open the correct slider when a marker is clicked
             markers.forEach(marker => {
@@ -469,6 +486,11 @@
             });
         });
 
+        function finishLoading() {
+            document.body.classList.add('ready');
+            const loadingDiv = document.getElementById('loading');
+            if (loadingDiv) loadingDiv.remove();
+        }
     </script>
 
 </body>
