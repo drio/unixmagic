@@ -13,23 +13,21 @@
     <title>{{ .Site.Title }}</title>
     <style>
         body {
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
+            opacity: 1;
+            transition: none;
         }
 
-        body.ready {
-            opacity: 1;
-        }
 
         html,
         body {
             margin: 0;
             padding: 0;
-            width: 100vw;
+            width: 100%;
             min-height: 100vh;
             font-family: Arial, sans-serif;
             background-color: #fff;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         a {
@@ -304,10 +302,23 @@
             color: salmon;
             font-weight: bold;
         }
+
+        #loading {
+            position: fixed;
+            inset: 0;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            z-index: 99999;
+        }
     </style>
 </head>
 
 <body>
+    <div id="loading">Get ready for some Unix magic... 🪄</div>
+
     <div class="header">
         <a href="https://github.com/drio/unixmagic" target="_blank">
             <img src="github.svg" alt="github" />
@@ -489,8 +500,9 @@
         function finishLoading() {
             document.body.classList.add('ready');
             const loadingDiv = document.getElementById('loading');
-            if (loadingDiv) loadingDiv.remove();
+            if (loadingDiv) loadingDiv.style.display = 'none';
         }
+
     </script>
 
 </body>
