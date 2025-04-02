@@ -305,6 +305,7 @@
 
         #loading {
             position: fixed;
+            opacity: 1;
             inset: 0;
             background: white;
             display: flex;
@@ -456,6 +457,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             const markers = document.querySelectorAll('.marker');
             const closeButtons = document.querySelectorAll('.close-btn');
+            const poster = document.getElementById('poster');
 
             // Reposition markers on image load and window resize
             window.addEventListener('resize', positionMarkers);
@@ -500,9 +502,12 @@
         function finishLoading() {
             document.body.classList.add('ready');
             const loadingDiv = document.getElementById('loading');
-            if (loadingDiv) loadingDiv.style.display = 'none';
+            if (loadingDiv) {
+                loadingDiv.style.transition = 'opacity 0.7s ease';
+                loadingDiv.style.opacity = '0';
+                setTimeout(() => loadingDiv.style.display = 'none', 400);
+            }
         }
-
     </script>
 
 </body>
