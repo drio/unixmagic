@@ -8,7 +8,9 @@ description: "A program in formatting documents for the document processing syst
 ---
 
 [Troff](https://en.wikipedia.org/wiki/Troff) is the major component of a document processing system developed by Bell Labs for the Unix operating system.
-Troff stands for "typesetter roff", where `roff` is a typesetting markup language.
+Troff stands for "typesetter roff", developed as a descendant to
+[`roff`](https://en.wikipedia.org/wiki/Roff_(software)), where `roff` was
+a Unix version of one of the earliest text formatting programs called [`RUNOFF`](https://en.wikipedia.org/wiki/TYPSET_and_RUNOFF).
 A typical distribution of troff includes macros for many document styles, including ones for the Unix `man` pages.
 
-Troff was developed by Bell Labs in th 1970s, where Joseph Ossanna created `troff` by modifying `nroff` to support multiple fonts and proportional spacing.
+Troff was developed by Bell Labs in the 1970s, where Joseph Ossanna created `troff` by modifying `nroff` to support multiple fonts and proportional spacing.
