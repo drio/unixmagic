@@ -2,7 +2,7 @@
 title: "wall"
 number: "41"
 position:
-  left: "30%"
+  left: "40%"
   top: "29%"
 description: "Utility to send a message to all users"
 ---
