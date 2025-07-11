@@ -16,6 +16,7 @@ Contributions welcome!
 ### References
 - Hacker news [discussion](https://news.ycombinator.com/item?id=43019136).
 - Previous HN [discussion](https://news.ycombinator.com/item?id=27029196).
+- Jan-Piet Mens [blog post](https://jpmens.net/2021/04/09/the-unix-magic-poster/).
 
 ### Contributions welcome!
 
