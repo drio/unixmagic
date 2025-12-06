@@ -1,1 +1,110 @@
-unixmagic.net
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    <link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ "favicon.png" | relURL }}">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #bc4f5f;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        .back-link:hover {
+            color: #a53f4f;
+        }
+
+        .marker-number {
+            background-color: #bc4f5f;
+            color: white;
+            font-size: 18px;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .content {
+            padding: 30px 0;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            font-size: 18px;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .body {
+            line-height: 1.7;
+            color: #333;
+        }
+
+        a {
+            color: #bc4f5f;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="{{ "/" | relURL }}" class="back-link">← Home</a>
+            <a href="{{ "/" | relURL }}#{{ .File.BaseFileName }}" class="back-link">View on Interactive Poster →</a>
+        </div>
+
+        <div class="content">
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+                <span class="marker-number">{{ .Params.number }}</span>
+                <div>
+                    <h1>{{ .Title }}</h1>
+                    <div class="description">{{ .Params.description }}</div>
+                </div>
+            </div>
+
+            <div class="body">
+                {{ .Content }}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

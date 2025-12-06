@@ -200,7 +200,8 @@
 
         .annotation-footer {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
+            align-items: center;
             margin-top: 8px;
         }
 
@@ -214,6 +215,20 @@
 
         .back-to-top:hover {
             text-decoration: none;
+        }
+
+        .share-btn {
+            background: none;
+            border: none;
+            color: #999;
+            cursor: pointer;
+            font-size: 13px;
+            padding: 4px 8px;
+            transition: color 0.2s;
+        }
+
+        .share-btn:hover {
+            color: #bc4f5f;
         }
 
         /* Side container: sliding panel with frosted glass effect */
@@ -359,6 +374,9 @@
                 <div class="annotation-body">
                     {{ .Content | safeHTML }}
                 </div>
+                <div class="annotation-footer">
+                    <button class="share-btn" data-hash="{{ .File.BaseFileName }}" data-permalink="{{ .RelPermalink }}">🔗 Share</button>
+                </div>
             </div>
         </div>
     </div>
@@ -421,6 +439,7 @@
             </div>
 
             <div class="annotation-footer">
+                <button class="share-btn" data-hash="{{ .File.BaseFileName }}" data-permalink="{{ .RelPermalink }}">🔗 Share</button>
                 <a href="#" class="back-to-top">🔝</a>
             </div>
         </div>
@@ -454,12 +473,26 @@
             });
         }
 
+        function openMarkerPanel(markerId) {
+            const slider = document.getElementById(`annotation-${markerId}`);
+            if (slider) {
+                document.querySelectorAll('.side-container').forEach(s => s.classList.remove('active'));
+                slider.classList.add('active');
+            }
+        }
+
+        function handleHashChange() {
+            const hash = window.location.hash.slice(1);
+            if (hash) {
+                openMarkerPanel(hash);
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', function () {
             const markers = document.querySelectorAll('.marker');
             const closeButtons = document.querySelectorAll('.close-btn');
             const poster = document.getElementById('poster');
 
-            // Reposition markers on image load and window resize
             window.addEventListener('resize', positionMarkers);
             if (poster.complete) {
                 positionMarkers();
@@ -471,7 +504,6 @@
                 };
             }
 
-            // Open the correct slider when a marker is clicked
             markers.forEach(marker => {
                 marker.addEventListener('click', function () {
                     const annotationId = this.getAttribute('data-id');
@@ -484,18 +516,36 @@
                 });
             });
 
-            // Close slider when clicking close button
             closeButtons.forEach(button => {
                 button.addEventListener('click', function () {
                     this.parentElement.classList.remove('active');
                 });
             });
 
-            // Close slider when clicking outside
             document.addEventListener('click', function (event) {
                 if (!event.target.closest('.side-container') && !event.target.classList.contains('marker')) {
                     document.querySelectorAll('.side-container').forEach(s => s.classList.remove('active'));
                 }
+            });
+
+            handleHashChange();
+            window.addEventListener('hashchange', handleHashChange);
+
+            document.querySelectorAll('.share-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const hash = this.getAttribute('data-hash');
+                    const permalink = this.getAttribute('data-permalink');
+                    const baseUrl = window.location.origin + window.location.pathname;
+                    const hashUrl = `${baseUrl}#${hash}`;
+
+                    navigator.clipboard.writeText(hashUrl).then(() => {
+                        const originalText = this.textContent;
+                        this.textContent = '✓ Copied!';
+                        setTimeout(() => {
+                            this.textContent = originalText;
+                        }, 2000);
+                    });
+                });
             });
         });
 
