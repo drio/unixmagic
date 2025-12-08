@@ -35,7 +35,7 @@ featuring the poster's image.
 
 <div align="center">
 <img src="static/ump.webp" width="400">
-<img src="static/puzzle.webp" width="400">
+<img src="./puzzle.webp" width="400">
 </div>
 
 ### The other posters
