@@ -40,7 +40,7 @@ featuring the poster's image.
 
 ### The other posters
 
-Did you know Gary created two other posters that never "made it"? Not sure about you, but prefer the "Unix Magic" one.
+Did you know Gary created two other posters that never "made it"? Not sure about you, but I prefer the "Unix Magic" one.
 
 <div align="center">
 <img src="static/view.small.webp" width="400">
