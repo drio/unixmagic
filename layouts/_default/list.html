@@ -46,7 +46,7 @@
             align-items: center;
             gap: 10px;
             justify-content: center;
-            padding-top: 15px;
+            padding-top: 8px;
         }
 
         .header-link {
@@ -329,6 +329,149 @@
             font-size: 20px;
             z-index: 99999;
         }
+
+        /* Frame mode styles */
+        .frame-toggle {
+            background: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 4px 10px;
+            font-size: 13px;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .frame-toggle:hover {
+            border-color: #bc4f5f;
+            color: #bc4f5f;
+        }
+
+        .frame-toggle.active {
+            background: #bc4f5f;
+            border-color: #bc4f5f;
+            color: white;
+        }
+
+        .frame-hint {
+            display: none;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 35px;
+            font-size: 11px;
+            color: #999;
+            z-index: 10;
+        }
+
+        body.frame-mode .frame-hint {
+            display: block;
+        }
+
+        .frame-container {
+            display: block;
+        }
+
+        .frame-sidebar {
+            display: none;
+        }
+
+        body.frame-mode .frame-container {
+            display: grid;
+            grid-template-columns: 1fr minmax(auto, 700px) 1fr;
+            gap: 10px;
+            padding: 5px 15px;
+            max-width: 1600px;
+            margin: 0 auto;
+            align-items: start;
+        }
+
+        body.frame-mode .frame-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 2px;
+            scrollbar-width: thin;
+        }
+
+        .frame-sidebar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .frame-sidebar::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 2px;
+        }
+
+        .frame-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .frame-item:hover {
+            background-color: #f5f5f5;
+        }
+
+        .frame-item.highlight {
+            background-color: #ffe0e4;
+        }
+
+        .frame-item-number {
+            background-color: #bc4f5f;
+            color: white;
+            font-size: 10px;
+            min-width: 18px;
+            height: 18px;
+            line-height: 18px;
+            text-align: center;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .frame-item-title {
+            font-size: 13px;
+            color: #333;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .frame-item:hover .frame-item-title {
+            color: #bc4f5f;
+        }
+
+        /* Marker highlight state */
+        .marker.highlight {
+            opacity: 1 !important;
+            transform: translate(-50%, -50%) scale(2) !important;
+            box-shadow: 0 0 20px 8px rgba(188, 79, 95, 0.9), 0 0 40px 15px rgba(188, 79, 95, 0.5);
+            z-index: 100;
+            animation: pulse 0.8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 20px 8px rgba(188, 79, 95, 0.9), 0 0 40px 15px rgba(188, 79, 95, 0.5); }
+            50% { box-shadow: 0 0 25px 12px rgba(188, 79, 95, 1), 0 0 50px 20px rgba(188, 79, 95, 0.6); }
+        }
+
+        /* Hide frame mode on smaller screens */
+        @media (max-width: 1100px) {
+            .frame-toggle {
+                display: none;
+            }
+            body.frame-mode .frame-container {
+                display: block;
+            }
+            body.frame-mode .frame-sidebar {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -342,20 +485,47 @@
         {{ $i := "index.xml" }}
         <a href="{{ $i | relURL }}" class="rss-link" title="RSS Feed"><img src="rss.svg"> </a>
         <a href="#poster-info" class="header-link">about</a>
+        <button class="frame-toggle" id="frame-toggle" title="Show all annotations">Show All</button>
     </div>
+    <div class="frame-hint">Hover to highlight · Click for details</div>
 
-
-    <div class="image-container" id='poster-container'>
-        <!-- to avoid formatting issues -->
-        {{ $image := "ump.webp" }}
-        <img id="poster" src="{{ $image | relURL }}" alt="Unix Magic Poster">
-
-        {{ range where .Site.RegularPages "Section" "markers" }}
-        <div class="marker" data-left="{{ .Params.position.left }}" data-top="{{ .Params.position.top }}"
-            data-id="annotation-{{ .File.BaseFileName }}">
-            {{ .Params.number }}
+    <div class="frame-container" id="frame-container">
+        <!-- Left sidebar: markers 1-20 -->
+        <div class="frame-sidebar frame-sidebar-left">
+            {{ range sort (where .Site.RegularPages "Section" "markers") ".Params.number" }}
+            {{ if le .Params.number 20 }}
+            <div class="frame-item" data-marker-number="{{ .Params.number }}">
+                <span class="frame-item-number">{{ .Params.number }}</span>
+                <span class="frame-item-title">{{ .Title }}</span>
+            </div>
+            {{ end }}
+            {{ end }}
         </div>
-        {{ end }}
+
+        <div class="image-container" id='poster-container'>
+            <!-- to avoid formatting issues -->
+            {{ $image := "ump.webp" }}
+            <img id="poster" src="{{ $image | relURL }}" alt="Unix Magic Poster">
+
+            {{ range where .Site.RegularPages "Section" "markers" }}
+            <div class="marker" data-left="{{ .Params.position.left }}" data-top="{{ .Params.position.top }}"
+                data-id="annotation-{{ .File.BaseFileName }}" data-number="{{ .Params.number }}">
+                {{ .Params.number }}
+            </div>
+            {{ end }}
+        </div>
+
+        <!-- Right sidebar: markers 21-41 -->
+        <div class="frame-sidebar frame-sidebar-right">
+            {{ range sort (where .Site.RegularPages "Section" "markers") ".Params.number" }}
+            {{ if gt .Params.number 20 }}
+            <div class="frame-item" data-marker-number="{{ .Params.number }}">
+                <span class="frame-item-number">{{ .Params.number }}</span>
+                <span class="frame-item-title">{{ .Title }}</span>
+            </div>
+            {{ end }}
+            {{ end }}
+        </div>
     </div>
 
     <!-- Sliders for each annotation -->
@@ -492,6 +662,8 @@
             const markers = document.querySelectorAll('.marker');
             const closeButtons = document.querySelectorAll('.close-btn');
             const poster = document.getElementById('poster');
+            const frameToggle = document.getElementById('frame-toggle');
+            const frameItems = document.querySelectorAll('.frame-item');
 
             window.addEventListener('resize', positionMarkers);
             if (poster.complete) {
@@ -503,6 +675,51 @@
                     finishLoading();
                 };
             }
+
+            // Frame mode toggle
+            frameToggle.addEventListener('click', function() {
+                document.body.classList.toggle('frame-mode');
+                this.classList.toggle('active');
+                this.textContent = this.classList.contains('active') ? 'Hide All' : 'Show All';
+                // Reposition markers after layout change
+                setTimeout(positionMarkers, 50);
+            });
+
+            // Bidirectional highlighting: frame items -> markers
+            frameItems.forEach(item => {
+                const markerNum = item.getAttribute('data-marker-number');
+                const marker = document.querySelector(`.marker[data-number="${markerNum}"]`);
+
+                item.addEventListener('mouseenter', function() {
+                    if (marker) marker.classList.add('highlight');
+                });
+
+                item.addEventListener('mouseleave', function() {
+                    if (marker) marker.classList.remove('highlight');
+                });
+
+                // Click opens the detail panel
+                item.addEventListener('click', function() {
+                    if (marker) marker.click();
+                });
+            });
+
+            // Bidirectional highlighting: markers -> frame items
+            markers.forEach(marker => {
+                const markerNum = marker.getAttribute('data-number');
+                const frameItem = document.querySelector(`.frame-item[data-marker-number="${markerNum}"]`);
+
+                marker.addEventListener('mouseenter', function() {
+                    if (frameItem && document.body.classList.contains('frame-mode')) {
+                        frameItem.classList.add('highlight');
+                        frameItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                });
+
+                marker.addEventListener('mouseleave', function() {
+                    if (frameItem) frameItem.classList.remove('highlight');
+                });
+            });
 
             markers.forEach(marker => {
                 marker.addEventListener('click', function () {
