@@ -11,3 +11,5 @@ node_modules
 *.vim
 .env*
 *.mp4
+.aider*
+.claude
