@@ -429,6 +429,12 @@
             overflow-y: auto;
             padding: 2px;
             scrollbar-width: thin;
+            animation: sidebarFadeIn 0.2s ease-out;
+        }
+
+        @keyframes sidebarFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         body.frame-mode .frame-sidebar-left {
@@ -751,11 +757,18 @@
 
             // Frame mode toggle
             frameToggle.addEventListener('click', function () {
+                // Hide markers during transition to prevent flicker
+                markers.forEach(m => m.style.visibility = 'hidden');
+
                 document.body.classList.toggle('frame-mode');
                 this.classList.toggle('active');
                 this.textContent = this.classList.contains('active') ? 'Hide All' : 'Show All';
-                // Reposition markers after layout change
-                setTimeout(positionMarkers, 50);
+
+                // Reposition markers after layout settles, then show them
+                setTimeout(() => {
+                    positionMarkers();
+                    markers.forEach(m => m.style.visibility = '');
+                }, 100);
             });
 
             // Help toggle
