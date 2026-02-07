@@ -60,6 +60,12 @@
             color: #bc4f5f;
         }
 
+        .header-sep {
+            color: #ccc;
+            font-size: 14px;
+        }
+
+
 
         .header img {
             width: 20px;
@@ -543,7 +549,9 @@
         {{ $i := "index.xml" }}
         <a href="{{ $i | relURL }}" class="rss-link" title="RSS Feed"><img src="rss.svg"> </a>
         <a href="#poster-info" class="header-link">about</a>
+        <span class="header-sep">|</span>
         <a href="#" class="header-link" id="help-toggle">help</a>
+        <span class="header-sep">|</span>
         <button class="frame-toggle" id="frame-toggle" title="Show all annotations">Show All</button>
     </div>
 
@@ -633,28 +641,24 @@
                 This is the <strong>UNIX Magic Poster</strong>, originally created by <strong>Gary Overacre</strong> in
                 the mid-1980s and published by UniTech Software.
                 It was later seen on display at a <a href="https://www.usenix.org/" target="_blank">USENIX
-                    Conference</a>, reflecting its lasting influence in UNIX culture.
-                Head over to the <a href="https://github.com/drio/unixmagic" target="_blank">repo</a> if you’d like to
+                    Conference</a>.
+                Head over to the <a href="https://github.com/drio/unixmagic" target="_blank">repo</a> if you'd like to
                 contribute!
             </p>
 
             <p>
-                UNIX has been a major influence on my career
-                from the very beginning. My first exposure to UNIX was during my college years,
-                when I had to write most of my first-year programming assignments on terminals
-                connected to an <a href="https://en.wikipedia.org/wiki/HP-UX">HP-UX</a> main server.
-                I was immediately captivated by the simplicity
-                and power UNIX offered—especially compared to the operating systems I had used
-                before, like DOS and Windows.
+                UNIX has been a big part of my career from the start. My first exposure was
+                during college, when I wrote most of my first-year programming assignments on
+                terminals connected to an <a href="https://en.wikipedia.org/wiki/HP-UX">HP-UX</a>
+                main server. Coming from DOS and Windows, the simplicity and power of UNIX
+                hit me right away.
             </p>
 
             <p>
-                That experience changed the way I thought about computers. From that point on,
-                I never looked back—UNIX has been my constant companion in my computing journey
-                ever since.
+                That experience changed how I thought about computers. From that point on,
+                I never looked back. UNIX has been part of my computing life ever since.
 
-                This project is my humble rendition—a celebration of UNIX and its lasting impact
-                on me.
+                This project is my way of celebrating that.
             </p>
 
             <div style="display: flex; justify-content: flex-end; font-weight: 500; font-size: 12px;">
