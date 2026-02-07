@@ -805,7 +805,14 @@
 
                 // Click opens the detail panel
                 item.addEventListener('click', function () {
-                    if (marker) marker.click();
+                    if (marker) {
+                        const annotationId = marker.getAttribute('data-id');
+                        const slider = document.getElementById(annotationId);
+                        if (slider) {
+                            document.querySelectorAll('.side-container').forEach(s => s.classList.remove('active'));
+                            slider.classList.add('active');
+                        }
+                    }
                 });
             });
 
@@ -845,7 +852,9 @@
             });
 
             document.addEventListener('click', function (event) {
-                if (!event.target.closest('.side-container') && !event.target.classList.contains('marker')) {
+                if (!event.target.closest('.side-container') &&
+                    !event.target.classList.contains('marker') &&
+                    !event.target.closest('.frame-item')) {
                     document.querySelectorAll('.side-container').forEach(s => s.classList.remove('active'));
                 }
             });
