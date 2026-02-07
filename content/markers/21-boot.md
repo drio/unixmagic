@@ -9,7 +9,7 @@ description: "The booting process (or Unix Networking Sockets)"
 
 I have to admit, this object looks more like a boot than a sock, but I find it
 hard to believe that the author would leave out a reference to sockets,
-considering how important they are—not only in UNIX but in the history of
+considering how important they are, not only in UNIX but in the history of
 operating systems.  
 
 For that reason, I see two possibilities:
@@ -23,9 +23,8 @@ is likely a playful reference to UNIX network sockets.  Network sockets were an
 abstraction pioneered by UNIX in BSD UNIX (4.2BSD, 1983).  Sockets provided a
 unified interface for interprocess communication (IPC), enabling processes to
 communicate both locally (on the same machine) via UNIX domain sockets, and
-over a network using TCP/IP.  This innovation became foundational to modern
-networking, and the socket API was later adopted by all major operating
-systems, shaping how network programming is done today.
+over a network using TCP/IP.  The socket API from BSD was later adopted by virtually every other operating
+system.
 
 For more on the history of BSD sockets, see [Berkeley Sockets –
 Wikipedia](https://en.wikipedia.org/wiki/Berkeley_sockets), or read the

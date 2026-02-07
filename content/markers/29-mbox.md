@@ -7,11 +7,9 @@ position:
 description: "The mail system format"
 ---
 
-`mbox` is a reference to the mail format from the early days of UNIX. UNIX was
-one of the first operating systems to come with built-in email capabilities,
-and it did so while staying true to its mantra: "everything is a file." In the
-`mbox` format, all email messages are stored in a single file, with new
-messages simply appended to the end. By default, users' mail was stored in
-`/usr/mail/<username>`. This design naturally enabled the integration of
-system logs and notifications to be sent via email—further embedding email as
-a core part of the UNIX experience.
+`mbox` is a reference to the mail format from the early days of UNIX. In the
+`mbox` format, all email messages for a user are stored in a single file, with
+new messages appended to the end. User mailboxes lived in
+`/usr/mail/<username>`. It's a good example of the "everything is a file"
+principle. You could read your mail with standard text tools, and system
+notifications were just more messages appended to the same file.

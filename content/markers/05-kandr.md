@@ -7,15 +7,15 @@ position:
 description: "Legendary figures in Unix history"
 ---
 
-In the context of Unix history these three sets of initials refer to legendary
-figures in the creation and development of Unix:
+These three sets of initials refer to key figures in Unix history:
 
-dmr: Dennis M. Ritchie, co-creator of Unix and creator of the C programming
-language.
+**dmr** - Dennis M. Ritchie, co-creator of Unix and creator of the C
+programming language.
 
-kt: Ken Thompson (often just “ken” in historical Unix references), co-creator
-of Unix alongside Ritchie.
+**kt** - Ken Thompson, co-creator of Unix alongside Ritchie. The poster shows
+"kt", though his actual Bell Labs login was "ken", which is how he's usually
+referenced in early Unix source code and documentation.
 
-bwk: Brian W. Kernighan, co-author of several influential Unix programs and
-books (including “The C Programming Language” and “The UNIX Programming
-Environment”).
+**bwk** - Brian W. Kernighan, co-author of "The C Programming Language" and
+"The UNIX Programming Environment", and contributor to many Unix tools
+including `awk` (the 'k' in awk).

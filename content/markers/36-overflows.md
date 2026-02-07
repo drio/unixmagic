@@ -7,15 +7,16 @@ position:
 description: "Buffer overflows"
 ---
 
-This may be a bit of a stretch, but considering how prevalent buffer overflows 
-have been in the history of UNIX, the imagery might be intentional. The 
-overflowing liquid from the shell could be a visual reference to a buffer overflow.
+The overflowing liquid from the shell looks like a visual nod to buffer
+overflows. A buffer overflow happens when a program writes past the end of a
+fixed-size memory buffer, spilling data into adjacent memory. This can
+overwrite return addresses or other critical data, leading to crashes or
+exploitable security holes.
 
-A buffer overflow occurs when a program writes more data into a buffer (a fixed 
-block of memory) than it can hold. The excess data "spills over" into adjacent 
-memory, often overwriting critical information like return addresses, which can 
-cause crashes or open security vulnerabilities. Buffer overflows were (and still 
-are) a classic type of exploit in C programming on UNIX systems.
+Buffer overflows have been a persistent problem in C programs on UNIX systems,
+from the 1988 Morris worm (which exploited one in `fingerd`) to modern CVEs.
+C's lack of bounds checking on arrays makes this easy to get wrong, and UNIX
+systems have been a primary target because of how widely deployed they are.
 
-For more information, see 
+For more, see
 [Buffer overflow – Wikipedia](https://en.wikipedia.org/wiki/Buffer_overflow).

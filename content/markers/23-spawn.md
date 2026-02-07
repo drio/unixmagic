@@ -7,12 +7,11 @@ position:
 description: "An operation in which a new child process is created"
 ---
 
-Spawning is the process of loading and executing a new child process.
-Closely related is the idea of `fork` and `exec` that can be used
-to simulate spawning, by forking a process, having the parent terminate
-and `exec`ing the child into the desired spawn process.
+Spawning means creating a new child process. In UNIX, this is traditionally
+done with `fork` and `exec`: `fork` creates a copy of the current process,
+then the *child* calls `exec` to replace itself with a different program. The
+parent typically calls `wait` to wait for the child to finish.
 
-POSIX allow for the concept of spawning by itself that can be made
-to be more efficient than `fork` and `exec`.
-
-The spawn metaphor had its early use in the VMS operating system from 1977.
+POSIX also defines `posix_spawn`, which combines the two steps into one call
+and can be more efficient since it avoids copying the parent's entire address
+space.

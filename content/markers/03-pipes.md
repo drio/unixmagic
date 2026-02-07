@@ -7,9 +7,12 @@ position:
 description: "Connect cmd outputs to cmd inputs to create complex pipelines"
 ---
 
-<a href="https://en.wikipedia.org/wiki/Pipeline_(Unix)">Pipes</a> are a
-foundational feature in Unix that enable you to combine simple utilities into
-more powerful workflows. By passing data from one command’s output to another
-command’s input, pipes allow you to quickly create flexible, efficient, and
-maintainable solutions directly at the command line. They are denoted in the
-shell by the vertical bar character (|).
+<a href="https://en.wikipedia.org/wiki/Pipeline_(Unix)">Pipes</a> let you
+connect the output of one command to the input of another using the `|`
+character. Instead of saving intermediate results to files, you just chain
+commands together: `ls | grep txt | wc -l`. Each program reads from the
+previous one's output and writes to the next one's input.
+
+Doug McIlroy pushed for pipes at Bell Labs, and they became one of the ideas
+that defined the UNIX philosophy: write small programs that do one thing, then
+combine them.
