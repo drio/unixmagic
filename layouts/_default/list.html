@@ -44,7 +44,7 @@
         .header {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 5px;
             justify-content: center;
             padding-top: 8px;
         }
@@ -65,19 +65,12 @@
             font-size: 14px;
         }
 
-
-
-        .header img {
-            width: 20px;
-            max-width: 10vw;
-            height: auto;
-            transition: filter 0.3s ease-in-out;
-            opacity: 0.5;
+        .frame-toggle {
+            margin-left: 12px;
         }
 
-        .header img:hover {
-            opacity: 1;
-        }
+
+
 
         .poster-info-container {
             display: flex;
@@ -543,15 +536,14 @@
     <div id="loading">Get ready for some Unix magic... 🪄</div>
 
     <div class="header">
-        <a href="https://github.com/drio/unixmagic" target="_blank">
-            <img src="github.svg" alt="github" />
-        </a>
-        {{ $i := "index.xml" }}
-        <a href="{{ $i | relURL }}" class="rss-link" title="RSS Feed"><img src="rss.svg"> </a>
         <a href="#poster-info" class="header-link">about</a>
+        <span class="header-sep">|</span>
+        <a href="https://github.com/drio/unixmagic" target="_blank" class="header-link">github</a>
         <span class="header-sep">|</span>
         <a href="#" class="header-link" id="help-toggle">help</a>
         <span class="header-sep">|</span>
+        {{ $i := "index.xml" }}
+        <a href="{{ $i | relURL }}" class="header-link" title="RSS Feed">rss</a>
         <button class="frame-toggle" id="frame-toggle" title="Show all annotations">Show All</button>
     </div>
 
