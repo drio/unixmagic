@@ -1,0 +1,288 @@
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Unix Magic Poster Annotations</title><link>/</link><description>Unix Magic Poster Annotations</description><item><title>Shell</title><link>/#annotation-01-shell</link><description>A gateway to controlling the system</description><content:encoded>&amp;lt;p&amp;gt;The shell gets a prominent spot on the poster because it really is the center
+of how you use UNIX. It&amp;amp;rsquo;s the command-line interface where you type commands,
+launch programs, chain them together with pipes, and generally tell the system
+what to do.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;What set the UNIX shell apart was that it doubled as a programming language.
+You could use it interactively, but you could also write scripts to automate
+repetitive work. Most operating systems at the time didn&amp;amp;rsquo;t give you that.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;The original was the Bourne shell (&amp;lt;code&amp;gt;sh&amp;lt;/code&amp;gt;), written by Stephen Bourne at Bell
+Labs. Countless variants followed (&amp;lt;code&amp;gt;csh&amp;lt;/code&amp;gt;, &amp;lt;code&amp;gt;ksh&amp;lt;/code&amp;gt;, &amp;lt;code&amp;gt;bash&amp;lt;/code&amp;gt;, &amp;lt;code&amp;gt;zsh&amp;lt;/code&amp;gt;) but they all
+trace back to that first one.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>AWK</title><link>/#annotation-15-awk</link><description>A language designed for text processing.</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/AWK&amp;#34;&amp;gt;AWK&amp;lt;/a&amp;gt; is a domain specific language designed for text
+processing, either run directly on files or used as part of a pipeline.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;AWK was created at Bell Labs in the 1970s, and its name is
+derived from the surnames of its authors: Alfred Aho, Peter Weinberger and Brian Kernighan.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>B</title><link>/#annotation-18-B</link><description>An early programming language used in the early Multics project.</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/B_(programming_language)&amp;#34;&amp;gt;B&amp;lt;/a&amp;gt; is a programming language
+designed for recursive, non-numeric, machine-independent applications.
+B was derived from BCPL, and its name may possibly be a contraction of BCPL.
+B is an almost extinct programming language, superseded by the more modern C language.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;B was developed at Bell Labs circa 1969 by Ken Thompson and Dennis Ritchie.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>Backpressure</title><link>/#annotation-07-backpressure</link><description>Tell producers to stop sending data because the consumer cannot keep up</description><content:encoded>&amp;lt;p&amp;gt;When two processes communicate over a pipe, the process sending data is the
+producer, and the process receiving data is the consumer. The OS maintains a
+buffer to temporarily store data if the producer sends data faster than the
+consumer can process it. However, if the buffer becomes full, the OS will block
+the producer until space is available.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;Was that the intention of the artist? You decide - is the valve handle in the
+pipes a clever reference to UNIX back pressure, or is that a stretch?&amp;lt;/p&amp;gt;</content:encoded></item><item><title>banner</title><link>/#annotation-40-banner</link><description>A program that outputs ASCII art</description><content:encoded>&amp;lt;p&amp;gt;The poster&amp;amp;rsquo;s title is rendered in large block letters, much like the output of
+the &amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Banner_(Unix)&amp;#34;&amp;gt;&amp;lt;code&amp;gt;banner&amp;lt;/code&amp;gt;&amp;lt;/a&amp;gt; command. &amp;lt;code&amp;gt;banner&amp;lt;/code&amp;gt;
+takes a text string and prints it in oversized ASCII characters, originally
+meant for printing headers on line printers so you could tell whose printout
+was whose in a shared printer room. It was a common utility on Unix systems and
+a fun one to play with at a terminal.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>boot (or sock?)</title><link>/#annotation-21-boot</link><description>The booting process (or Unix Networking Sockets)</description><content:encoded>&amp;lt;p&amp;gt;I have to admit, this object looks more like a boot than a sock, but I find it
+hard to believe that the author would leave out a reference to sockets,
+considering how important they are, not only in UNIX but in the history of
+operating systems.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;For that reason, I see two possibilities:&amp;lt;/p&amp;gt;
+&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;
+&amp;lt;p&amp;gt;If it is a boot, it may represent the booting process of the UNIX operating
+system, a fundamental part of bringing the system to life.&amp;lt;/p&amp;gt;
+&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;
+&amp;lt;p&amp;gt;Alternatively, if it is a sock (granted, a thick and oversized one! 😄), it
+is likely a playful reference to UNIX network sockets. Network sockets were an
+abstraction pioneered by UNIX in BSD UNIX (4.2BSD, 1983). Sockets provided a
+unified interface for interprocess communication (IPC), enabling processes to
+communicate both locally (on the same machine) via UNIX domain sockets, and
+over a network using TCP/IP. The socket API from BSD was later adopted by virtually every other operating
+system.&amp;lt;/p&amp;gt;
+&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&amp;lt;p&amp;gt;For more on the history of BSD sockets, see &amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Berkeley_sockets&amp;#34;&amp;gt;Berkeley Sockets –
+Wikipedia&amp;lt;/a&amp;gt;, or read the
+official Linux man page for
+&amp;lt;a href=&amp;#34;https://man7.org/linux/man-pages/man2/socket.2.html&amp;#34;&amp;gt;&amp;lt;code&amp;gt;socket()&amp;lt;/code&amp;gt;&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>cat</title><link>/#annotation-19-cat</link><description>A standard Unix utility that reads files sequentially, writing them to standard output.</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Cat_(Unix)&amp;#34;&amp;gt;&amp;lt;code&amp;gt;cat&amp;lt;/code&amp;gt;&amp;lt;/a&amp;gt; derives its name from its function of
+(con)&amp;lt;em&amp;gt;cat&amp;lt;/em&amp;gt;enating files together.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;The original version of &amp;lt;code&amp;gt;cat&amp;lt;/code&amp;gt; was part of version 1 of Unix, and written by Ken Thompson and Dennis Ritchie.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>curses</title><link>/#annotation-32-curses</link><description>A terminal control library to aid in creating text user interfaces (TUI)</description><content:encoded>&amp;lt;p&amp;gt;The &amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Curses_(programming_library)&amp;#34;&amp;gt;&amp;lt;code&amp;gt;curses&amp;lt;/code&amp;gt;&amp;lt;/a&amp;gt; programming
+library provides a layer of abstraction over sending graphical and positioning
+data directly to allow for graphical elements and cursor positioning in Unix terminals.
+The name is a pun on the term &amp;amp;ldquo;cursor optimization&amp;amp;rdquo;.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;The first curses library was written by Ken Arnold and originally released with BSD UNIX.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>Daemons</title><link>/#annotation-08-daemons</link><description>Service processes that run in the background and supervise the system or provide functionality to other processes</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Daemon_(computing)&amp;#34;&amp;gt;Daemons&amp;lt;/a&amp;gt; are programs that run in the background
+and are often started at system boot time. They respond to network requests, hardware activity,
+or other programs by performing some task. Daemons such as cron may also perform
+defined tasks at scheduled times.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;The term was coined by the programmers at MIT&amp;amp;rsquo;s Project MAC. It is inspired by Maxwell&amp;amp;rsquo;s demon and
+greek mythology, acting as a metaphor for a supernatural being working in the background.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>dates</title><link>/#annotation-26-dates</link><description>A command to display and set the system date</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;https://man7.org/linux/man-pages/man1/date.1.html&amp;#34;&amp;gt;&amp;lt;code&amp;gt;date&amp;lt;/code&amp;gt;&amp;lt;/a&amp;gt; is a command to display and set a UNIX system date.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;Unix time is currently defined as the number of non-leap seconds which have passed since 00:00:00 UTC on Thursday, 1 January 1970,
+which is referred to as the Unix epoch.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;The earliest versions of Unix time had a 32-bit integer incrementing at a rate of 60 Hz, which was the rate of the system clock
+on the hardware of the early Unix systems.
+Timestamps stored this way could only represent a range of a little over two and a quarter years.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;The current epoch of 1 January 1970 00:00:00 UTC was selected arbitrarily by Unix engineers because it was considered a
+convenient date to work with.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>diff</title><link>/#annotation-33-diff</link><description>A utility to find the differences between contents of a file</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Diff&amp;#34;&amp;gt;&amp;lt;code&amp;gt;diff&amp;lt;/code&amp;gt;&amp;lt;/a&amp;gt; is a data comparison tool that computes
+and displays the differences in the contents of files.
+&amp;lt;code&amp;gt;diff&amp;lt;/code&amp;gt; is line oriented and is often used to determine changes between two versions
+of the same file.
+For example, &amp;lt;code&amp;gt;diff&amp;lt;/code&amp;gt; can be used to find which lines have changed in a source file,
+allowing for only transmission of the changes, rather than the whole file.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;diff&amp;lt;/code&amp;gt; as developed in the early 1970s at Bell Labs.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>Filesystem hierarchy</title><link>/#annotation-38-tree-graph</link><description>Navigating the filesystem</description><content:encoded>&amp;lt;p&amp;gt;The tree-like shape the wizard is manipulating is likely a reference to the
+UNIX filesystem hierarchy. UNIX organizes files and directories as a tree
+rooted at &amp;lt;code&amp;gt;/&amp;lt;/code&amp;gt;, branching into subdirectories like &amp;lt;code&amp;gt;/usr&amp;lt;/code&amp;gt;, &amp;lt;code&amp;gt;/bin&amp;lt;/code&amp;gt;, &amp;lt;code&amp;gt;/etc&amp;lt;/code&amp;gt;, and
+so on. You navigate it with commands like &amp;lt;code&amp;gt;cd&amp;lt;/code&amp;gt;, &amp;lt;code&amp;gt;ls&amp;lt;/code&amp;gt;, and &amp;lt;code&amp;gt;pwd&amp;lt;/code&amp;gt;.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;The branching form could also represent process trees. Every process in UNIX
+has a parent, forming a tree rooted at &amp;lt;code&amp;gt;init&amp;lt;/code&amp;gt; (PID 1).&amp;lt;/p&amp;gt;</content:encoded></item><item><title>fork</title><link>/#annotation-13-fork</link><description>An operation whereby a process creates a copy of itself</description><content:encoded>&amp;lt;p&amp;gt;In multitasking operating systems, processes need a way to create new processes.
+&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Fork_(system_call)&amp;#34;&amp;gt;Forking&amp;lt;/a&amp;gt; a process is typically the
+only way of doing so in Unix-like systems.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;One of the earliest references to a fork concept appeared in A Multiprocessor
+System Design by Melvin Conway, published in 1962.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>Jfo nroff</title><link>/#annotation-24-jfo-nroff</link><description>A text formatting program that produces fixed width output for printers and terminals</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Nroff&amp;#34;&amp;gt;&amp;lt;code&amp;gt;nroff&amp;lt;/code&amp;gt;&amp;lt;/a&amp;gt;, short for &amp;amp;ldquo;new roff&amp;amp;rdquo;
+is a text-formatting program produces output suitable for simple fixed-width
+printers and terminal windows.
+It is an integral part of the Unix help system, being used to format man pages for display.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;The letters &amp;lt;em&amp;gt;Jfo&amp;lt;/em&amp;gt; stand for Joseph Frank Ossanna
+who created the original version of &amp;lt;code&amp;gt;nroff&amp;lt;/code&amp;gt; for Version 2 Unix.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>Legendary figures</title><link>/#annotation-05-kandr</link><description>Legendary figures in Unix history</description><content:encoded>&amp;lt;p&amp;gt;These three sets of initials refer to key figures in Unix history:&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;dmr&amp;lt;/strong&amp;gt; - Dennis M. Ritchie, co-creator of Unix and creator of the C
+programming language.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;kt&amp;lt;/strong&amp;gt; - Ken Thompson, co-creator of Unix alongside Ritchie. The poster shows
+&amp;amp;ldquo;kt&amp;amp;rdquo;, though his actual Bell Labs login was &amp;amp;ldquo;ken&amp;amp;rdquo;, which is how he&amp;amp;rsquo;s usually
+referenced in early Unix source code and documentation.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;bwk&amp;lt;/strong&amp;gt; - Brian W. Kernighan, co-author of &amp;amp;ldquo;The C Programming Language&amp;amp;rdquo; and
+&amp;amp;ldquo;The UNIX Programming Environment&amp;amp;rdquo;, and contributor to many Unix tools
+including &amp;lt;code&amp;gt;awk&amp;lt;/code&amp;gt; (the &amp;amp;lsquo;k&amp;amp;rsquo; in awk).&amp;lt;/p&amp;gt;</content:encoded></item><item><title>login</title><link>/#annotation-30-login</link><description>The gateway into the system</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;login&amp;lt;/code&amp;gt; is the gateway into the system. It authenticates the user, initializes
+the environment by changing to the user’s home directory, and spawns a process
+running as the user (with their &amp;lt;code&amp;gt;uid&amp;lt;/code&amp;gt; and &amp;lt;code&amp;gt;gid&amp;lt;/code&amp;gt;), using their shell of choice.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;Additionally, the standard input and output need to be attached to a terminal:
+this could be a &amp;lt;strong&amp;gt;pseudo-terminal&amp;lt;/strong&amp;gt; (if you are in a graphical interface or
+using &amp;lt;code&amp;gt;ssh&amp;lt;/code&amp;gt;), or a &amp;lt;strong&amp;gt;physical terminal&amp;lt;/strong&amp;gt; (as was common at the time).&amp;lt;/p&amp;gt;</content:encoded></item><item><title>make</title><link>/#annotation-22-make</link><description>A software development tool to perform ordered actions and manage dependencies</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Make_(software)&amp;#34;&amp;gt;Make&amp;lt;/a&amp;gt; is a command line interface
+that reads in a configuration &amp;lt;code&amp;gt;Makefile&amp;lt;/code&amp;gt; that is often used in code executable
+compilation and automation.
+Before Make, building on Unix mostly consisted of shell scripts written for each program&amp;amp;rsquo;s codebase.
+Make&amp;amp;rsquo;s dependency ordering and out-of-date checking makes the build process more robust and more efficient.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;Stuart Feldman was the original author of Make, completing an early version in April 1976 at
+Bell Labs.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>man</title><link>/#annotation-02-man</link><description>Command to get detailed documentation of different Unix components, including other cmds.</description><content:encoded>&amp;lt;p&amp;gt;The &amp;lt;a href=&amp;#34;https://man7.org/linux/man-pages/man1/man.1.html&amp;#34;&amp;gt;man(1)&amp;lt;/a&amp;gt;
+command (short for manual) is used to display online reference manuals (man
+pages) for commands, system calls, configuration files, and other aspects of
+the system. man provides detailed documentation on how to use a command,
+including its options, usage examples, related files, and other pertinent
+details.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;There&amp;amp;rsquo;s some ambiguity as to what the interpretation of the man in the window
+could represent.
+The man is holding a scythe, which could represent &amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Zombie_process&amp;#34;&amp;gt;reaping a process&amp;lt;/a&amp;gt;.
+Under Unix like systems, process reaping is when a parent process reads
+the exit status of a spawned child process, allowing the child process
+to be removed from the process table.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;Others have suggested that the man could represent a &amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Hacker&amp;#34;&amp;gt;hacker&amp;lt;/a&amp;gt;,
+a term used to mean a skilled or clever programmer.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>mbox</title><link>/#annotation-29-mbox</link><description>The mail system format</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;code&amp;gt;mbox&amp;lt;/code&amp;gt; is a reference to the mail format from the early days of UNIX. In the
+&amp;lt;code&amp;gt;mbox&amp;lt;/code&amp;gt; format, all email messages for a user are stored in a single file, with
+new messages appended to the end. User mailboxes lived in
+&amp;lt;code&amp;gt;/usr/mail/&amp;amp;lt;username&amp;amp;gt;&amp;lt;/code&amp;gt;. It&amp;amp;rsquo;s a good example of the &amp;amp;ldquo;everything is a file&amp;amp;rdquo;
+principle. You could read your mail with standard text tools, and system
+notifications were just more messages appended to the same file.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>Memory leaks</title><link>/#annotation-04-leak</link><description>Improper managing of memory by a computer program</description><content:encoded>&amp;lt;p&amp;gt;A memory leak occurs when a computer program improperly manages memory
+allocation, failing to release memory that’s no longer needed. Over time, these
+un-freed allocations accumulate, reducing the amount of available memory for
+other processes and potentially leading to slowdowns or crashes.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>null</title><link>/#annotation-10-null</link><description>The null device is a device file that discards all data written to it but reports that the write operation succeeded.</description><content:encoded>&amp;lt;p&amp;gt;The &amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Null_device&amp;#34;&amp;gt;Null device&amp;lt;/a&amp;gt; is a device file that discards all data written
+to it but reports that the write operation succeeded.
+This device is called /dev/null on Unix and Unix-like systems.
+The null device is typically used for disposing of unwanted output streams of a process, or as a convenient empty file for input streams.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>Oregano</title><link>/#annotation-11-oregano</link><description>The Oregano incident</description><content:encoded>&amp;lt;p&amp;gt;From &amp;lt;a href=&amp;#34;https://groups.google.com/g/comp.unix.wizards/c/qkiqSJWgEPE/m/E5BwZYMvXwAJ&amp;#34;&amp;gt;Sarah Groves Hobart&amp;lt;/a&amp;gt;:&amp;lt;/p&amp;gt;
+&amp;lt;blockquote&amp;gt;
+&amp;lt;p&amp;gt;The oregano is reputedly referring to an incident in which one of the
+original folks involved with BSD was hassled for coming across the
+Canadian/U.S. border with a bag of what was assumed to be an illegal
+substance, and turned out to be oregano.&amp;lt;/p&amp;gt;
+&amp;lt;/blockquote&amp;gt;</content:encoded></item><item><title>Overflows</title><link>/#annotation-36-overflows</link><description>Buffer overflows</description><content:encoded>&amp;lt;p&amp;gt;The overflowing liquid from the shell looks like a visual nod to buffer
+overflows. A buffer overflow happens when a program writes past the end of a
+fixed-size memory buffer, spilling data into adjacent memory. This can
+overwrite return addresses or other critical data, leading to crashes or
+exploitable security holes.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;Buffer overflows have been a persistent problem in C programs on UNIX systems,
+from the 1988 Morris worm (which exploited one in &amp;lt;code&amp;gt;fingerd&amp;lt;/code&amp;gt;) to modern CVEs.
+C&amp;amp;rsquo;s lack of bounds checking on arrays makes this easy to get wrong, and UNIX
+systems have been a primary target because of how widely deployed they are.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;For more, see
+&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Buffer_overflow&amp;#34;&amp;gt;Buffer overflow – Wikipedia&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>Pipes</title><link>/#annotation-03-pipes</link><description>Connect cmd outputs to cmd inputs to create complex pipelines</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Pipeline_(Unix)&amp;#34;&amp;gt;Pipes&amp;lt;/a&amp;gt; let you
+connect the output of one command to the input of another using the &amp;lt;code&amp;gt;|&amp;lt;/code&amp;gt;
+character. Instead of saving intermediate results to files, you just chain
+commands together: &amp;lt;code&amp;gt;ls | grep txt | wc -l&amp;lt;/code&amp;gt;. Each program reads from the
+previous one&amp;amp;rsquo;s output and writes to the next one&amp;amp;rsquo;s input.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;Doug McIlroy pushed for pipes at Bell Labs, and they became one of the ideas
+that defined the UNIX philosophy: write small programs that do one thing, then
+combine them.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>pwd</title><link>/#annotation-28-pwd</link><description>A cmd to determine your location in the filesystem</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;https://man7.org/linux/man-pages/man1/pwd.1.html&amp;#34;&amp;gt;&amp;lt;code&amp;gt;pwd&amp;lt;/code&amp;gt;&amp;lt;/a&amp;gt; prints the full path
+of your current working directory. It stands for &amp;amp;ldquo;print working directory&amp;amp;rdquo; and
+is one of the most basic navigation commands in UNIX. You use it to figure out
+where you are in the filesystem. It&amp;amp;rsquo;s been part of UNIX since the early days
+and is a shell built-in on most modern systems.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>root</title><link>/#annotation-25-root</link><description>The administrator account on UNIX systems</description><content:encoded>&amp;lt;p&amp;gt;The root user is the name often given to the administrator or superuser account
+on UNIX systems.
+In Unix-like systems, root is the conventional name of the user who has all rights or
+permissions to all files and programs in all modes (e.g. single- or multi-user).
+The root user can do many things an ordinary user cannot, such as changing the
+ownership of files and binding to network ports numbered below 1024.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>Shell script</title><link>/#annotation-14-shell-script</link><description>The shell language</description><content:encoded>&amp;lt;p&amp;gt;A &amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Shell_script&amp;#34;&amp;gt;shell script&amp;lt;/a&amp;gt; is a text file
+containing a sequence of shell commands that run as a program. Instead of
+typing commands one at a time, you write them into a file and execute it.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;Shell scripts are what made UNIX administration practical. System startup,
+backups, log rotation, batch processing - all of it was (and still is) driven
+by shell scripts. Because the shell already knows how to run programs, redirect
+I/O, and handle pipes, a script gets all of that for free. Add variables,
+loops, and conditionals, and you have a real programming language that&amp;amp;rsquo;s
+tightly integrated with the operating system.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>Shell's symbols</title><link>/#annotation-35-shell-symbols</link><description>Symbols of the shell</description><content:encoded>&amp;lt;h3 id=&amp;#34;shell-symbols-on-the-wizards-cloak&amp;#34;&amp;gt;Shell Symbols on the Wizard&amp;amp;rsquo;s Cloak&amp;lt;/h3&amp;gt;
+&amp;lt;p&amp;gt;The wizard’s cloak is decorated with symbols that represent some of the most
+important special characters used in the UNIX shell. These symbols are the
+&amp;amp;ldquo;runes&amp;amp;rdquo; of UNIX power, allowing users to combine commands, redirect input and
+output, and control processes with precision. Mastery of these symbols is part
+of what transforms a regular user into a &amp;amp;ldquo;UNIX wizard.&amp;amp;rdquo;&amp;lt;/p&amp;gt;
+&amp;lt;h4 id=&amp;#34;--job-control&amp;#34;&amp;gt;&amp;lt;code&amp;gt;%&amp;lt;/code&amp;gt; – Job Control&amp;lt;/h4&amp;gt;
+&amp;lt;p&amp;gt;Used to &amp;lt;strong&amp;gt;refer to background jobs in the shell&amp;lt;/strong&amp;gt;.&amp;lt;/p&amp;gt;
+&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;code&amp;gt;jobs&amp;lt;/code&amp;gt; → List background jobs.&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;code&amp;gt;fg %1&amp;lt;/code&amp;gt; → Bring &amp;lt;strong&amp;gt;job 1 to the foreground&amp;lt;/strong&amp;gt;.&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;code&amp;gt;bg %2&amp;lt;/code&amp;gt; → Resume &amp;lt;strong&amp;gt;job 2 in the background&amp;lt;/strong&amp;gt;.&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&amp;lt;h4 id=&amp;#34;--variable-expansion--shell-prompt&amp;#34;&amp;gt;&amp;lt;code&amp;gt;$&amp;lt;/code&amp;gt; – Variable Expansion &amp;amp;amp; Shell Prompt&amp;lt;/h4&amp;gt;
+&amp;lt;p&amp;gt;Represents &amp;lt;strong&amp;gt;variables and parameter substitution&amp;lt;/strong&amp;gt;.&amp;lt;/p&amp;gt;
+&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;code&amp;gt;$HOME&amp;lt;/code&amp;gt; → Expands to &amp;lt;strong&amp;gt;the value of the &amp;lt;code&amp;gt;HOME&amp;lt;/code&amp;gt; environment variable&amp;lt;/strong&amp;gt;.&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;code&amp;gt;$?&amp;lt;/code&amp;gt; → Shows &amp;lt;strong&amp;gt;the exit status of the last command&amp;lt;/strong&amp;gt;.&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&amp;lt;p&amp;gt;Also often &amp;lt;strong&amp;gt;appears as the shell prompt&amp;lt;/strong&amp;gt; for &amp;lt;strong&amp;gt;a regular user&amp;lt;/strong&amp;gt;.&amp;lt;/p&amp;gt;
+&amp;lt;h4 id=&amp;#34;--output-redirection&amp;#34;&amp;gt;&amp;lt;code&amp;gt;&amp;amp;gt;&amp;lt;/code&amp;gt; – Output Redirection&amp;lt;/h4&amp;gt;
+&amp;lt;p&amp;gt;Redirects &amp;lt;strong&amp;gt;standard output to a file&amp;lt;/strong&amp;gt;.&amp;lt;/p&amp;gt;
+&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;code&amp;gt;ls &amp;amp;gt; files.txt&amp;lt;/code&amp;gt; → Writes the &amp;lt;strong&amp;gt;output of &amp;lt;code&amp;gt;ls&amp;lt;/code&amp;gt; into &amp;lt;code&amp;gt;files.txt&amp;lt;/code&amp;gt;&amp;lt;/strong&amp;gt; (overwriting it).&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&amp;lt;h4 id=&amp;#34;--input-redirection&amp;#34;&amp;gt;&amp;lt;code&amp;gt;&amp;amp;lt;&amp;lt;/code&amp;gt; – Input Redirection&amp;lt;/h4&amp;gt;
+&amp;lt;p&amp;gt;Redirects &amp;lt;strong&amp;gt;standard input from a file&amp;lt;/strong&amp;gt;.&amp;lt;/p&amp;gt;
+&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;code&amp;gt;sort &amp;amp;lt; input.txt&amp;lt;/code&amp;gt; → Reads &amp;lt;strong&amp;gt;input from &amp;lt;code&amp;gt;input.txt&amp;lt;/code&amp;gt; instead of the keyboard&amp;lt;/strong&amp;gt;.&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&amp;lt;h4 id=&amp;#34;--wildcard-glob&amp;#34;&amp;gt;&amp;lt;code&amp;gt;*&amp;lt;/code&amp;gt; – Wildcard (Glob)&amp;lt;/h4&amp;gt;
+&amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;Matches any number of characters&amp;lt;/strong&amp;gt; in filenames.&amp;lt;/p&amp;gt;
+&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;code&amp;gt;ls *.txt&amp;lt;/code&amp;gt; → Lists &amp;lt;strong&amp;gt;all files ending in &amp;lt;code&amp;gt;.txt&amp;lt;/code&amp;gt;&amp;lt;/strong&amp;gt;.&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;code&amp;gt;rm *&amp;lt;/code&amp;gt; → &amp;lt;strong&amp;gt;Deletes all files in the current directory&amp;lt;/strong&amp;gt; (Dangerous!).&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&amp;lt;h4 id=&amp;#34;--history-expansion&amp;#34;&amp;gt;&amp;lt;code&amp;gt;!&amp;lt;/code&amp;gt; – History Expansion&amp;lt;/h4&amp;gt;
+&amp;lt;p&amp;gt;&amp;lt;strong&amp;gt;Expands to previously executed commands&amp;lt;/strong&amp;gt;.&amp;lt;/p&amp;gt;
+&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;code&amp;gt;!!&amp;lt;/code&amp;gt; → Repeats &amp;lt;strong&amp;gt;the last command&amp;lt;/strong&amp;gt;.&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;code&amp;gt;!ls&amp;lt;/code&amp;gt; → Repeats &amp;lt;strong&amp;gt;the last command starting with &amp;lt;code&amp;gt;ls&amp;lt;/code&amp;gt;&amp;lt;/strong&amp;gt;.&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;code&amp;gt;!$&amp;lt;/code&amp;gt; → Expands &amp;lt;strong&amp;gt;to the last argument of the previous command&amp;lt;/strong&amp;gt;.&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&amp;lt;h4 id=&amp;#34;---test--conditional-expressions&amp;#34;&amp;gt;&amp;lt;code&amp;gt;[&amp;lt;/code&amp;gt; &amp;lt;code&amp;gt;]&amp;lt;/code&amp;gt; – Test / Conditional Expressions&amp;lt;/h4&amp;gt;
+&amp;lt;p&amp;gt;Used &amp;lt;strong&amp;gt;in shell conditionals&amp;lt;/strong&amp;gt; and &amp;lt;strong&amp;gt;&amp;lt;code&amp;gt;if&amp;lt;/code&amp;gt; statements&amp;lt;/strong&amp;gt;.&amp;lt;/p&amp;gt;
+&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;&amp;lt;code&amp;gt;[ -f file.txt ]&amp;lt;/code&amp;gt; → &amp;lt;strong&amp;gt;Tests if &amp;lt;code&amp;gt;file.txt&amp;lt;/code&amp;gt; is a regular file&amp;lt;/strong&amp;gt;.&amp;lt;/li&amp;gt;
+&amp;lt;li&amp;gt;Common &amp;lt;strong&amp;gt;in shell scripting&amp;lt;/strong&amp;gt;:
+&amp;lt;div class=&amp;#34;highlight&amp;#34;&amp;gt;&amp;lt;pre tabindex=&amp;#34;0&amp;#34; style=&amp;#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&amp;#34;&amp;gt;&amp;lt;code class=&amp;#34;language-bash&amp;#34; data-lang=&amp;#34;bash&amp;#34;&amp;gt;&amp;lt;span style=&amp;#34;display:flex;&amp;#34;&amp;gt;&amp;lt;span&amp;gt;&amp;lt;span style=&amp;#34;color:#66d9ef&amp;#34;&amp;gt;if&amp;lt;/span&amp;gt; &amp;lt;span style=&amp;#34;color:#f92672&amp;#34;&amp;gt;[&amp;lt;/span&amp;gt; -f file.txt &amp;lt;span style=&amp;#34;color:#f92672&amp;#34;&amp;gt;]&amp;lt;/span&amp;gt;; &amp;lt;span style=&amp;#34;color:#66d9ef&amp;#34;&amp;gt;then&amp;lt;/span&amp;gt;
+&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;#34;display:flex;&amp;#34;&amp;gt;&amp;lt;span&amp;gt; echo &amp;lt;span style=&amp;#34;color:#e6db74&amp;#34;&amp;gt;&amp;amp;#34;File exists!&amp;amp;#34;&amp;lt;/span&amp;gt;
+&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;span style=&amp;#34;display:flex;&amp;#34;&amp;gt;&amp;lt;span&amp;gt;&amp;lt;span style=&amp;#34;color:#66d9ef&amp;#34;&amp;gt;fi&amp;lt;/span&amp;gt;
+&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&amp;lt;/code&amp;gt;&amp;lt;/pre&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;</content:encoded></item><item><title>skull</title><link>/#annotation-39-skull</link><description>Redirecting to stdout/stdin</description><content:encoded>&amp;lt;p&amp;gt;The skull-like spigot connected to the shell most likely represents
+&amp;lt;code&amp;gt;/dev/null&amp;lt;/code&amp;gt;, the special UNIX device that discards all data written to it.
+Redirecting output to &amp;lt;code&amp;gt;/dev/null&amp;lt;/code&amp;gt; sends it into a void. Nothing comes back.
+The skull is a fitting symbol for where data goes to die. See also the
+&amp;lt;a href=&amp;#34;#annotation-10-null&amp;#34;&amp;gt;/dev/null&amp;lt;/a&amp;gt; entry.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;It could also be a nod to UNIX
+&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Daemon_(computing)&amp;#34;&amp;gt;daemons&amp;lt;/a&amp;gt;, background
+processes that run without a terminal. The gargoyle-like appearance of the
+spigot fits the daemon imagery.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>spawn</title><link>/#annotation-23-spawn</link><description>An operation in which a new child process is created</description><content:encoded>&amp;lt;p&amp;gt;Spawning means creating a new child process. In UNIX, this is traditionally
+done with &amp;lt;code&amp;gt;fork&amp;lt;/code&amp;gt; and &amp;lt;code&amp;gt;exec&amp;lt;/code&amp;gt;: &amp;lt;code&amp;gt;fork&amp;lt;/code&amp;gt; creates a copy of the current process,
+then the &amp;lt;em&amp;gt;child&amp;lt;/em&amp;gt; calls &amp;lt;code&amp;gt;exec&amp;lt;/code&amp;gt; to replace itself with a different program. The
+parent typically calls &amp;lt;code&amp;gt;wait&amp;lt;/code&amp;gt; to wait for the child to finish.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;POSIX also defines &amp;lt;code&amp;gt;posix_spawn&amp;lt;/code&amp;gt;, which combines the two steps into one call
+and can be more efficient since it avoids copying the parent&amp;amp;rsquo;s entire address
+space.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>spells</title><link>/#annotation-31-spells</link><description>A command to check spelling</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Spell_(Unix)&amp;#34;&amp;gt;&amp;lt;code&amp;gt;spell&amp;lt;/code&amp;gt;&amp;lt;/a&amp;gt; is the standard English
+language spell checker for Unix and other Unix-like operating systems.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;The original version was written by Stephen C. Johnson for Version 6 UNIX while at Bell Labs in 1976.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>spool</title><link>/#annotation-16-spool</link><description>/usr/spool</description><content:encoded>&amp;lt;p&amp;gt;This references &amp;lt;code&amp;gt;/usr/spool&amp;lt;/code&amp;gt;, a directory used for temporary storage of data
+waiting to be processed. Print jobs, outgoing mail, and UUCP transfers all
+queued here. The name comes from &amp;amp;ldquo;Simultaneous Peripheral Operations On-Line&amp;amp;rdquo;&amp;lt;/p&amp;gt;
+&amp;lt;ul&amp;gt;
+&amp;lt;li&amp;gt;a way to let slow devices (like printers) work through a backlog without
+blocking the rest of the system. On modern systems, this directory has moved to
+&amp;lt;code&amp;gt;/var/spool&amp;lt;/code&amp;gt;.&amp;lt;/li&amp;gt;
+&amp;lt;/ul&amp;gt;
+&amp;lt;p&amp;gt;Thanks to Andrew Tanenbaum for pointing out that threads were not available in
+early UNIX. He also shared &amp;lt;a href=&amp;#34;https://commandcenter.blogspot.com/2020/01/unix-quiz.html&amp;#34;&amp;gt;Rob Pike&amp;amp;rsquo;s UNIX
+quiz&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>su</title><link>/#annotation-09-su</link><description>Command to switch your identity</description><content:encoded>&amp;lt;p&amp;gt;The &amp;lt;a href=&amp;#34;https://www.man7.org/linux/man-pages/man1/su.1.html&amp;#34;&amp;gt;su&amp;lt;/a&amp;gt; command (short for “substitute user” or
+“switch user”) is used to start a shell under a different user account.
+Typically, one of the most common uses of su is switching to the superuser
+(root) account to gain administrative privileges.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>tar</title><link>/#annotation-12-tar</link><description>A software utility for collecting multiple files into a single archive file.</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Tar_(computing)&amp;#34;&amp;gt;Tar&amp;lt;/a&amp;gt; is a software tool for collecting multiple
+files into a single archive file, often called a tarball.
+The name is derived from &amp;amp;ldquo;tape archive&amp;amp;rdquo;, as it was originally developed to write
+data to sequential I/O devices with no file system of their own, such as devices that use magnetic tape.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;The command-line utility was first introduced in the Version 7 Unix in January 1979, replacing the &amp;lt;code&amp;gt;tp&amp;lt;/code&amp;gt; program (which in turn replaced &amp;lt;code&amp;gt;tap&amp;lt;/code&amp;gt;).&amp;lt;/p&amp;gt;</content:encoded></item><item><title>tee</title><link>/#annotation-37-tee</link><description>The T-junctions in the pipes, possibly a reference to the tee command.</description><content:encoded>&amp;lt;p&amp;gt;The T-shaped pipe junctions in the poster may reference the
+&amp;lt;a href=&amp;#34;https://man7.org/linux/man-pages/man1/tee.1.html&amp;#34;&amp;gt;&amp;lt;code&amp;gt;tee&amp;lt;/code&amp;gt;&amp;lt;/a&amp;gt; command. &amp;lt;code&amp;gt;tee&amp;lt;/code&amp;gt; reads
+from standard input and writes to both standard output and one or more files at
+the same time, like a T-junction splitting a flow of water.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;This is handy for debugging pipelines (you can tap into the middle of a chain
+to see what&amp;amp;rsquo;s flowing through) or for logging (save a copy of the data while
+still passing it along): &amp;lt;code&amp;gt;make 2&amp;amp;gt;&amp;amp;amp;1 | tee build.log&amp;lt;/code&amp;gt;.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>The c programming language</title><link>/#annotation-06-c</link><description>A key programming language in the creation of Unix</description><content:encoded>&amp;lt;p&amp;gt;Dennis Ritchie created C at Bell Labs in the early 1970s, and Unix was
+rewritten in it shortly after. Before that, Unix was written in PDP assembly,
+which meant it only ran on PDP machines. Rewriting it in C made it possible to
+port Unix to other hardware. You just needed a C compiler for the target
+platform. That portability is a big reason Unix spread through universities and
+eventually into commercial use.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>traps</title><link>/#annotation-34-traps</link><description>An inter-process message sent to a running program</description><content:encoded>&amp;lt;p&amp;gt;Traps, or &amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Signal_(IPC)&amp;#34;&amp;gt;signals&amp;lt;/a&amp;gt;, are sent
+from the kernel to a process, notifying the process of an event.
+Common signals are interrupt, terminate or kill, with some signal
+handling useful for inter-process communication and coordination.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>troff</title><link>/#annotation-17-troff</link><description>A program in formatting documents for the document processing system.</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Troff&amp;#34;&amp;gt;Troff&amp;lt;/a&amp;gt; is the major component of a document processing system developed by Bell Labs for the Unix operating system.
+Troff stands for &amp;amp;ldquo;typesetter roff&amp;amp;rdquo;, developed as a descendant to
+&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Roff_(software)&amp;#34;&amp;gt;&amp;lt;code&amp;gt;roff&amp;lt;/code&amp;gt;&amp;lt;/a&amp;gt;, where &amp;lt;code&amp;gt;roff&amp;lt;/code&amp;gt; was
+a Unix version of one of the earliest text formatting programs called &amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/TYPSET_and_RUNOFF&amp;#34;&amp;gt;&amp;lt;code&amp;gt;RUNOFF&amp;lt;/code&amp;gt;&amp;lt;/a&amp;gt;.
+A typical distribution of troff includes macros for many document styles, including ones for the Unix &amp;lt;code&amp;gt;man&amp;lt;/code&amp;gt; pages.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;Troff was developed by Bell Labs in the 1970s, where Joseph Ossanna created &amp;lt;code&amp;gt;troff&amp;lt;/code&amp;gt; by modifying &amp;lt;code&amp;gt;nroff&amp;lt;/code&amp;gt; to support multiple fonts and proportional spacing.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>uucp</title><link>/#annotation-20-uucp</link><description>A Unix program for file copy requests.</description><content:encoded>&amp;lt;p&amp;gt;&amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/UUCP&amp;#34;&amp;gt;&amp;lt;code&amp;gt;uucp&amp;lt;/code&amp;gt;&amp;lt;/a&amp;gt; (Unix-to-Unix Copy) was a suite
+of programs for copying files between Unix systems over phone lines using
+modems. Written by Mike Lesk at Bell Labs in 1978, it was one of the earliest
+ways Unix machines could talk to each other.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;UUCP was the backbone of Usenet and early email between sites. Machines would
+dial each other on a schedule, exchange queued files and messages, then hang up.
+It wasn&amp;amp;rsquo;t fast, but it connected Unix systems years before the internet was
+widely available.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>wall</title><link>/#annotation-41-wall</link><description>Utility to send a message to all users</description><content:encoded>&amp;lt;p&amp;gt;The &amp;lt;a href=&amp;#34;https://www.man7.org/linux/man-pages/man1/wall.1.html&amp;#34;&amp;gt;wall&amp;lt;/a&amp;gt; command is a command-line utility that displays the contents of the specified file or otherwise its standard input on the terminals of all currently logged-in users. It is typically used by root to send out shutting down message to all users just before poweroff.&amp;lt;/p&amp;gt;</content:encoded></item><item><title>whoami</title><link>/#annotation-27-whoami</link><description>A command to provide the effective username of the current user</description><content:encoded>&amp;lt;p&amp;gt;Users on UNIX systems may want to
+switch to other accounts, allowing for switching roles, escalation or deescalation of
+privileges or might be logging into multiple machines across networks.
+The &amp;lt;a href=&amp;#34;https://en.wikipedia.org/wiki/Whoami&amp;#34;&amp;gt;&amp;lt;code&amp;gt;whoami&amp;lt;/code&amp;gt;&amp;lt;/a&amp;gt; is a command to tell the invoker
+what user they are logged in as.&amp;lt;/p&amp;gt;
+&amp;lt;p&amp;gt;The earliest versions were created in 2.9 BSD.&amp;lt;/p&amp;gt;</content:encoded></item></channel></rss>
