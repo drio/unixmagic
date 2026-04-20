@@ -21,6 +21,6 @@ Under Unix like systems, process reaping is when a parent process reads
 the exit status of a spawned child process, allowing the child process
 to be removed from the process table.
 
-Others have suggested that the man could represent a [hacker](https://en.wikipedia.org/wiki/Hacker),
+Others have suggested that the man could represent a [hacker](https://en.wikipedia.org/wiki/Hacker_culture),
 a term used to mean a skilled or clever programmer.
 
