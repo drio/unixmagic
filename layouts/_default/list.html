@@ -22,61 +22,90 @@
       })();
     </script>
     <style>
+        /* =====================================================
+           Color tokens — single source of truth for the palette.
+           Edit values here. Everything below just aliases them.
+           ===================================================== */
         :root {
-            /* Default: dark (also used when OS has no preference) */
-            --bg: #15161a;
-            --panel: #1c1d22;
-            --fg: #d4d4d0;
-            --fg-muted: #8a8a86;
-            --fg-subtle: #55565b;
-            --accent: #d46a79;
-            --accent-dark: #e88293;   /* hover: brighter on dark */
-            --accent-tint: rgba(212, 106, 121, 0.18);
-            --border: #2a2b30;
-            --border-strong: #3a3b42;
+            /* Dark palette */
+            --dark-bg:             #15161a;
+            --dark-panel:          #1c1d22;
+            --dark-fg:             #d4d4d0;
+            --dark-fg-muted:       #8a8a86;
+            --dark-fg-subtle:      #55565b;
+            --dark-accent:         #d46a79;
+            --dark-accent-hover:   #e88293;  /* on dark, hover is brighter */
+            --dark-accent-tint:    rgba(212, 106, 121, 0.18);
+            --dark-border:         #2a2b30;
+            --dark-border-strong:  #3a3b42;
+
+            /* Light palette */
+            --light-bg:            #f4efe3;
+            --light-panel:         #fbf7ec;
+            --light-fg:            #2b2a26;
+            --light-fg-muted:      #6b6a63;
+            --light-fg-subtle:     #9a9890;
+            --light-accent:        #bc4f5f;
+            --light-accent-hover:  #9b3d4c;  /* on light, hover is darker */
+            --light-accent-tint:   #f3d6da;
+            --light-border:        #d9d2c3;
+            --light-border-strong: #b8ae97;
+
             --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+            /* Default binding: dark (also used when the OS has no preference) */
+            --bg:             var(--dark-bg);
+            --panel:          var(--dark-panel);
+            --fg:             var(--dark-fg);
+            --fg-muted:       var(--dark-fg-muted);
+            --fg-subtle:      var(--dark-fg-subtle);
+            --accent:         var(--dark-accent);
+            --accent-hover:   var(--dark-accent-hover);
+            --accent-tint:    var(--dark-accent-tint);
+            --border:         var(--dark-border);
+            --border-strong:  var(--dark-border-strong);
         }
 
-        /* Auto: follow OS when it prefers light */
+        /* Auto mode: follow the OS when it prefers light */
         @media (prefers-color-scheme: light) {
             :root {
-                --bg: #f4efe3;
-                --panel: #fbf7ec;
-                --fg: #2b2a26;
-                --fg-muted: #6b6a63;
-                --fg-subtle: #9a9890;
-                --accent: #bc4f5f;
-                --accent-dark: #9b3d4c;
-                --accent-tint: #f3d6da;
-                --border: #d9d2c3;
-                --border-strong: #b8ae97;
+                --bg:             var(--light-bg);
+                --panel:          var(--light-panel);
+                --fg:             var(--light-fg);
+                --fg-muted:       var(--light-fg-muted);
+                --fg-subtle:      var(--light-fg-subtle);
+                --accent:         var(--light-accent);
+                --accent-hover:   var(--light-accent-hover);
+                --accent-tint:    var(--light-accent-tint);
+                --border:         var(--light-border);
+                --border-strong:  var(--light-border-strong);
             }
         }
 
-        /* Explicit user override (wins via higher specificity than :root) */
+        /* Explicit user override via [data-theme] wins over :root + @media */
         html[data-theme="dark"] {
-            --bg: #15161a;
-            --panel: #1c1d22;
-            --fg: #d4d4d0;
-            --fg-muted: #8a8a86;
-            --fg-subtle: #55565b;
-            --accent: #d46a79;
-            --accent-dark: #e88293;
-            --accent-tint: rgba(212, 106, 121, 0.18);
-            --border: #2a2b30;
-            --border-strong: #3a3b42;
+            --bg:             var(--dark-bg);
+            --panel:          var(--dark-panel);
+            --fg:             var(--dark-fg);
+            --fg-muted:       var(--dark-fg-muted);
+            --fg-subtle:      var(--dark-fg-subtle);
+            --accent:         var(--dark-accent);
+            --accent-hover:   var(--dark-accent-hover);
+            --accent-tint:    var(--dark-accent-tint);
+            --border:         var(--dark-border);
+            --border-strong:  var(--dark-border-strong);
         }
         html[data-theme="light"] {
-            --bg: #f4efe3;
-            --panel: #fbf7ec;
-            --fg: #2b2a26;
-            --fg-muted: #6b6a63;
-            --fg-subtle: #9a9890;
-            --accent: #bc4f5f;
-            --accent-dark: #9b3d4c;
-            --accent-tint: #f3d6da;
-            --border: #d9d2c3;
-            --border-strong: #b8ae97;
+            --bg:             var(--light-bg);
+            --panel:          var(--light-panel);
+            --fg:             var(--light-fg);
+            --fg-muted:       var(--light-fg-muted);
+            --fg-subtle:      var(--light-fg-subtle);
+            --accent:         var(--light-accent);
+            --accent-hover:   var(--light-accent-hover);
+            --accent-tint:    var(--light-accent-tint);
+            --border:         var(--light-border);
+            --border-strong:  var(--light-border-strong);
         }
 
         * { box-sizing: border-box; }
@@ -107,7 +136,7 @@
 
         a:hover {
             text-decoration: underline;
-            color: var(--accent-dark);
+            color: var(--accent-hover);
         }
 
         /* -------- Header: prompt line -------- */
@@ -280,13 +309,13 @@
 
         .marker:hover {
             opacity: 1;
-            background: var(--accent-dark);
+            background: var(--accent-hover);
             transform: translate(-50%, -50%) scale(1.25);
         }
 
         .marker.highlight {
             opacity: 1 !important;
-            background: var(--accent-dark);
+            background: var(--accent-hover);
             transform: translate(-50%, -50%) scale(1.6) !important;
             box-shadow: 0 0 0 3px var(--accent-tint), 0 0 0 5px var(--accent);
             z-index: 100;

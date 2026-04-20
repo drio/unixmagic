@@ -17,51 +17,78 @@
       })();
     </script>
     <style>
+        /* =====================================================
+           Color tokens — single source of truth for the palette.
+           Edit values here. Everything below just aliases them.
+           ===================================================== */
         :root {
-            /* Default: dark */
-            --bg: #15161a;
-            --panel: #1c1d22;
-            --fg: #d4d4d0;
-            --fg-muted: #8a8a86;
-            --fg-subtle: #55565b;
-            --accent: #d46a79;
-            --accent-dark: #e88293;
-            --border: #2a2b30;
+            /* Dark palette */
+            --dark-bg:           #15161a;
+            --dark-panel:        #1c1d22;
+            --dark-fg:           #d4d4d0;
+            --dark-fg-muted:     #8a8a86;
+            --dark-fg-subtle:    #55565b;
+            --dark-accent:       #d46a79;
+            --dark-accent-hover: #e88293;  /* on dark, hover is brighter */
+            --dark-border:       #2a2b30;
+
+            /* Light palette */
+            --light-bg:           #f4efe3;
+            --light-panel:        #fbf7ec;
+            --light-fg:           #2b2a26;
+            --light-fg-muted:     #6b6a63;
+            --light-fg-subtle:    #9a9890;
+            --light-accent:       #bc4f5f;
+            --light-accent-hover: #9b3d4c;  /* on light, hover is darker */
+            --light-border:       #d9d2c3;
+
             --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+
+            /* Default binding: dark */
+            --bg:           var(--dark-bg);
+            --panel:        var(--dark-panel);
+            --fg:           var(--dark-fg);
+            --fg-muted:     var(--dark-fg-muted);
+            --fg-subtle:    var(--dark-fg-subtle);
+            --accent:       var(--dark-accent);
+            --accent-hover: var(--dark-accent-hover);
+            --border:       var(--dark-border);
         }
 
+        /* Auto mode: follow the OS when it prefers light */
         @media (prefers-color-scheme: light) {
             :root {
-                --bg: #f4efe3;
-                --panel: #fbf7ec;
-                --fg: #2b2a26;
-                --fg-muted: #6b6a63;
-                --fg-subtle: #9a9890;
-                --accent: #bc4f5f;
-                --accent-dark: #9b3d4c;
-                --border: #d9d2c3;
+                --bg:           var(--light-bg);
+                --panel:        var(--light-panel);
+                --fg:           var(--light-fg);
+                --fg-muted:     var(--light-fg-muted);
+                --fg-subtle:    var(--light-fg-subtle);
+                --accent:       var(--light-accent);
+                --accent-hover: var(--light-accent-hover);
+                --border:       var(--light-border);
             }
         }
 
+        /* Explicit user override via [data-theme] wins over :root + @media */
         html[data-theme="dark"] {
-            --bg: #15161a;
-            --panel: #1c1d22;
-            --fg: #d4d4d0;
-            --fg-muted: #8a8a86;
-            --fg-subtle: #55565b;
-            --accent: #d46a79;
-            --accent-dark: #e88293;
-            --border: #2a2b30;
+            --bg:           var(--dark-bg);
+            --panel:        var(--dark-panel);
+            --fg:           var(--dark-fg);
+            --fg-muted:     var(--dark-fg-muted);
+            --fg-subtle:    var(--dark-fg-subtle);
+            --accent:       var(--dark-accent);
+            --accent-hover: var(--dark-accent-hover);
+            --border:       var(--dark-border);
         }
         html[data-theme="light"] {
-            --bg: #f4efe3;
-            --panel: #fbf7ec;
-            --fg: #2b2a26;
-            --fg-muted: #6b6a63;
-            --fg-subtle: #9a9890;
-            --accent: #bc4f5f;
-            --accent-dark: #9b3d4c;
-            --border: #d9d2c3;
+            --bg:           var(--light-bg);
+            --panel:        var(--light-panel);
+            --fg:           var(--light-fg);
+            --fg-muted:     var(--light-fg-muted);
+            --fg-subtle:    var(--light-fg-subtle);
+            --accent:       var(--light-accent);
+            --accent-hover: var(--light-accent-hover);
+            --border:       var(--light-border);
         }
 
         * { box-sizing: border-box; }
@@ -79,7 +106,7 @@
         ::selection { background: rgba(212, 106, 121, 0.3); color: var(--fg); }
 
         a { color: var(--accent); text-decoration: none; }
-        a:hover { text-decoration: underline; color: var(--accent-dark); }
+        a:hover { text-decoration: underline; color: var(--accent-hover); }
 
         .container {
             max-width: 820px;
