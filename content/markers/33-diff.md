@@ -14,5 +14,5 @@ of the same file.
 For example, `diff` can be used to find which lines have changed in a source file,
 allowing for only transmission of the changes, rather than the whole file.
 
-`diff` as developed in the early 1970s at Bell Labs.
+`diff` was developed in the early 1970s at Bell Labs.
 
