@@ -6,94 +6,194 @@
     <title>{{ .Title }} - {{ .Site.Title }}</title>
     <link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ "favicon.png" | relURL }}">
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t === 'light' || t === 'dark') {
+            document.documentElement.setAttribute('data-theme', t);
+          }
+        } catch (e) {}
+      })();
+    </script>
     <style>
+        :root {
+            /* Default: dark */
+            --bg: #15161a;
+            --panel: #1c1d22;
+            --fg: #d4d4d0;
+            --fg-muted: #8a8a86;
+            --fg-subtle: #55565b;
+            --accent: #d46a79;
+            --accent-dark: #e88293;
+            --border: #2a2b30;
+            --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg: #f4efe3;
+                --panel: #fbf7ec;
+                --fg: #2b2a26;
+                --fg-muted: #6b6a63;
+                --fg-subtle: #9a9890;
+                --accent: #bc4f5f;
+                --accent-dark: #9b3d4c;
+                --border: #d9d2c3;
+            }
+        }
+
+        html[data-theme="dark"] {
+            --bg: #15161a;
+            --panel: #1c1d22;
+            --fg: #d4d4d0;
+            --fg-muted: #8a8a86;
+            --fg-subtle: #55565b;
+            --accent: #d46a79;
+            --accent-dark: #e88293;
+            --border: #2a2b30;
+        }
+        html[data-theme="light"] {
+            --bg: #f4efe3;
+            --panel: #fbf7ec;
+            --fg: #2b2a26;
+            --fg-muted: #6b6a63;
+            --fg-subtle: #9a9890;
+            --accent: #bc4f5f;
+            --accent-dark: #9b3d4c;
+            --border: #d9d2c3;
+        }
+
+        * { box-sizing: border-box; }
+
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #fff;
+            font-family: var(--mono);
+            font-size: 14px;
+            line-height: 1.6;
+            background-color: var(--bg);
+            color: var(--fg);
         }
 
+        ::selection { background: rgba(212, 106, 121, 0.3); color: var(--fg); }
+
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; color: var(--accent-dark); }
+
         .container {
-            max-width: 800px;
+            max-width: 820px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 22px 18px 40px;
         }
 
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-bottom: 20px;
-            border-bottom: 2px solid #e0e0e0;
+            gap: 12px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid var(--border);
+            font-size: 13px;
+            flex-wrap: wrap;
         }
 
         .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-            color: #bc4f5f;
-            font-weight: bold;
-            transition: color 0.2s;
+            color: var(--fg-muted);
+            font-size: 13px;
         }
-
-        .back-link:hover {
-            color: #a53f4f;
-        }
+        .back-link::before { content: "["; color: var(--fg-subtle); }
+        .back-link::after  { content: "]"; color: var(--fg-subtle); }
+        .back-link:hover { color: var(--accent); text-decoration: none; }
+        .back-link:hover::before, .back-link:hover::after { color: var(--accent); }
 
         .marker-number {
-            background-color: #bc4f5f;
-            color: white;
-            font-size: 18px;
-            width: 36px;
-            height: 36px;
-            line-height: 36px;
-            text-align: center;
+            background-color: var(--accent);
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            width: 34px;
+            height: 34px;
+            line-height: 1;
+            padding-top: 1px;
             border-radius: 50%;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
         }
 
         .content {
-            padding: 30px 0;
+            padding: 26px 0 10px;
+        }
+
+        .title-block {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
         }
 
         h1 {
-            color: #333;
-            margin-bottom: 10px;
+            color: var(--fg);
+            margin: 0;
+            font-size: 20px;
+            font-weight: 700;
         }
 
         .description {
-            font-size: 18px;
-            color: #666;
-            font-style: italic;
-            margin-bottom: 30px;
+            font-size: 13px;
+            color: var(--fg-muted);
+            margin-top: 2px;
         }
 
         .body {
             line-height: 1.7;
-            color: #333;
+            color: var(--fg);
+            padding: 14px 16px;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-left: 2px solid var(--accent);
         }
 
-        a {
-            color: #bc4f5f;
-            text-decoration: none;
-        }
+        .body p { margin: 0 0 12px; }
+        .body p:last-child { margin-bottom: 0; }
 
-        a:hover {
-            text-decoration: underline;
+        .body code {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            padding: 0 4px;
+            font-size: 13px;
+        }
+        .body pre {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            padding: 10px 12px;
+            overflow-x: auto;
+            font-size: 13px;
+        }
+        .body pre code { background: none; border: none; padding: 0; }
+
+        .footer {
+            margin-top: 24px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border);
+            font-size: 12px;
+            color: var(--fg-subtle);
+            letter-spacing: 0.2em;
+            text-align: center;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <a href="{{ "/" | relURL }}" class="back-link">← Home</a>
-            <a href="{{ "/" | relURL }}#{{ .File.BaseFileName }}" class="back-link">View on Interactive Poster →</a>
+            <a href="{{ "/" | relURL }}" class="back-link">← home</a>
+            <a href="{{ "/" | relURL }}#{{ .File.BaseFileName }}" class="back-link">open on poster →</a>
         </div>
 
         <div class="content">
-            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+            <div class="title-block">
                 <span class="marker-number">{{ .Params.number }}</span>
                 <div>
                     <h1>{{ .Title }}</h1>
@@ -105,6 +205,8 @@
                 {{ .Content }}
             </div>
         </div>
+
+        <div class="footer">-- EOF --</div>
     </div>
 </body>
 </html>
