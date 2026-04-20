@@ -520,6 +520,33 @@
             margin-bottom: 10px;
         }
 
+        /* Man-page style footer line: UNIX-MAGIC(1)   DATE · SHA   author
+           Mirrors real man pages, which put version metadata in a
+           left/center/right row at the bottom of each page. */
+        .footer-manline {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 12px;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 11px;
+            color: var(--fg-subtle);
+            font-variant-numeric: tabular-nums;
+        }
+        .footer-manline > * { white-space: nowrap; }
+        .footer-manline .v-mid { color: var(--fg-muted); }
+        .footer-manline a {
+            color: inherit;
+            border-bottom: 1px dotted var(--fg-subtle);
+        }
+        .footer-manline a:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+            text-decoration: none;
+        }
+
         .footer a {
             color: var(--accent);
             font-weight: 600;
@@ -755,6 +782,32 @@
             <div class="help-section-title">See also</div>
             <div class="help-section-body"><a href="#poster-info">about</a>, <a href="https://github.com/drio/unixmagic" target="_blank">github</a></div>
         </div>
+
+        {{/* Project version: prefer data/version.toml (set by `make`,
+             tracks HEAD including layout commits); fall back to the
+             most recently edited content page's GitInfo for direct
+             `hugo` invocations. */}}
+        {{ $v := .Site.Data.version }}
+        {{ $ghash := "" }}{{ $gfull := "" }}{{ $gdate := "" }}
+        {{ if $v }}
+            {{ $ghash = $v.hash }}{{ $gfull = $v.full_hash }}{{ $gdate = $v.date }}
+        {{ else }}
+            {{ $latestPage := index (first 1 (sort .Site.RegularPages "GitInfo.AuthorDate" "desc")) 0 }}
+            {{ with $latestPage.GitInfo }}
+                {{ $ghash = .AbbreviatedHash }}{{ $gfull = .Hash }}{{ $gdate = .AuthorDate.Format "2006-01-02" }}
+            {{ end }}
+        {{ end }}
+
+        {{ if $ghash }}
+        <div class="help-section">
+            <div class="help-section-title">Version</div>
+            <div class="help-section-body">
+                <div class="row"><span class="k">name</span><span>unix-magic(1)</span></div>
+                <div class="row"><span class="k">date</span><span>{{ $gdate }}</span></div>
+                <div class="row"><span class="k">commit</span><span><a href="https://github.com/drio/unixmagic/commit/{{ $gfull }}" target="_blank">{{ $ghash }}</a></span></div>
+            </div>
+        </div>
+        {{ end }}
     </div>
 
     <div class="frame-container" id="frame-container">
@@ -878,7 +931,17 @@
     </div>
 
     <div class="footer">
-        made with unix by <a href="https://driohq.net" target="_blank">drio</a>
+        <div class="footer-manline">
+            <span>UNIX-MAGIC(1)</span>
+            <span class="v-mid">
+                {{ if $ghash }}
+                    {{ $gdate }} · <a href="https://github.com/drio/unixmagic/commit/{{ $gfull }}" target="_blank">{{ $ghash }}</a>
+                {{ else }}
+                    unixmagic.net
+                {{ end }}
+            </span>
+            <span>made with unix by <a href="https://driohq.net" target="_blank">drio</a></span>
+        </div>
     </div>
 
     <script>

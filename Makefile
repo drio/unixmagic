@@ -1,11 +1,24 @@
-.PHONY: all info serve
+.PHONY: all info serve serve/all build version
 all: 
 	@cat Makefile
 
-serve:
+# Write current git HEAD into data/version.toml so Hugo templates can
+# display the project's actual version (not just the last content edit,
+# which is all .GitInfo on a Page gives you). Regenerated every run.
+version:
+	@mkdir -p data
+	@printf 'hash = "%s"\nfull_hash = "%s"\ndate = "%s"\n' \
+	  "$$(git rev-parse --short HEAD)" \
+	  "$$(git rev-parse HEAD)" \
+	  "$$(git log -1 --format=%cs)" > data/version.toml
+
+build: version
+	hugo --minify
+
+serve: version
 	hugo server --buildDrafts --baseURL=http://localhost:1313/
 
-serve/all:
+serve/all: version
 	hugo server --buildDrafts --bind 0.0.0.0 --baseURL=http://localhost:1313/
 
 info:
