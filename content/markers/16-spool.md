@@ -9,9 +9,9 @@ description: "/usr/spool"
 
 This references `/usr/spool`, a directory used for temporary storage of data
 waiting to be processed. Print jobs, outgoing mail, and UUCP transfers all
-queued here. The name comes from "Simultaneous Peripheral Operations On-Line"
-- a way to let slow devices (like printers) work through a backlog without
-blocking the rest of the system. On modern systems, this directory has moved to
+queued here. The name is commonly said to be a backronym for "Simultaneous Peripheral
+Operations On-Line" - a way to let slow devices (like printers) work through a backlog
+without blocking the rest of the system. On modern systems, this directory has moved to
 `/var/spool`.
 
 Thanks to Andrew Tanenbaum for pointing out that threads were not available in
