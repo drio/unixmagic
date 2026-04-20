@@ -287,6 +287,55 @@
             margin-bottom: 16px;
         }
 
+        /* -------- Man-page sub-sections inside About -------- */
+        .man-section { margin: 14px 0; }
+        .man-section-title {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            color: var(--fg);
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+        .man-section-body {
+            color: var(--fg);
+            padding-left: 16px;
+        }
+        .man-section-body p { margin: 0 0 10px; }
+        .man-section-body p:last-child { margin-bottom: 0; }
+
+        .man-row {
+            display: grid;
+            grid-template-columns: 190px 1fr;
+            gap: 12px;
+            padding: 1px 0;
+            color: var(--fg-muted);
+            font-size: 13px;
+        }
+        .man-row .k { color: var(--accent); }
+        .man-row .k a { color: inherit; }
+        .man-row a { word-break: break-all; }
+
+        /* -------- File viewer (images opened from the FILES section) -------- */
+        .file-viewer { width: min(80vw, 900px); }
+        .file-viewer .side-content {
+            border-left: 2px solid var(--accent);
+            padding: 16px 14px 14px;
+            overflow: auto;
+        }
+        .file-viewer img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0;
+        }
+        .file-caption {
+            font-size: 12px;
+            color: var(--fg-muted);
+            margin-bottom: 10px;
+            font-family: var(--mono);
+        }
+
         /* -------- Poster + markers -------- */
         .image-container {
             position: relative;
@@ -917,33 +966,114 @@
                 <span class="v-mid">General Commands Manual</span>
                 <span>UNIX-MAGIC(1)</span>
             </div>
-            <p>
-                This is the <strong>UNIX Magic Poster</strong>, originally created by <strong>Gary Overacre</strong> in
-                the mid-1980s and published by UniTech Software.
-                It was later seen on display at a <a href="https://www.usenix.org/" target="_blank">USENIX
-                    Conference</a>.
-                Head over to the <a href="https://github.com/drio/unixmagic" target="_blank">repo</a> if you'd like to
-                contribute!
-            </p>
 
-            <p>
-                UNIX has been a big part of my career from the start. My first exposure was
-                during college, when I wrote most of my first-year programming assignments on
-                terminals connected to an <a href="https://en.wikipedia.org/wiki/HP-UX">HP-UX</a>
-                main server. Coming from DOS and Windows, the simplicity and power of UNIX
-                hit me right away.
-            </p>
+            <div class="man-section">
+                <div class="man-section-title">Name</div>
+                <div class="man-section-body">
+                    unix-magic — interactive guide to the UNIX Magic poster
+                </div>
+            </div>
 
-            <p>
-                That experience changed how I thought about computers. From that point on,
-                I never looked back. UNIX has been part of my computing life ever since.
-                This project is my way of celebrating that.
-            </p>
+            <div class="man-section">
+                <div class="man-section-title">Description</div>
+                <div class="man-section-body">
+                    <p>
+                        This is the <strong>UNIX Magic Poster</strong>, originally created
+                        by <strong>Gary Overacre</strong> in the mid-1980s and published
+                        by UniTech Software, Inc. It was later seen on display at
+                        a <a href="https://www.usenix.org/" target="_blank">USENIX Conference</a>.
+                    </p>
+                </div>
+            </div>
+
+            <div class="man-section">
+                <div class="man-section-title">History</div>
+                <div class="man-section-body">
+                    <p>
+                        UNIX has been a big part of my career from the start. My first
+                        exposure was during college, when I wrote most of my first-year
+                        programming assignments on terminals connected to
+                        an <a href="https://en.wikipedia.org/wiki/HP-UX">HP-UX</a> main
+                        server. Coming from DOS and Windows, the simplicity and power of
+                        UNIX hit me right away.
+                    </p>
+                    <p>
+                        That experience changed how I thought about computers. From that
+                        point on, I never looked back. UNIX has been part of my computing
+                        life ever since. This project is my way of celebrating that.
+                    </p>
+                </div>
+            </div>
+
+            <div class="man-section">
+                <div class="man-section-title">Author</div>
+                <div class="man-section-body">
+                    Poster artwork by <strong>Gary Overacre</strong> (mid-1980s),
+                    published by UniTech Software, Inc.<br>
+                    Site by <a href="https://driohq.net" target="_blank">drio</a>.
+                </div>
+            </div>
+
+            <div class="man-section">
+                <div class="man-section-title">See also</div>
+                <div class="man-section-body">
+                    <div class="man-row"><span class="k">hn(2025)</span><a href="https://news.ycombinator.com/item?id=43019136" target="_blank">news.ycombinator.com/item?id=43019136</a></div>
+                    <div class="man-row"><span class="k">hn(2021)</span><a href="https://news.ycombinator.com/item?id=27029196" target="_blank">news.ycombinator.com/item?id=27029196</a></div>
+                    <div class="man-row"><span class="k">blog</span><a href="https://jpmens.net/2021/04/09/the-unix-magic-poster/" target="_blank">jpmens.net — The UNIX Magic Poster (2021)</a></div>
+                    <div class="man-row"><span class="k">source</span><a href="https://github.com/drio/unixmagic" target="_blank">github.com/drio/unixmagic</a></div>
+                </div>
+            </div>
+
+            <div class="man-section">
+                <div class="man-section-title">Files</div>
+                <div class="man-section-body">
+                    <div class="man-row"><span class="k"><a href="#" class="file-link" data-target="file-view">./the-view.webp</a></span><span>Gary Overacre's second poster, “The View”</span></div>
+                    <div class="man-row"><span class="k"><a href="#" class="file-link" data-target="file-feuds">./computer-feuds.webp</a></span><span>Gary Overacre's third poster, “Computer Feuds”</span></div>
+                    <div class="man-row"><span class="k"><a href="#" class="file-link" data-target="file-puzzle">./puzzle.webp</a></span><span>a 1000-piece puzzle drio had made of this poster</span></div>
+                </div>
+            </div>
+
+            <div class="man-section">
+                <div class="man-section-title">Contributing</div>
+                <div class="man-section-body">
+                    <p>
+                        Contributions welcome. When adding an annotation, try to frame it
+                        in the context of UNIX's early days: how did this functionality
+                        compare to other systems at the time? What made it special? This
+                        project isn't just about explaining what things are, but why they
+                        mattered—technically and culturally.
+                    </p>
+                </div>
+            </div>
 
             <div class="sig">
                 <pre>$ ./enjoy
 -- drio</pre>
             </div>
+        </div>
+    </div>
+
+    <!-- Image viewers opened from the FILES section. Reuse .side-container
+         so they slide in from the left exactly like annotations. -->
+    <div id="file-view" class="side-container file-viewer">
+        <button class="close-btn">✕</button>
+        <div class="side-content">
+            <div class="file-caption">./the-view.webp — Gary Overacre, “The View”</div>
+            <img src="{{ "view.small.webp" | relURL }}" alt="The View poster by Gary Overacre">
+        </div>
+    </div>
+    <div id="file-feuds" class="side-container file-viewer">
+        <button class="close-btn">✕</button>
+        <div class="side-content">
+            <div class="file-caption">./computer-feuds.webp — Gary Overacre, “Computer Feuds”</div>
+            <img src="{{ "feuds.small.webp" | relURL }}" alt="Computer Feuds poster by Gary Overacre">
+        </div>
+    </div>
+    <div id="file-puzzle" class="side-container file-viewer">
+        <button class="close-btn">✕</button>
+        <div class="side-content">
+            <div class="file-caption">./puzzle.webp — 1000-piece puzzle drio had made</div>
+            <img src="{{ "puzzle.webp" | relURL }}" alt="Custom puzzle of the UNIX Magic Poster">
         </div>
     </div>
 
@@ -996,6 +1126,7 @@
         //    FrameMode  "show-all" split view with flanking reference lists
         //    Help       man-page help dialog
         //    Share      copy-link button for each annotation
+        //    Files      FILES section — clickable paths that open images
         //    Loading    initial overlay
         // =====================================================================
 
@@ -1149,6 +1280,17 @@
             }
         };
 
+        const Files = {
+            init() {
+                document.querySelectorAll('.file-link').forEach(link => {
+                    link.addEventListener('click', e => {
+                        e.preventDefault();
+                        Panel.open(link.dataset.target);
+                    });
+                });
+            }
+        };
+
         const Loading = {
             finish() {
                 const el = document.getElementById('loading');
@@ -1184,6 +1326,7 @@
             FrameMode.init(document.getElementById('frame-toggle'));
             Help.init(document.getElementById('help-container'), document.getElementById('help-toggle'));
             Share.init();
+            Files.init();
 
             document.querySelectorAll('.back-to-top').forEach(a => {
                 a.addEventListener('click', e => {
