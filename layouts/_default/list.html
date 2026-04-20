@@ -1303,11 +1303,15 @@
 
         // ----- Cross-module handlers -----------------------------------------
 
-        // Clicking anywhere outside a panel, marker, or frame-item closes open panels
+        // Clicking anywhere outside a panel, marker, frame-item, or
+        // file-link closes open panels. file-link has to be exempt because
+        // it opens a panel; without this, the bubbling click would
+        // immediately close the panel it just opened.
         function onOutsideClick(event) {
             if (event.target.closest('.side-container')) return;
             if (event.target.classList.contains('marker')) return;
             if (event.target.closest('.frame-item'))     return;
+            if (event.target.closest('.file-link'))      return;
             Panel.closeAll();
         }
 
