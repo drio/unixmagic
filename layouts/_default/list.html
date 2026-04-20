@@ -1080,7 +1080,7 @@
     <div class="annotations">
         <div class="annotations-header">cat markers/*.md</div>
         {{ range sort (where .Site.RegularPages "Section" "markers") ".Params.number" }}
-        <div id="annotation-{{ .File.BaseFileName }}" class="annotation">
+        <div id="card-{{ .File.BaseFileName }}" class="annotation">
             <div class="annotation-header">
                 <span class="annotation-number">{{ .Params.number }}</span>
                 <div class="annotation-text">
