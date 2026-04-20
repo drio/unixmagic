@@ -13,5 +13,6 @@ printers and terminal windows.
 It is an integral part of the Unix help system, being used to format man pages for display.
 
 The letters *Jfo* stand for Joseph Frank Ossanna
-who created the original version of `nroff` for Version 2 Unix.
+who wrote the original version of `nroff` at Bell Labs in the early 1970s for
+Research Unix.
 
