@@ -12,6 +12,6 @@ and are often started at system boot time. They respond to network requests, har
 or other programs by performing some task. Daemons such as cron may also perform
 defined tasks at scheduled times.
 
-The term was coined by the programmers at MIT's Project MAC. It is inspired by Maxwell's demon and
-greek mythology, acting as a metaphor for a supernatural being working in the background.
+The term was coined by the programmers at MIT's Project MAC. It was taken from Maxwell's demon
+(itself named after the Greek δαίμων), a metaphor for a supernatural being working in the background.
 
