@@ -731,8 +731,12 @@
         }
 
         @media (max-width: 600px) {
-            .header { gap: 0 10px; font-size: 12px; padding: 12px 10px 8px; }
+            .header { gap: 6px 10px; font-size: 12px; padding: 12px 10px 8px; }
             .prompt { font-size: 12px; }
+            /* Neutralize the desktop push-right; at this width the header
+               wraps onto multiple rows and we want items to sit next to
+               each other centered, not jump to the right edge. */
+            #theme-toggle { margin-left: 0; }
             .poster-info { padding: 16px 14px 4px; }
             .annotations { padding: 8px 10px 24px; }
             .side-container { width: 92vw; padding: 18px 18px 18px 16px; }
