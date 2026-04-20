@@ -1269,7 +1269,7 @@
             init() {
                 document.querySelectorAll('.share-btn').forEach(btn => {
                     btn.addEventListener('click', () => {
-                        const url = `${location.origin}${location.pathname}#${btn.dataset.hash}`;
+                        const url = `${location.origin}${location.pathname}#annotation-${btn.dataset.hash}`;
                         navigator.clipboard.writeText(url).then(() => {
                             const original = btn.textContent;
                             btn.textContent = 'copied';
