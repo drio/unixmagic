@@ -140,16 +140,36 @@
         }
 
         /* -------- Header: prompt line -------- */
+        /* Header is two stacked rows:
+             row 1: the shell invocation (drio@unixmagic:~$ ls)
+             row 2: the nav + display toggles, which read as the
+                    output of that invocation */
         .header {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             align-items: center;
-            gap: 0 14px;
-            justify-content: center;
+            gap: 4px;
             padding: 14px 16px 10px;
             font-size: 13px;
             border-bottom: 1px solid var(--border);
             background: var(--bg);
+        }
+
+        .header-prompt {
+            display: flex;
+            gap: 8px;
+            align-items: baseline;
+        }
+        .header-prompt .cmd { color: var(--fg); }
+
+        .header-nav {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 4px 14px;
+            width: 100%;
+            max-width: 1100px;
+            justify-content: flex-start;
         }
 
         .prompt {
@@ -731,11 +751,11 @@
         }
 
         @media (max-width: 600px) {
-            .header { gap: 6px 10px; font-size: 12px; padding: 12px 10px 8px; }
+            .header { padding: 12px 10px 8px; font-size: 12px; }
             .prompt { font-size: 12px; }
-            /* Neutralize the desktop push-right; at this width the header
-               wraps onto multiple rows and we want items to sit next to
-               each other centered, not jump to the right edge. */
+            /* At iPhone widths, let the nav center itself and drop the
+               push-right so the toggles sit naturally among the links. */
+            .header-nav { justify-content: center; }
             #theme-toggle { margin-left: 0; }
             .poster-info { padding: 16px 14px 4px; }
             .annotations { padding: 8px 10px 24px; }
@@ -754,14 +774,19 @@
     </div>
 
     <div class="header">
-        <span class="prompt"><span class="user">drio</span>@<span class="host">unixmagic</span>:~$</span>
-        <a href="#poster-info" class="header-link">about</a>
-        <a href="https://github.com/drio/unixmagic" target="_blank" class="header-link">github</a>
-        <a href="#" class="header-link" id="help-toggle">help</a>
-        {{ $i := "index.xml" }}
-        <a href="{{ $i | relURL }}" class="header-link" title="RSS Feed">rss</a>
-        <button class="header-toggle" id="theme-toggle" title="Toggle light/dark theme">theme</button>
-        <button class="header-toggle frame-toggle" id="frame-toggle" title="Show all annotations">show-all</button>
+        <div class="header-prompt">
+            <span class="prompt"><span class="user">drio</span>@<span class="host">unixmagic</span>:~$</span>
+            <span class="cmd">ls</span>
+        </div>
+        <div class="header-nav">
+            <a href="#poster-info" class="header-link">about</a>
+            <a href="https://github.com/drio/unixmagic" target="_blank" class="header-link">github</a>
+            <a href="#" class="header-link" id="help-toggle">help</a>
+            {{ $i := "index.xml" }}
+            <a href="{{ $i | relURL }}" class="header-link" title="RSS Feed">rss</a>
+            <button class="header-toggle" id="theme-toggle" title="Toggle light/dark theme">theme</button>
+            <button class="header-toggle frame-toggle" id="frame-toggle" title="Show all annotations">show-all</button>
+        </div>
     </div>
 
     <!-- Help dialog (man-page style) -->
