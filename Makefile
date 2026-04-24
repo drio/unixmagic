@@ -1,5 +1,5 @@
-.PHONY: all info serve serve/all build version
-all: 
+.PHONY: help info serve serve-all build version
+help:
 	@cat Makefile
 
 # Write current git HEAD into data/version.toml so Hugo templates can
@@ -18,22 +18,30 @@ build: version
 serve: version
 	hugo server --buildDrafts --baseURL=http://localhost:1313/
 
-serve/all: version
+serve-all: version
 	hugo server --buildDrafts --bind 0.0.0.0 --baseURL=http://localhost:1313/
 
 info:
-	identify ump.webp
+	identify static/ump.webp
 
-#convert ump.png -resize 1920x ump.webp
-static/umn.webp: static/ump.png
-	convert ump.png ump.webp
+# Fetch the poster image if it's missing.
+static/ump.png:
+	wget -O $@ https://github.com/tyingq/unix-magic-poster/raw/main/ump.png
 
-static/ump.png: static
-	wget https://github.com/tyingq/unix-magic-poster/raw/main/ump.png
+# Regenerate the WebP from the PNG.
+static/ump.webp: static/ump.png
+	convert static/ump.png static/ump.webp
 
-static: 
-	mkdir static
-
-static/favicon.ico:
+static/favicon.ico: static/ump.webp
 	convert static/ump.webp -resize 48x48 static/favicon.ico
 
+# 180x180 home-screen icon for iOS. Matches favicon.png's framing
+# (whole poster squashed into a square).
+static/apple-touch-icon.png: static/ump.webp
+	ffmpeg -y -v error -i static/ump.webp -vf "scale=180:180:flags=lanczos" -frames:v 1 $@
+
+# Convert the oversized animated demo GIF into animated WebP.
+# Needs `gif2webp` (brew install webp). Animated WebP is typically
+# ~10x smaller than the GIF and renders in the GitHub README <img> tag.
+unixmagic.desktop.v2.webp: unixmagic.desktop.v2.gif
+	gif2webp -q 75 -m 6 -mt $< -o $@
