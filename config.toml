@@ -6,9 +6,10 @@ languageCode = "en-us"
 title = "Unix Magic Poster Annotations"
 enableGitInfo = true
 
+[params]
+  description = "An interactive, annotated guide to every reference on the classic UNIX Magic poster by Gary Overacre."
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
-
-

@@ -1,4 +1,4 @@
-{{- with .OutputFormats.Get "RSS" }}
+{{- with .OutputFormats.Get "RSS" -}}
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>{{ site.Title }}</title>
@@ -7,12 +7,12 @@
     {{ range where site.RegularPages "Section" "markers" }}
     <item>
       <title>{{ .Title }}</title>
-      <link>{{ site.BaseURL }}#annotation-{{ .File.BaseFileName }}</link>
+      <link>{{ .Permalink }}</link>
+      <guid>{{ .Permalink }}</guid>
       <description>{{ .Params.description | html }}</description>
-      <content:encoded>{{ .Content | safeHTML | htmlEscape }}</content:encoded>
+      <content:encoded>{{ printf "<![CDATA[%s]]>" .Content | safeHTML }}</content:encoded>
     </item>
     {{ end }}
   </channel>
 </rss>
-{{- end }}
-
+{{- end -}}
