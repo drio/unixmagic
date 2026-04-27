@@ -1,6 +1,6 @@
 # Unix Magic Poster Reference Tracker
 
-![Live site.](https://unixmagic.net)
+[Live site.](https://unixmagic.net)
 
 ![](./unixmagic.desktop.gif)
 
