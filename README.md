@@ -1,5 +1,7 @@
 # Unix Magic Poster Reference Tracker
 
+![Live site.](https://unixmagic.net)
+
 ![](./unixmagic.desktop.gif)
 
 A pipeline that builds [a website](https://unixmagic.net) that maps and documents all the references
