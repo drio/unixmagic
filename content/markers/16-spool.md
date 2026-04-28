@@ -18,7 +18,3 @@ Operations On-Line*, which has the ring of something invented after the
 fact to justify a word everyone was already using. The underlying idea
 is older than Unix: buffer work to disk so the slow device doesn't hold
 up the fast one.
-
-Thanks to Andrew Tanenbaum for pointing out that threads were not available in
-early UNIX. He also shared [Rob Pike's UNIX
-quiz](https://commandcenter.blogspot.com/2020/01/unix-quiz.html).
