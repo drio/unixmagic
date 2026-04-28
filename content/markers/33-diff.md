@@ -15,4 +15,3 @@ For example, `diff` can be used to find which lines have changed in a source fil
 allowing for only transmission of the changes, rather than the whole file.
 
 `diff` was developed in the early 1970s at Bell Labs.
-

@@ -4,31 +4,23 @@ number: "21"
 position:
   left: "17%"
   top: "58%"
-description: "The booting process (or Unix Networking Sockets)"
+description: "The booting process, or maybe a Unix socket"
 ---
 
-I have to admit, this object looks more like a boot than a sock, but I find it
-hard to believe that the author would leave out a reference to sockets,
-considering how important they are, not only in UNIX but in the history of
-operating systems.  
+I have to admit, this object looks more like a boot than a sock. But
+it's hard to believe the artist would leave out sockets, given how
+central they are to Unix and operating systems generally. So I see two
+readings:
 
-For that reason, I see two possibilities:
+- If it's a **boot**, it points to the boot process — the small dance of
+  firmware, boot loader, and kernel that brings the system to life.
+- If it's a **sock** (a thick, oversized one), it's a nod to Unix
+  **network sockets**. Sockets arrived in 4.2BSD in 1983 and gave
+  processes a single API for talking to each other, whether they were on
+  the same machine (Unix-domain sockets) or across a TCP/IP network.
+  Almost every other operating system eventually adopted the Berkeley
+  socket interface.
 
-
-- If it is a boot, it may represent the booting process of the UNIX operating
-system, a fundamental part of bringing the system to life.
-
-- Alternatively, if it is a sock (granted, a thick and oversized one! 😄), it
-is likely a playful reference to UNIX network sockets.  Network sockets were an
-abstraction pioneered by UNIX in BSD UNIX (4.2BSD, 1983).  Sockets provided a
-unified interface for interprocess communication (IPC), enabling processes to
-communicate both locally (on the same machine) via UNIX domain sockets, and
-over a network using TCP/IP.  The socket API from BSD was later adopted by virtually every other operating
-system.
-
-For more on the history of BSD sockets, see [Berkeley Sockets –
-Wikipedia](https://en.wikipedia.org/wiki/Berkeley_sockets), or read the
-official Linux man page for
-[`socket()`](https://man7.org/linux/man-pages/man2/socket.2.html).
-
-
+See the Wikipedia entry on [Berkeley sockets](https://en.wikipedia.org/wiki/Berkeley_sockets)
+or the [`socket(2)`](https://man7.org/linux/man-pages/man2/socket.2.html)
+man page for the API itself.

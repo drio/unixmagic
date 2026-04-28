@@ -4,11 +4,13 @@ number: "28"
 position:
   left: "79%"
   top: "33%"
-description: "A cmd to determine your location in the filesystem"
+description: "Print the current working directory"
 ---
 
-[`pwd`](https://man7.org/linux/man-pages/man1/pwd.1.html) prints the full path
-of your current working directory. It stands for "print working directory" and
-is one of the most basic navigation commands in UNIX. You use it to figure out
-where you are in the filesystem. It's been part of UNIX since the early days
-and is a shell built-in on most modern systems.
+[`pwd`](https://man7.org/linux/man-pages/man1/pwd.1.html) — "print
+working directory" — tells you where you are in the filesystem. It's
+been part of Unix from the early days and is a shell builtin on most
+modern systems, which matters because the shell tracks the logical path
+(honoring symlinks you traversed) while the external `/bin/pwd` returns
+the resolved physical path. Usually they agree; when they don't,
+`pwd -P` vs `pwd -L` is how you tell them apart.

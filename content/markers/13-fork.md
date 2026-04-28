@@ -4,12 +4,25 @@ number: "13"
 position:
   left: "25%"
   top: "90%"
-description: "An operation whereby a process creates a copy of itself"
+description: "The system call that creates a new process"
 ---
 
-In multitasking operating systems, processes need a way to create new processes.
-[Forking](https://en.wikipedia.org/wiki/Fork_(system_call)) a process is typically the
-only way of doing so in Unix-like systems.
+[`fork(2)`](https://en.wikipedia.org/wiki/Fork_(system_call)) is how Unix
+makes a new process: the kernel duplicates the calling process, and now
+there are two of them running the same code. They only differ in the
+return value of `fork` itself — zero in the child, the child's PID in the
+parent — which is how each copy knows who it is.
 
-One of the earliest references to a fork concept appeared in A Multiprocessor
-System Design by Melvin Conway, published in 1962.
+What made this radical at the time was how *cheap* it could be. Early
+Unix leaned on it for everything, and modern kernels use copy-on-write so
+the duplicated address space costs almost nothing until one side writes
+to it. The shell runs every command by forking and then calling `exec`
+in the child to replace itself with the target program. That fork/exec
+split is unusual — VMS and Windows went with a single "spawn" call that
+creates a process already running a different program — but it's what
+lets the shell set up redirections, pipes, and environment changes in
+the child after `fork` and before `exec`, using ordinary code. A lot of
+Unix's composability flows from that one design choice.
+
+Melvin Conway described the idea under the name "fork" in *A
+Multiprocessor System Design* in 1962, years before Unix existed.

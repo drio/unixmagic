@@ -4,14 +4,14 @@ number: "7"
 position:
   left: "11%"
   top: "22%"
-description: "Tell producers to stop sending data because the consumer cannot keep up"
+description: "What happens when the producer is faster than the consumer"
 ---
 
-When two processes communicate over a pipe, the process sending data is the
-producer, and the process receiving data is the consumer. The OS maintains a
-buffer to temporarily store data if the producer sends data faster than the
-consumer can process it. However, if the buffer becomes full, the OS will block
-the producer until space is available.
+When two processes talk over a pipe, one is producing data and the other
+is consuming it. The kernel holds a small buffer in between. If the
+producer gets ahead, the buffer fills, and the kernel blocks the
+producer's next `write` until the consumer drains some space. That's
+backpressure: the slow side telling the fast side to wait.
 
-Was that the intention of the artist? You decide - is the valve handle in the
-pipes a clever reference to UNIX back pressure, or is that a stretch?
+Whether the valve on the poster's pipe is a deliberate nod to this or
+just a nice bit of plumbing, I'll leave to you.

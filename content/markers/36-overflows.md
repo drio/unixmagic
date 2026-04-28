@@ -4,19 +4,26 @@ number: "36"
 position:
   left: "50%"
   top: "62%"
-description: "Buffer overflows"
+description: "Buffer overflows — writing past the end of memory"
 ---
 
-The overflowing liquid from the shell looks like a visual nod to buffer
-overflows. A buffer overflow happens when a program writes past the end of a
-fixed-size memory buffer, spilling data into adjacent memory. This can
-overwrite return addresses or other critical data, leading to crashes or
-exploitable security holes.
+The liquid sloshing out of the shell looks like a visual pun on buffer
+overflows. A buffer overflow happens when a program writes past the end
+of a fixed-size memory region, spilling data into whatever sits next
+door.
 
-Buffer overflows have been a persistent problem in C programs on UNIX systems,
-from the 1988 Morris worm (which exploited one in `fingerd`) to modern CVEs.
-C's lack of bounds checking on arrays makes this easy to get wrong, and UNIX
-systems have been a primary target because of how widely deployed they are.
+There are two flavors that matter in practice. **Stack overflows** hit
+local variables and, critically, the saved return address of the
+current function. Overwrite that, and when the function returns control
+jumps wherever the attacker wants — that's the classic 1988 Morris worm
+trick against `fingerd`, and the basis of decades of exploits. **Heap
+overflows** hit `malloc`'d memory and corrupt allocator metadata or
+adjacent objects; harder to weaponize but just as damaging.
 
-For more, see
-[Buffer overflow – Wikipedia](https://en.wikipedia.org/wiki/Buffer_overflow).
+C's lack of automatic bounds checking is what makes this easy to get
+wrong, and Unix systems have been a primary target because they're
+everywhere. Modern mitigations — stack canaries, ASLR, non-executable
+stacks, safer string functions — make exploitation harder but don't
+eliminate the class. See
+[Buffer overflow](https://en.wikipedia.org/wiki/Buffer_overflow) on
+Wikipedia for the long version.

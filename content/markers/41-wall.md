@@ -4,8 +4,19 @@ number: "41"
 position:
   left: "40%"
   top: "29%"
-description: "Utility to send a message to all users"
+description: "Broadcast a message to every logged-in user"
 ---
 
-The <a href="https://www.man7.org/linux/man-pages/man1/wall.1.html">wall</a> command is a command-line utility that displays the contents of the specified file or otherwise its standard input on the terminals of all currently logged-in users. It is typically used by root to send out shutting down message to all users just before poweroff. 
+[`wall`](https://man7.org/linux/man-pages/man1/wall.1.html) — "write to
+all" — prints a message on every terminal currently logged into the
+system. It reads from a file or stdin and pushes the contents out to
+everyone.
 
+The classic use is from root, right before a shutdown:
+
+```sh
+echo "System going down in 5 minutes. Save your work." | wall
+```
+
+On a multi-user timesharing machine in the 80s, that was how you gave
+people a heads-up before pulling the plug.

@@ -7,7 +7,7 @@ position:
 description: "The mail system format"
 ---
 
-`mbox` is a reference to the mail format from the early days of UNIX. In the
+`mbox` is a reference to the mail format from the early days of Unix. In the
 `mbox` format, all email messages for a user are stored in a single file, with
 new messages appended to the end. User mailboxes lived in
 `/usr/mail/<username>`. It's a good example of the "everything is a file"
