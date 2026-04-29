@@ -2,7 +2,7 @@
 
 [[Live site](https://unixmagic.net)]
 
-![](./unixmagic.desktop.gif)
+![](./unixmagic.desktop.v2.gif)
 
 A pipeline that builds [a website](https://unixmagic.net) that maps and documents all the references
 found in the classic Usenix Unix Magic poster. The goal is to create a
