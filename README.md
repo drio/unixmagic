@@ -1,40 +1,36 @@
 # Unix Magic Poster Reference Tracker
 
-[[Live site](https://unixmagic.net)]
+Live site: **[unixmagic.net](https://unixmagic.net)**
 
-![](./unixmagic.desktop.v2.gif)
+![Unix Magic poster walkthrough](./unixmagic.desktop.v2.webp)
 
-A pipeline that builds [a website](https://unixmagic.net) that maps and documents all the references
-found in the classic Usenix Unix Magic poster. The goal is to create a
-structured way to explore, annotate, and understand the various elements of the
-poster, making it a valuable reference for Unix enthusiasts.
+A Hugo pipeline that catalogues and annotates every reference on the classic
+USENIX UNIX Magic poster. The goal is a structured way to explore and
+understand each element of the poster — part reference, part love letter to
+early Unix.
 
 The UNIX Magic poster was created by *Gary Overacre* and published by UniTech
 Software, Inc. in the 1980s.
 
-- 🔗 You can find the latest build of this pipeline [here](https://drio.github.io/unixmagic/).
 - 📋 Marker [list](https://github.com/drio/unixmagic/issues/4) issue.
 
-Contributions welcome!
-
 ### References
-- Hacker news [discussion](https://news.ycombinator.com/item?id=43019136).
-- Hacker news (2) [discussion](https://news.ycombinator.com/item?id=47916769).
-- Previous HN [discussion](https://news.ycombinator.com/item?id=27029196).
+- Hacker News [discussion (2025)](https://news.ycombinator.com/item?id=43019136).
+- Hacker News [discussion (2025, part 2)](https://news.ycombinator.com/item?id=47916769).
+- Hacker News [discussion (2021)](https://news.ycombinator.com/item?id=27029196).
 - Jan-Piet Mens [blog post](https://jpmens.net/2021/04/09/the-unix-magic-poster/).
 
-### Contributions welcome!
+### Contributing
 
-When contributing, remember that this is an opportunity to dig deep into the
-history behind what you’re describing. Feel free to share what this particular
-component means to you personally, but also aim to frame the explanation within
-the context of Unix’s early days. How did this functionality compare to other
-operating systems at the time? What made it special or innovative? This project
-is not just about explaining what things are, but understanding why they
-mattered—both technically and culturally—in the evolution of Unix.
+Contributions welcome. When adding an annotation, remember this is a chance to
+dig into the history behind what you're describing. Share what the component
+means to you, but also frame the explanation in the context of Unix's early
+days: how did this functionality compare to other systems at the time? What
+made it special? This project isn't just about explaining what things are,
+but why they mattered — technically and culturally.
 
-Here you have the original poster (first image) and a custom puzzle I ordered,
-featuring the poster's image.
+Below: the original poster, and a custom puzzle drio had made featuring the
+poster's artwork.
 
 <div align="center">
 <img src="static/ump.webp" width="400">
@@ -43,11 +39,10 @@ featuring the poster's image.
 
 ### The other posters
 
-Did you know Gary created two other posters that never "made it"? Not sure about you, but I prefer the "Unix Magic" one.
+Gary also made two other posters that never quite landed the same way. I
+prefer "UNIX Magic", but here they are.
 
 <div align="center">
 <img src="static/view.small.webp" width="400">
 <img src="static/feuds.small.webp" width="400">
 </div>
-
-
