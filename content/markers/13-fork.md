@@ -25,4 +25,4 @@ the child after `fork` and before `exec`, using ordinary code. A lot of
 Unix's composability flows from that one design choice.
 
 Melvin Conway described the idea under the name "fork" in *A
-Multiprocessor System Design* in 1962, years before Unix existed.
+Multiprocessor System Design* in the early 1960s, years before Unix existed.
