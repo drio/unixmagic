@@ -25,6 +25,21 @@
 </head>
 
 <body>
+    {{/* Project version: prefer data/version.toml (set by `make`,
+         tracks HEAD including layout commits); fall back to the
+         most recently edited content page's GitInfo for direct
+         `hugo` invocations. */}}
+    {{ $v := hugo.Data.version }}
+    {{ $ghash := "" }}{{ $gfull := "" }}{{ $gdate := "" }}
+    {{ if $v }}
+        {{ $ghash = $v.hash }}{{ $gfull = $v.full_hash }}{{ $gdate = $v.date }}
+    {{ else }}
+        {{ $latestPage := index (first 1 (sort .Site.RegularPages "GitInfo.AuthorDate" "desc")) 0 }}
+        {{ with $latestPage.GitInfo }}
+            {{ $ghash = .AbbreviatedHash }}{{ $gfull = .Hash }}{{ $gdate = .AuthorDate.Format "2006-01-02" }}
+        {{ end }}
+    {{ end }}
+
     <div id="loading">
         <div class="load-line"><span class="prompt-char">$</span>unix-magic --init</div>
         <div class="load-line">loading references<span class="cursor"></span></div>
@@ -71,21 +86,6 @@
             <div class="help-section-title">See also</div>
             <div class="help-section-body"><a href="#poster-info">about</a>, <a href="https://github.com/drio/unixmagic" target="_blank" rel="noopener noreferrer">github</a></div>
         </div>
-
-        {{/* Project version: prefer data/version.toml (set by `make`,
-             tracks HEAD including layout commits); fall back to the
-             most recently edited content page's GitInfo for direct
-             `hugo` invocations. */}}
-        {{ $v := hugo.Data.version }}
-        {{ $ghash := "" }}{{ $gfull := "" }}{{ $gdate := "" }}
-        {{ if $v }}
-            {{ $ghash = $v.hash }}{{ $gfull = $v.full_hash }}{{ $gdate = $v.date }}
-        {{ else }}
-            {{ $latestPage := index (first 1 (sort .Site.RegularPages "GitInfo.AuthorDate" "desc")) 0 }}
-            {{ with $latestPage.GitInfo }}
-                {{ $ghash = .AbbreviatedHash }}{{ $gfull = .Hash }}{{ $gdate = .AuthorDate.Format "2006-01-02" }}
-            {{ end }}
-        {{ end }}
 
         {{ if $ghash }}
         <div class="help-section">

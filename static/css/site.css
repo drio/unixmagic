@@ -934,3 +934,10 @@ body.frame-mode .frame-sidebar-right { justify-self: start; }
     letter-spacing: 0.2em;
     text-align: center;
 }
+
+@media (prefers-reduced-motion: reduce) {
+    .prompt .cursor,
+    #loading .cursor { animation: none; }
+    .marker { animation: none; opacity: 0.92; }
+    .frame-sidebar { animation: none; }
+}

@@ -105,15 +105,15 @@ const FrameMode = {
 
     toggle(button) {
         const markers = document.querySelectorAll('.marker');
-        // Hide markers briefly while the layout shifts so they don't fly across the screen
+        // Hide markers while the layout shifts so they don't fly across the screen.
+        // Restore visibility on the next frame, after the reflow caused by the
+        // class toggle has already happened -- no arbitrary timeout needed.
         markers.forEach(m => m.style.visibility = 'hidden');
         document.body.classList.toggle('frame-mode');
         button.classList.toggle('active');
         button.textContent = button.classList.contains('active') ? 'hide-all' : 'show-all';
-        setTimeout(() => {
-            Poster.positionMarkers();
-            markers.forEach(m => m.style.visibility = '');
-        }, 100);
+        Poster.positionMarkers();
+        requestAnimationFrame(() => markers.forEach(m => m.style.visibility = ''));
     },
 
     init(button) {

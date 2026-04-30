@@ -4,7 +4,7 @@ number: "39"
 position:
   left: "50%"
   top: "77%"
-description: "Redirecting to stdout/stdin"
+description: "The drain where data goes to die — /dev/null"
 ---
 
 The skull-like spigot connected to the shell most likely represents

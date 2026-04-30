@@ -4,12 +4,21 @@ number: "12"
 position:
   left: "16%"
   top: "85%"
-description: "A software utility for collecting multiple files into a single archive file."
+description: "Pack files onto tape -- and still everywhere 45 years later"
 ---
 
-[Tar](https://en.wikipedia.org/wiki/Tar_(computing)) is a software tool for collecting multiple
-files into a single archive file, often called a tarball.
-The name is derived from "tape archive", as it was originally developed to write
-data to sequential I/O devices with no file system of their own, such as devices that use magnetic tape.
+[`tar`](https://en.wikipedia.org/wiki/Tar_(computing)) -- tape archive -- was built
+for magnetic tape drives, which are strictly sequential: you write from one end to
+the other with no random access. That constraint shaped the format permanently. tar
+concatenates files one after another with a small header in front of each, and
+that's essentially all it does. There's no index, no directory at the front. To
+list the contents of a `.tar.gz` you have to read the whole thing from the
+beginning.
 
-The command-line utility was first introduced in the Version 7 Unix in January 1979, replacing the `tp` program (which in turn replaced `tap`).
+It shipped with Version 7 Unix in 1979, replacing `tp` (which had replaced `tap`).
+The format is almost unchanged since then, which is both a testament to its
+simplicity and why people still reach for it today.
+
+The command `tar xvzf archive.tar.gz` is one of those things Unix users type
+from muscle memory without thinking about what the flags mean: e**x**tract,
+**v**erbose, g**z**ip, **f**ile. 

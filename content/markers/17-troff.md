@@ -13,4 +13,4 @@ Troff stands for "typesetter roff", developed as a descendant to
 a Unix version of one of the earliest text formatting programs called [`RUNOFF`](https://en.wikipedia.org/wiki/TYPSET_and_RUNOFF).
 A typical distribution of troff includes macros for many document styles, including ones for the Unix `man` pages.
 
-Troff was developed by Bell Labs in the 1970s, where Joseph Ossanna created `troff` by modifying `nroff` to support multiple fonts and proportional spacing.
+
