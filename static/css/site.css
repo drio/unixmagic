@@ -464,9 +464,10 @@ button.marker {
 
 .annotation-body p { margin: 0 0 10px; }
 .annotation-body code {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    padding: 0 4px;
+    background: var(--accent-tint);
+    border: 1px solid var(--border-strong);
+    color: var(--accent);
+    padding: 1px 5px;
     font-size: 13px;
 }
 .annotation-body pre {
@@ -911,9 +912,10 @@ body.frame-mode .frame-sidebar-right { justify-self: start; }
 .single-body p:last-child { margin-bottom: 0; }
 
 .single-body code {
-    background: var(--bg);
-    border: 1px solid var(--border);
-    padding: 0 4px;
+    background: var(--accent-tint);
+    border: 1px solid var(--border-strong);
+    color: var(--accent);
+    padding: 1px 5px;
     font-size: 13px;
 }
 .single-body pre {
