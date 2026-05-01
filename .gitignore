@@ -13,3 +13,7 @@ data/
 .hugo_build.lock
 .aider*
 .claude
+node_modules
+*.vim
+.env*
+*.mp4
