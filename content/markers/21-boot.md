@@ -12,8 +12,8 @@ it's hard to believe the artist would leave out sockets, given how
 central they are to Unix and operating systems generally. So I see two
 readings:
 
-- If it's a **boot**, it points to the boot process — the small dance of
-  firmware, boot loader, and kernel that brings the system to life.
+- If it's a **boot**, it points to the boot process — firmware hands
+  off to the boot loader, which loads and starts the kernel.
 - If it's a **sock** (a thick, oversized one), it's a nod to Unix
   **network sockets**. Sockets arrived in 4.2BSD in 1983 and gave
   processes a single API for talking to each other, whether they were on

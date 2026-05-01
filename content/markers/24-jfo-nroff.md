@@ -1,5 +1,5 @@
 ---
-title: "nroff (J.F.O.)"
+title: "nroff"
 number: "24"
 position:
   left: "76%"

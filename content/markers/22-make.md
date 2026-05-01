@@ -19,5 +19,5 @@ changed file instead of the whole tree could save minutes on the hardware of
 the time.
 
 The `Makefile` format outlived the era it was designed for. Make is still the
-default build tool on most Unix systems, and its tab-indented syntax -- a
+default build tool on most Unix systems, and its tab-indented syntax -- which
 Feldman famously regretted -- has been tripping people up ever since.

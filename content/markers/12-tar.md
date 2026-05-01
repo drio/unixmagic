@@ -16,8 +16,8 @@ list the contents of a `.tar.gz` you have to read the whole thing from the
 beginning.
 
 It shipped with Version 7 Unix in 1979, replacing `tp` (which had replaced `tap`).
-The format is almost unchanged since then, which is both a testament to its
-simplicity and why people still reach for it today.
+The format is almost unchanged since then, which is why people still reach
+for it today.
 
 The command `tar xvzf archive.tar.gz` is one of those things Unix users type
 from muscle memory without thinking about what the flags mean: e**x**tract,

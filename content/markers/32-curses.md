@@ -15,6 +15,6 @@ whatever terminal they were running on — and every terminal model spoke
 a slightly different dialect. Curses reads the terminal's capabilities
 from `termcap`/`terminfo` and gives you a portable API.
 
-It's why `vi`, `less`, `top`, `htop`, `mutt`, and countless other TUI
+It's why `vi`, `less`, `top`, `htop`, `mutt`, and many other TUI
 programs look and work the same across terminals. The name is a pun on
 "cursor optimization". Ken Arnold wrote the original curses for BSD Unix.

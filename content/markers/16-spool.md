@@ -14,7 +14,6 @@ dial-up. On modern systems this directory has moved to `/var/spool`, but
 the pattern hasn't changed.
 
 "Spool" is often said to be a backronym for *Simultaneous Peripheral
-Operations On-Line*, which has the ring of something invented after the
-fact to justify a word everyone was already using. The underlying idea
-is older than Unix: buffer work to disk so the slow device doesn't hold
-up the fast one.
+Operations On-Line*, likely coined after the word was already in use.
+The underlying idea is older than Unix: buffer work to disk so the slow
+device doesn't hold up the fast one.

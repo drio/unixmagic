@@ -13,8 +13,7 @@ Unix command by that name.
 
 [`spell`](https://en.wikipedia.org/wiki/Spell_(Unix)) is the classic
 Unix spell-checker. Stephen C. Johnson wrote the original for Version 6
-Unix in 1975, and Doug McIlroy rewrote it soon after — a lovely piece of
-engineering worth reading about on its own. McIlroy had to fit an
+Unix in 1975, and Doug McIlroy rewrote it soon after. McIlroy had to fit an
 English dictionary into a PDP-11 with tens of kilobytes of memory, so
 he compressed the word list into a Bloom-filter-like structure of
 hash codes. It was famously short, fast, and accurate enough to be

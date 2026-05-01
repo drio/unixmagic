@@ -15,7 +15,7 @@ they were still the fastest way to get an authoritative answer without
 leaving the terminal.
 
 The figure in the window is harder to pin down. He's holding a scythe,
-which is suggestive: on Unix, a parent process "reaps" its children by
+which could fit: on Unix, a parent process "reaps" its children by
 reading their exit status, letting the kernel clear them out of the
 process table. Others read him as a [hacker](https://en.wikipedia.org/wiki/Hacker_culture)
 in the older sense — the clever tinkerer, not the intruder.

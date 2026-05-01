@@ -7,10 +7,10 @@ position:
 description: "The runes on the wizard's cloak — shell metacharacters"
 ---
 
-The wizard's cloak is decorated with shell metacharacters. Each of them
-gives the shell a different superpower: chaining commands, redirecting
-I/O, expanding variables, matching filenames. A handful of these
-symbols is most of what separates a GUI user from a shell user.
+The wizard's cloak is decorated with shell metacharacters. Each one
+does a different job: chaining commands, redirecting I/O, expanding
+variables, matching filenames. A handful of these symbols is most of
+what separates a GUI user from a shell user.
 
 | Symbol    | Name                 | Example                              |
 |-----------|----------------------|--------------------------------------|
@@ -33,5 +33,3 @@ if [ -f file.txt ]; then
     echo "file exists: $(wc -l < file.txt) lines"
 fi
 ```
-
-Nothing magical — it just looks that way the first time you see it.

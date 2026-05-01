@@ -12,6 +12,7 @@ done with `fork` and `exec`: `fork` creates a copy of the current process,
 then the *child* calls `exec` to replace itself with a different program. The
 parent typically calls `wait` to wait for the child to finish.
 
-POSIX also defines `posix_spawn`, which combines the two steps into one call
-and can be more efficient since it avoids copying the parent's entire address
-space.
+POSIX also defines `posix_spawn`, which combines the two steps into one call.
+It can be more efficient on systems where `fork` is expensive -- for example,
+hardware without an MMU, or very large parent processes where even setting up
+copy-on-write mappings is slow.

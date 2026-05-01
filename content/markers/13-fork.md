@@ -21,8 +21,8 @@ in the child to replace itself with the target program. That fork/exec
 split is unusual — VMS and Windows went with a single "spawn" call that
 creates a process already running a different program — but it's what
 lets the shell set up redirections, pipes, and environment changes in
-the child after `fork` and before `exec`, using ordinary code. A lot of
-Unix's composability flows from that one design choice.
+the child after `fork` and before `exec`, using ordinary code. Most of
+Unix's composability comes from that split.
 
 Melvin Conway described the idea under the name "fork" in *A
 Multiprocessor System Design* in the early 1960s, years before Unix existed.

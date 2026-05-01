@@ -9,9 +9,9 @@ date: 2025-02-13T12:00:00Z
 lastmod: 2025-02-13T12:00:00Z
 ---
 
-The shell gets a prominent spot on the poster because it really is the center
+The shell gets a prominent spot on the poster because it is the center
 of how you use Unix. It's the command-line interface where you type commands,
-launch programs, chain them together with pipes, and generally tell the system
+launch programs, chain them together with pipes, and tell the system
 what to do.
 
 What eventually set the Unix shell apart was that it doubled as a programming

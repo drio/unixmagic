@@ -17,4 +17,4 @@ same `write(2)` call you'd use on a regular file works here, so every
 tool that can produce output can also discard it without special-casing
 anything. The `2>/dev/null` idiom — "throw the error messages away" — is
 one of the shortest useful incantations in the shell, and it predates
-the "quiet mode" flags that most programs eventually grew.
+the `-q` / quiet-mode flags most programs later added.
