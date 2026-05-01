@@ -9,10 +9,8 @@ description: "The all-powerful administrative account"
 
 `root` is the superuser — uid 0 in the kernel's eyes. Most permission
 checks in Unix short-circuit for uid 0, which is why root can read any
-file, kill any process, mount any filesystem, and bind to privileged
-network ports (those numbered below 1024, reserved so that only
-trusted processes can offer services like SSH or HTTP on the
-well-known ports).
+file, kill any process, mount any filesystem, and bind to ports below
+1024 (the "privileged" range reserved for services like SSH and HTTP).
 
 For a long time, administering a Unix box meant logging in as root and
 hoping you typed carefully. `sudo` changed that in the 80s by letting
