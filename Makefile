@@ -39,9 +39,3 @@ static/favicon.ico: static/ump.webp
 # (whole poster squashed into a square).
 static/apple-touch-icon.png: static/ump.webp
 	ffmpeg -y -v error -i static/ump.webp -vf "scale=180:180:flags=lanczos" -frames:v 1 $@
-
-# Convert the oversized animated demo GIF into animated WebP.
-# Needs `gif2webp` (brew install webp). Animated WebP is typically
-# ~10x smaller than the GIF and renders in the GitHub README <img> tag.
-unixmagic.desktop.v2.webp: unixmagic.desktop.v2.gif
-	gif2webp -q 75 -m 6 -mt $< -o $@
