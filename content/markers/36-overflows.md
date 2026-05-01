@@ -20,10 +20,8 @@ trick against `fingerd`, and the basis of decades of exploits. **Heap
 overflows** hit `malloc`'d memory and corrupt allocator metadata or
 adjacent objects; harder to weaponize but just as damaging.
 
-C's lack of automatic bounds checking is what makes this easy to get
-wrong, and Unix systems have been a primary target because they're
-everywhere. Modern mitigations — stack canaries, ASLR, non-executable
-stacks, safer string functions — make exploitation harder but don't
-eliminate the class. See
-[Buffer overflow](https://en.wikipedia.org/wiki/Buffer_overflow) on
-Wikipedia for the long version.
+C has no bounds checking, which is what makes this easy to get wrong.
+Modern mitigations — stack canaries, ASLR, non-executable stacks, safer
+string functions — make exploitation harder but don't eliminate the
+class. See [Buffer overflow](https://en.wikipedia.org/wiki/Buffer_overflow)
+for the long version.

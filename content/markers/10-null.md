@@ -16,5 +16,4 @@ It's a perfect illustration of Unix's "everything is a file" idea: the
 same `write(2)` call you'd use on a regular file works here, so every
 tool that can produce output can also discard it without special-casing
 anything. The `2>/dev/null` idiom — "throw the error messages away" — is
-one of the shortest useful incantations in the shell, and it predates
-the `-q` / quiet-mode flags most programs later added.
+one of the shortest useful incantations in the shell.

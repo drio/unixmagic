@@ -14,7 +14,7 @@ of how you use Unix. It's the command-line interface where you type commands,
 launch programs, chain them together with pipes, and tell the system
 what to do.
 
-What eventually set the Unix shell apart was that it doubled as a programming
+What set the Unix shell apart was that it doubled as a programming
 language. You could use it interactively, but you could also write scripts to
 automate repetitive work — something most operating systems at the time didn't
 offer.
