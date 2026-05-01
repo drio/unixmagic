@@ -1,0 +1,14 @@
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>traps - Unix Magic Poster Annotations</title><link rel=icon type=image/x-icon href=../../favicon.ico><link rel=apple-touch-icon sizes=180x180 href=../../apple-touch-icon.png><script>(function(){try{var e=localStorage.getItem("theme");(e==="light"||e==="dark")&&document.documentElement.setAttribute("data-theme",e)}catch{}})()</script><link rel=stylesheet href=../../css/site.css></head><body><div class=single-container><div class=single-header><a href=../../ class=back-link>← home</a>
+<a href=../../#annotation-34-traps class=back-link>open on poster →</a></div><div class=single-content><div class=title-block><span class=marker-number aria-hidden=true>34</span><div><h1>traps</h1><div class=description>Signals — the kernel's way of interrupting a process</div></div></div><div class=single-body><p><a href=https://en.wikipedia.org/wiki/Signal_(IPC)>Signals</a> (also called
+&ldquo;traps&rdquo;) are short, asynchronous notifications the kernel delivers to a
+process: &ldquo;your child exited&rdquo;, &ldquo;the user hit Ctrl-C&rdquo;, &ldquo;your terminal
+went away&rdquo;. A program can install a handler for most of them, or let
+the kernel&rsquo;s default action happen.</p><p>A few that come up constantly:</p><ul><li><strong>SIGINT</strong> — what Ctrl-C sends. Polite request to stop; programs
+usually catch it to clean up first.</li><li><strong>SIGTERM</strong> — the default from <code>kill &lt;pid></code>. Also polite, also
+catchable. <code>systemd</code>, <code>init</code>, and orchestration tools send SIGTERM
+first and wait.</li><li><strong>SIGKILL</strong> — <code>kill -9</code>. Cannot be caught, blocked, or ignored. The
+kernel stops the process immediately. Use when nothing else works.</li><li><strong>SIGHUP</strong> — originally &ldquo;the terminal hung up&rdquo;. Many daemons
+repurpose it to mean &ldquo;reread your config file&rdquo; because no one&rsquo;s
+dialing in anymore.</li></ul><p>The shell&rsquo;s <code>trap</code> builtin lets scripts install their own handlers:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-sh data-lang=sh><span style=display:flex><span>trap <span style=color:#e6db74>&#39;rm -f &#34;$tmpfile&#34;&#39;</span> EXIT INT TERM
+</span></span></code></pre></div><p>That line guarantees the temp file gets cleaned up whether the script
+finishes normally or gets interrupted.</p></div></div><div class=single-footer>-- EOF --</div></div></body></html>

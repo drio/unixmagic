@@ -1,0 +1,8 @@
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>spawn - Unix Magic Poster Annotations</title><link rel=icon type=image/x-icon href=../../favicon.ico><link rel=apple-touch-icon sizes=180x180 href=../../apple-touch-icon.png><script>(function(){try{var e=localStorage.getItem("theme");(e==="light"||e==="dark")&&document.documentElement.setAttribute("data-theme",e)}catch{}})()</script><link rel=stylesheet href=../../css/site.css></head><body><div class=single-container><div class=single-header><a href=../../ class=back-link>← home</a>
+<a href=../../#annotation-23-spawn class=back-link>open on poster →</a></div><div class=single-content><div class=title-block><span class=marker-number aria-hidden=true>23</span><div><h1>spawn</h1><div class=description>An operation in which a new child process is created</div></div></div><div class=single-body><p>Spawning means creating a new child process. In Unix, this is traditionally
+done with <code>fork</code> and <code>exec</code>: <code>fork</code> creates a copy of the current process,
+then the <em>child</em> calls <code>exec</code> to replace itself with a different program. The
+parent typically calls <code>wait</code> to wait for the child to finish.</p><p>POSIX also defines <code>posix_spawn</code>, which combines the two steps into one call.
+It can be more efficient on systems where <code>fork</code> is expensive &ndash; for example,
+hardware without an MMU, or very large parent processes where even setting up
+copy-on-write mappings is slow.</p></div></div><div class=single-footer>-- EOF --</div></div></body></html>

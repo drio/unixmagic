@@ -1,0 +1,10 @@
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Memory leaks - Unix Magic Poster Annotations</title><link rel=icon type=image/x-icon href=../../favicon.ico><link rel=apple-touch-icon sizes=180x180 href=../../apple-touch-icon.png><script>(function(){try{var e=localStorage.getItem("theme");(e==="light"||e==="dark")&&document.documentElement.setAttribute("data-theme",e)}catch{}})()</script><link rel=stylesheet href=../../css/site.css></head><body><div class=single-container><div class=single-header><a href=../../ class=back-link>← home</a>
+<a href=../../#annotation-04-leak class=back-link>open on poster →</a></div><div class=single-content><div class=title-block><span class=marker-number aria-hidden=true>4</span><div><h1>Memory leaks</h1><div class=description>Memory that a program allocates and forgets to give back</div></div></div><div class=single-body><p>A memory leak is memory a program allocates and then forgets to release.
+One leak is harmless; they accumulate.
+Long-running processes — daemons, editors, shells open for weeks — slowly
+eat the machine until something swaps, slows, or dies.</p><p>This mattered a lot on early Unix. C had no garbage collector, <code>malloc</code> and
+<code>free</code> were entirely the programmer&rsquo;s responsibility, and the machines of
+the 1970s and 80s had megabytes of RAM, not gigabytes. A leaky <code>inetd</code> or
+print spooler could crash a timesharing system overnight.
+Tools like <code>valgrind</code> didn&rsquo;t exist yet; you found leaks by reading code
+and watching <code>ps</code>.</p></div></div><div class=single-footer>-- EOF --</div></div></body></html>

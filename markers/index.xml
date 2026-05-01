@@ -1,0 +1,453 @@
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Unix Magic Poster Annotations</title><link>/</link><description>An interactive, annotated guide to every reference on the classic UNIX Magic poster by Gary Overacre.</description><item><title>Shell</title><link>/markers/01-shell/</link><guid>/markers/01-shell/</guid><description>A gateway to controlling the system</description><content:encoded><![CDATA[<p>The shell gets a prominent spot on the poster because it is the center
+of how you use Unix. It&rsquo;s the command-line interface where you type commands,
+launch programs, chain them together with pipes, and tell the system
+what to do.</p>
+<p>What set the Unix shell apart was that it doubled as a programming
+language. You could use it interactively, but you could also write scripts to
+automate repetitive work — something most operating systems at the time didn&rsquo;t
+offer.</p>
+<p>The first Unix shell was the <a href="https://en.wikipedia.org/wiki/Thompson_shell">Thompson shell</a>
+(<code>sh</code>), written by Ken Thompson for the earliest versions of Unix in 1971. It
+handled command execution, redirection, and pipes, but wasn&rsquo;t a real
+programming language. The <a href="https://en.wikipedia.org/wiki/PWB_shell">Mashey shell</a>
+and Bill Joy&rsquo;s <a href="https://en.wikipedia.org/wiki/C_shell"><code>csh</code></a> came next, both
+adding scripting features. Then in 1979, Stephen Bourne&rsquo;s
+<a href="https://en.wikipedia.org/wiki/Bourne_shell"><code>sh</code></a> shipped with Version 7 Unix
+and became the template everything else (<code>ksh</code>, <code>bash</code>, <code>zsh</code>) built on.</p>
+]]></content:encoded></item><item><title>AWK</title><link>/markers/15-awk/</link><guid>/markers/15-awk/</guid><description>A small language built for text processing</description><content:encoded><![CDATA[<p><a href="https://en.wikipedia.org/wiki/AWK">AWK</a> is a tiny programming language
+aimed squarely at text: read input line by line, match patterns, run
+actions, emit output. Great on its own, better inside a pipeline.</p>
+<p>It was written at Bell Labs in the 1970s. The name comes from the three
+authors&rsquo; initials: <strong>A</strong>lfred Aho, Peter <strong>W</strong>einberger, and Brian
+<strong>K</strong>ernighan — the same &ldquo;k&rdquo; as in <a href="#annotation-05-kandr">#5</a>.</p>
+]]></content:encoded></item><item><title>B</title><link>/markers/18-b/</link><guid>/markers/18-b/</guid><description>The language that came between BCPL and C</description><content:encoded><![CDATA[<p><a href="https://en.wikipedia.org/wiki/B_(programming_language)">B</a> is the step
+between BCPL and C. Ken Thompson wrote it at Bell Labs around 1969 for
+the early Unix work on the PDP-7, with contributions from Dennis Ritchie.
+It borrowed heavily from BCPL — the name is widely taken to be a
+contraction — and dropped most of BCPL&rsquo;s complexity to fit on a machine
+with very little memory.</p>
+<p>B was typeless: everything was a machine word. That worked on the PDP-7
+but fell apart on the PDP-11, which cared about byte-sized data. Ritchie
+added types, kept most of the syntax, and called the result C. B didn&rsquo;t
+survive the transition, and today it exists mostly as a footnote in the
+lineage BCPL → B → C.</p>
+]]></content:encoded></item><item><title>Backpressure</title><link>/markers/07-backpressure/</link><guid>/markers/07-backpressure/</guid><description>What happens when the producer is faster than the consumer</description><content:encoded><![CDATA[<p>When two processes talk over a pipe, one is producing data and the other
+is consuming it. The kernel holds a small buffer in between. If the
+producer gets ahead, the buffer fills, and the kernel blocks the
+producer&rsquo;s next <code>write</code> until the consumer drains some space. That&rsquo;s
+backpressure: the slow side telling the fast side to wait.</p>
+<p>Whether the valve on the poster&rsquo;s pipe is a deliberate nod to this or
+just a nice bit of plumbing, I&rsquo;ll leave to you.</p>
+]]></content:encoded></item><item><title>banner</title><link>/markers/40-banner/</link><guid>/markers/40-banner/</guid><description>A program that outputs ASCII art</description><content:encoded><![CDATA[<p>The poster&rsquo;s title is rendered in large block letters, much like the output of
+the <a href="https://en.wikipedia.org/wiki/Banner_(Unix)"><code>banner</code></a> command. <code>banner</code>
+takes a text string and prints it in oversized ASCII characters, originally
+meant for printing headers on line printers so you could tell whose printout
+was whose in a shared printer room. It was a common utility on Unix systems and
+a fun one to play with at a terminal.</p>
+]]></content:encoded></item><item><title>boot (or sock?)</title><link>/markers/21-boot/</link><guid>/markers/21-boot/</guid><description>The booting process, or maybe a Unix socket</description><content:encoded><![CDATA[<p>I have to admit, this object looks more like a boot than a sock. But
+it&rsquo;s hard to believe the artist would leave out sockets, given how
+central they are to Unix and operating systems generally. So I see two
+readings:</p>
+<ul>
+<li>If it&rsquo;s a <strong>boot</strong>, it points to the boot process — firmware hands
+off to the boot loader, which loads and starts the kernel.</li>
+<li>If it&rsquo;s a <strong>sock</strong> (a thick, oversized one), it&rsquo;s a nod to Unix
+<strong>network sockets</strong>. Sockets arrived in 4.2BSD in 1983 and gave
+processes a single API for talking to each other, whether they were on
+the same machine (Unix-domain sockets) or across a TCP/IP network.
+Almost every other operating system eventually adopted the Berkeley
+socket interface.</li>
+</ul>
+<p>See the Wikipedia entry on <a href="https://en.wikipedia.org/wiki/Berkeley_sockets">Berkeley sockets</a>
+or the <a href="https://man7.org/linux/man-pages/man2/socket.2.html"><code>socket(2)</code></a>
+man page for the API itself.</p>
+]]></content:encoded></item><item><title>cat</title><link>/markers/19-cat/</link><guid>/markers/19-cat/</guid><description>Concatenate files to standard output</description><content:encoded><![CDATA[<p><a href="https://en.wikipedia.org/wiki/Cat_(Unix)"><code>cat</code></a> takes its name from
+(con)<em>cat</em>enate. Give it one file and it dumps the contents to stdout;
+give it several and it glues them together. It was part of Version 1
+Unix, written by Ken Thompson and Dennis Ritchie.</p>
+<p><code>cat</code> is also where the &ldquo;Useless Use of Cat&rdquo; joke comes from:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cat file | grep foo   <span style="color:#75715e"># UUOC</span>
+</span></span><span style="display:flex;"><span>grep foo file         <span style="color:#75715e"># same thing, one less process</span>
+</span></span></code></pre></div>]]></content:encoded></item><item><title>curses</title><link>/markers/32-curses/</link><guid>/markers/32-curses/</guid><description>A terminal control library for building text user interfaces</description><content:encoded><![CDATA[<p>The <a href="https://en.wikipedia.org/wiki/Curses_(programming_library)"><code>curses</code></a>
+library hides the ugly details of moving the cursor around a terminal and
+repainting regions of the screen. Before curses, programs that wanted to
+do anything more than scroll text had to emit raw escape sequences for
+whatever terminal they were running on — and every terminal model spoke
+a slightly different dialect. Curses reads the terminal&rsquo;s capabilities
+from <code>termcap</code>/<code>terminfo</code> and gives you a portable API.</p>
+<p>It&rsquo;s why <code>vi</code>, <code>less</code>, <code>top</code>, <code>htop</code>, <code>mutt</code>, and many other TUI
+programs look and work the same across terminals. The name is a pun on
+&ldquo;cursor optimization&rdquo;. Ken Arnold wrote the original curses for BSD Unix.</p>
+]]></content:encoded></item><item><title>Daemons</title><link>/markers/08-daemons/</link><guid>/markers/08-daemons/</guid><description>Service processes that run in the background and supervise the system or provide functionality to other processes</description><content:encoded><![CDATA[<p><a href="https://en.wikipedia.org/wiki/Daemon_(computing)">Daemons</a> are long-running
+background processes, usually started at boot. They handle network requests,
+hardware events, and scheduled work. Familiar examples: <code>cron</code>, <code>syslogd</code>,
+<code>sshd</code>.</p>
+]]></content:encoded></item><item><title>dates</title><link>/markers/26-dates/</link><guid>/markers/26-dates/</guid><description>Displaying and setting the system clock</description><content:encoded><![CDATA[<p><a href="https://man7.org/linux/man-pages/man1/date.1.html"><code>date</code></a> prints or
+sets the system time. Under the hood, Unix stores time as a single
+count — seconds since 00:00:00 UTC on 1 January 1970, the &ldquo;Unix epoch&rdquo;.
+The epoch was picked because it was close enough to when these systems
+were built and round enough to be easy to reason about.</p>
+<p>A signed 32-bit seconds counter overflows at 03:14:07 UTC on <strong>19 January 2038</strong>. That&rsquo;s
+the Y2038 problem, and it&rsquo;s real — a lot of embedded systems and
+filesystems still use 32-bit <code>time_t</code>. Modern Unixes use 64-bit <code>time_t</code>,
+which buys around 292 billion years of headroom, which is probably enough.</p>
+]]></content:encoded></item><item><title>diff</title><link>/markers/33-diff/</link><guid>/markers/33-diff/</guid><description>Compare two files and show exactly what changed</description><content:encoded><![CDATA[<p><a href="https://en.wikipedia.org/wiki/Diff"><code>diff</code></a> compares two files line by line and
+shows what was added, removed, or changed. Doug McIlroy wrote it at Bell Labs in
+the early 1970s.</p>
+<p>Before diff, reconciling two versions of a source file meant reading them side by
+side. diff automated that completely and its output format &ndash; the patch &ndash; became
+a universal unit of change. You could mail a patch to someone and they could apply
+it with <a href="https://man7.org/linux/man-pages/man1/patch.1.html"><code>patch(1)</code></a> without
+ever seeing the original file.</p>
+<p>The algorithm diff uses &ndash; the longest common subsequence problem &ndash; was formalized by James Hunt and McIlroy in a 1976 paper. For large files the naive approach is expensive, and getting it fast enough to be useful on the hardware of the time was non-trivial. The Hunt-McIlroy algorithm is still the basis of most diff implementations.</p>
+]]></content:encoded></item><item><title>dmr · kt · bwk</title><link>/markers/05-kandr/</link><guid>/markers/05-kandr/</guid><description>The three sets of initials that built Unix</description><content:encoded><![CDATA[<p>Three sets of initials, three people who shaped Unix:</p>
+<ul>
+<li><strong>dmr</strong> — Dennis M. Ritchie. Co-created Unix and designed the C
+programming language.</li>
+<li><strong>kt</strong> — Ken Thompson. Co-created Unix with Ritchie. His Bell Labs
+login was actually <code>ken</code>, which is how he&rsquo;s cited in most early Unix
+source.</li>
+<li><strong>bwk</strong> — Brian W. Kernighan. Co-author of <em>The C Programming Language</em>
+and <em>The Unix Programming Environment</em>, and the &ldquo;k&rdquo; in <code>awk</code>
+(see <a href="#annotation-15-awk">#15</a>).</li>
+</ul>
+]]></content:encoded></item><item><title>Filesystem hierarchy</title><link>/markers/38-tree-graph/</link><guid>/markers/38-tree-graph/</guid><description>Navigating the filesystem</description><content:encoded><![CDATA[<p>The tree-like shape the wizard is manipulating is likely a reference to the
+Unix filesystem hierarchy. Unix organizes files and directories as a tree
+rooted at <code>/</code>, branching into subdirectories like <code>/usr</code>, <code>/bin</code>, <code>/etc</code>, and
+so on. You navigate it with commands like <code>cd</code>, <code>ls</code>, and <code>pwd</code>.</p>
+<p>The branching form could also represent process trees. Every process in Unix
+has a parent, forming a tree rooted at <code>init</code> (PID 1).</p>
+]]></content:encoded></item><item><title>fork</title><link>/markers/13-fork/</link><guid>/markers/13-fork/</guid><description>The system call that creates a new process</description><content:encoded><![CDATA[<p><a href="https://en.wikipedia.org/wiki/Fork_(system_call)"><code>fork(2)</code></a> is how Unix
+makes a new process: the kernel duplicates the calling process, and now
+there are two of them running the same code. They only differ in the
+return value of <code>fork</code> itself — zero in the child, the child&rsquo;s PID in the
+parent — which is how each copy knows who it is.</p>
+<p>What made this radical was how <em>cheap</em> it could be. Early
+Unix leaned on it for everything, and modern kernels use copy-on-write so
+the duplicated address space costs almost nothing until one side writes
+to it. The shell runs every command by forking and then calling <code>exec</code>
+in the child to replace itself with the target program. That fork/exec
+split is unusual — VMS and Windows went with a single &ldquo;spawn&rdquo; call that
+creates a process already running a different program — but it&rsquo;s what
+lets the shell set up redirections, pipes, and environment changes in
+the child after <code>fork</code> and before <code>exec</code>, using ordinary code. Most of
+Unix&rsquo;s composability comes from that split.</p>
+<p>Melvin Conway described the idea under the name &ldquo;fork&rdquo; in <em>A
+Multiprocessor System Design</em> in the early 1960s, years before Unix existed.</p>
+]]></content:encoded></item><item><title>login</title><link>/markers/30-login/</link><guid>/markers/30-login/</guid><description>The gateway into the system</description><content:encoded><![CDATA[<p><code>login</code> authenticates the user, sets up the environment by changing to the
+user&rsquo;s home directory, and spawns a shell running as that user (with their
+<code>uid</code> and <code>gid</code>).</p>
+<p>Standard input and output are attached to a terminal — a <strong>pseudo-terminal</strong>
+when you&rsquo;re in a graphical session or connected over <code>ssh</code>, or a <strong>physical
+terminal</strong> back when people actually dialed in.</p>
+]]></content:encoded></item><item><title>make</title><link>/markers/22-make/</link><guid>/markers/22-make/</guid><description>Build automation tool -- only recompile what changed</description><content:encoded><![CDATA[<p><a href="https://en.wikipedia.org/wiki/Make_(software)">Make</a> is a build automation tool
+that reads a <code>Makefile</code> describing targets, their dependencies, and the commands
+to build them. Stuart Feldman wrote the first version at Bell Labs in 1976.</p>
+<p>Before Make, building a project meant running a shell script that recompiled
+everything, every time. Make&rsquo;s key insight is the dependency graph: each target
+declares what it depends on, and Make only rebuilds what&rsquo;s out of date. On a
+large codebase that distinction mattered enormously &ndash; recompiling a single
+changed file instead of the whole tree could save minutes on the hardware of
+the time.</p>
+<p>The <code>Makefile</code> format outlived the era it was designed for. Make is still the
+default build tool on most Unix systems, and its tab-indented syntax &ndash; which
+Feldman famously regretted &ndash; has been tripping people up ever since.</p>
+]]></content:encoded></item><item><title>man</title><link>/markers/02-man/</link><guid>/markers/02-man/</guid><description>Reference manual viewer for commands, system calls, and files</description><content:encoded><![CDATA[<p>The <a href="https://man7.org/linux/man-pages/man1/man.1.html"><code>man(1)</code></a> command
+(short for &ldquo;manual&rdquo;) opens the reference pages that ship with the system:
+commands, system calls, library functions, config files, devices. Before
+the web, these pages <em>were</em> the documentation — and for a long time after,
+they were still the fastest way to get an authoritative answer without
+leaving the terminal.</p>
+<p>The figure in the window is harder to pin down. He&rsquo;s holding a scythe,
+which could fit: on Unix, a parent process &ldquo;reaps&rdquo; its children by
+reading their exit status, letting the kernel clear them out of the
+process table. Others read him as a <a href="https://en.wikipedia.org/wiki/Hacker_culture">hacker</a>
+in the older sense — the clever tinkerer, not the intruder.</p>
+]]></content:encoded></item><item><title>mbox</title><link>/markers/29-mbox/</link><guid>/markers/29-mbox/</guid><description>The mail system format</description><content:encoded><![CDATA[<p><code>mbox</code> is a reference to the mail format from the early days of Unix. In the
+<code>mbox</code> format, all email messages for a user are stored in a single file, with
+new messages appended to the end. User mailboxes lived in
+<code>/usr/mail/&lt;username&gt;</code>. It fits the Unix habit of using plain text as the
+universal format: you could read your mail with the same tools you used on any
+other file, and system notifications were just more messages appended to it.</p>
+]]></content:encoded></item><item><title>Memory leaks</title><link>/markers/04-leak/</link><guid>/markers/04-leak/</guid><description>Memory that a program allocates and forgets to give back</description><content:encoded><![CDATA[<p>A memory leak is memory a program allocates and then forgets to release.
+One leak is harmless; they accumulate.
+Long-running processes — daemons, editors, shells open for weeks — slowly
+eat the machine until something swaps, slows, or dies.</p>
+<p>This mattered a lot on early Unix. C had no garbage collector, <code>malloc</code> and
+<code>free</code> were entirely the programmer&rsquo;s responsibility, and the machines of
+the 1970s and 80s had megabytes of RAM, not gigabytes. A leaky <code>inetd</code> or
+print spooler could crash a timesharing system overnight.
+Tools like <code>valgrind</code> didn&rsquo;t exist yet; you found leaks by reading code
+and watching <code>ps</code>.</p>
+]]></content:encoded></item><item><title>nroff</title><link>/markers/24-jfo-nroff/</link><guid>/markers/24-jfo-nroff/</guid><description>A text formatter for fixed-width output; J.F.O. for its author</description><content:encoded><![CDATA[<p><a href="https://en.wikipedia.org/wiki/Nroff"><code>nroff</code></a> — short for &ldquo;new roff&rdquo; —
+is a text-formatting program that produces output suited to fixed-width
+printers and terminals. It&rsquo;s the engine that still renders Unix man
+pages today.</p>
+<p>The initials <strong>J.F.O.</strong> on the poster stand for <strong>Joseph Frank Ossanna</strong>,
+who wrote the original <code>nroff</code> at Bell Labs in the early 1970s for
+Research Unix. It descends from <code>roff</code>, which itself descends from
+<a href="https://en.wikipedia.org/wiki/TYPSET_and_RUNOFF">RUNOFF</a>. Ossanna later
+extended <code>nroff</code> into <code>troff</code> (see <a href="#annotation-17-troff">#17</a>) to drive
+phototypesetters with multiple fonts and proportional spacing.</p>
+]]></content:encoded></item><item><title>null</title><link>/markers/10-null/</link><guid>/markers/10-null/</guid><description>The device file that throws everything away</description><content:encoded><![CDATA[<p><code>/dev/null</code> is a <a href="https://en.wikipedia.org/wiki/Null_device">special device</a>
+that accepts any data written to it and returns success without storing
+a byte. Reading from it returns end-of-file immediately. It&rsquo;s the bit
+bucket.</p>
+<p>It&rsquo;s a perfect illustration of Unix&rsquo;s &ldquo;everything is a file&rdquo; idea: the
+same <code>write(2)</code> call you&rsquo;d use on a regular file works here, so every
+tool that can produce output can also discard it without special-casing
+anything. The <code>2&gt;/dev/null</code> idiom — &ldquo;throw the error messages away&rdquo; — is
+one of the shortest useful incantations in the shell.</p>
+]]></content:encoded></item><item><title>Oregano</title><link>/markers/11-oregano/</link><guid>/markers/11-oregano/</guid><description>A story about a bag of herbs at the Canadian border</description><content:encoded><![CDATA[<p>Unix folklore. The story, as told by Sarah Groves Hobart on
+<a href="https://groups.google.com/g/comp.unix.wizards/c/qkiqSJWgEPE/m/E5BwZYMvXwAJ">comp.unix.wizards</a>:</p>
+<blockquote>
+<p>The oregano is reputedly referring to an incident in which one of the
+original folks involved with BSD was hassled for coming across the
+Canadian/U.S. border with a bag of what was assumed to be an illegal
+substance, and turned out to be oregano.</p>
+</blockquote>
+<p>Whether it actually happened or is just a good story that stuck, nobody
+seems to know. Either way, it&rsquo;s on the poster.</p>
+]]></content:encoded></item><item><title>Overflows</title><link>/markers/36-overflows/</link><guid>/markers/36-overflows/</guid><description>Buffer overflows — writing past the end of memory</description><content:encoded><![CDATA[<p>The liquid sloshing out of the shell looks like a visual pun on buffer
+overflows. A buffer overflow happens when a program writes past the end
+of a fixed-size memory region, spilling data into whatever sits next
+door.</p>
+<p>There are two flavors that matter in practice. <strong>Stack overflows</strong> hit
+local variables and, critically, the saved return address of the
+current function. Overwrite that, and when the function returns control
+jumps wherever the attacker wants — that&rsquo;s the classic 1988 Morris worm
+trick against <code>fingerd</code>, and the basis of decades of exploits. <strong>Heap
+overflows</strong> hit <code>malloc</code>&rsquo;d memory and corrupt allocator metadata or
+adjacent objects; harder to weaponize but just as damaging.</p>
+<p>C has no bounds checking, which is what makes this easy to get wrong.
+Modern mitigations — stack canaries, ASLR, non-executable stacks, safer
+string functions — make exploitation harder but don&rsquo;t eliminate the
+class. See <a href="https://en.wikipedia.org/wiki/Buffer_overflow">Buffer overflow</a>
+for the long version.</p>
+]]></content:encoded></item><item><title>Pipes</title><link>/markers/03-pipes/</link><guid>/markers/03-pipes/</guid><description>Connect command outputs to command inputs to build pipelines</description><content:encoded><![CDATA[<p><a href="https://en.wikipedia.org/wiki/Pipeline_(Unix)">Pipes</a> let you connect
+the output of one command to the input of another using the <code>|</code>
+character. Instead of saving intermediate results to files, you chain
+commands together: <code>ls | grep txt | wc -l</code>. Each program reads from the
+previous one&rsquo;s output and writes to the next one&rsquo;s input.</p>
+<p>Doug McIlroy pushed for pipes at Bell Labs, and they became one of the
+ideas that defined the Unix philosophy: write small programs that do
+one thing, then combine them.</p>
+]]></content:encoded></item><item><title>pwd</title><link>/markers/28-pwd/</link><guid>/markers/28-pwd/</guid><description>Print the current working directory</description><content:encoded><![CDATA[<p><a href="https://man7.org/linux/man-pages/man1/pwd.1.html"><code>pwd</code></a> &ndash; &ldquo;print
+working directory&rdquo; &ndash; tells you where you are in the filesystem. It&rsquo;s been
+part of Unix from the early days and is a shell builtin on most modern
+systems.</p>
+<p>The shell builtin tracks the logical path you walked through, symlinks and
+all. Pass <code>-P</code> to get the physical path with symlinks resolved, or <code>-L</code> to
+force the logical one.</p>
+]]></content:encoded></item><item><title>root</title><link>/markers/25-root/</link><guid>/markers/25-root/</guid><description>The all-powerful administrative account</description><content:encoded><![CDATA[<p><code>root</code> is the superuser — uid 0 in the kernel&rsquo;s eyes. Most permission
+checks in Unix short-circuit for uid 0, which is why root can read any
+file, kill any process, mount any filesystem, and bind to ports below
+1024 (the &ldquo;privileged&rdquo; range reserved for services like SSH and HTTP).</p>
+<p>For a long time, administering a Unix box meant logging in as root and
+hoping you typed carefully. <code>sudo</code> changed that in the 80s by letting
+named users run specific commands with elevated privileges, leaving an
+audit trail and making &ldquo;full root shell&rdquo; a deliberate choice rather than
+the default workflow. Most modern systems discourage direct root
+logins entirely.</p>
+]]></content:encoded></item><item><title>Shell script</title><link>/markers/14-shell-script/</link><guid>/markers/14-shell-script/</guid><description>The shell language</description><content:encoded><![CDATA[<p>A <a href="https://en.wikipedia.org/wiki/Shell_script">shell script</a> is a text file
+containing a sequence of shell commands that run as a program. Instead of
+typing commands one at a time, you write them into a file and execute it.</p>
+<p>Shell scripts are what made Unix administration practical. System startup,
+backups, log rotation, batch processing - all of it was (and still is) driven
+by shell scripts. Because the shell already knows how to run programs, redirect
+I/O, and handle pipes, a script gets all of that for free. Add variables,
+loops, and conditionals, and you have a real programming language that&rsquo;s
+tightly integrated with the operating system.</p>
+]]></content:encoded></item><item><title>Shell's symbols</title><link>/markers/35-shell-symbols/</link><guid>/markers/35-shell-symbols/</guid><description>The runes on the wizard's cloak — shell metacharacters</description><content:encoded><![CDATA[<p>The wizard&rsquo;s cloak is decorated with shell metacharacters. Each one
+does a different job: chaining commands, redirecting I/O, expanding
+variables, matching filenames. A handful of these symbols is most of
+what separates a GUI user from a shell user.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Symbol</th>
+          <th>Name</th>
+          <th>Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>%</code></td>
+          <td>Job control</td>
+          <td><code>fg %1</code> — foreground job 1</td>
+      </tr>
+      <tr>
+          <td><code>$</code></td>
+          <td>Variable expansion</td>
+          <td><code>echo $HOME</code>, <code>$?</code> (last exit code)</td>
+      </tr>
+      <tr>
+          <td><code>&gt;</code> <code>&gt;&gt;</code></td>
+          <td>Output redirection</td>
+          <td><code>ls &gt; files.txt</code> (overwrite / append)</td>
+      </tr>
+      <tr>
+          <td><code>&lt;</code></td>
+          <td>Input redirection</td>
+          <td><code>sort &lt; input.txt</code></td>
+      </tr>
+      <tr>
+          <td><code>*</code> <code>?</code></td>
+          <td>Glob / wildcard</td>
+          <td><code>ls *.txt</code></td>
+      </tr>
+      <tr>
+          <td><code>!</code></td>
+          <td>History expansion</td>
+          <td><code>!!</code> (last command), <code>!$</code> (last arg)</td>
+      </tr>
+      <tr>
+          <td><code>[ ]</code></td>
+          <td>Test / conditionals</td>
+          <td><code>[ -f file.txt ]</code></td>
+      </tr>
+      <tr>
+          <td>`</td>
+          <td>`</td>
+          <td>Pipe</td>
+      </tr>
+      <tr>
+          <td><code>&amp;</code></td>
+          <td>Run in background</td>
+          <td><code>long-job &amp;</code></td>
+      </tr>
+      <tr>
+          <td><code>;</code></td>
+          <td>Command separator</td>
+          <td><code>cd /tmp; ls</code></td>
+      </tr>
+      <tr>
+          <td><code>`</code></td>
+          <td>Command substitution</td>
+          <td><code>echo `date`</code> (also <code>$(...)</code>)</td>
+      </tr>
+  </tbody>
+</table>
+<p>Put together, you get things like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f file.txt <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;file exists: </span><span style="color:#66d9ef">$(</span>wc -l &lt; file.txt<span style="color:#66d9ef">)</span><span style="color:#e6db74"> lines&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div>]]></content:encoded></item><item><title>skull</title><link>/markers/39-skull/</link><guid>/markers/39-skull/</guid><description>The drain where data goes to die — /dev/null</description><content:encoded><![CDATA[<p>The skull-like spigot connected to the shell most likely represents
+<code>/dev/null</code>, the special Unix device that discards all data written to it.
+Redirecting output to <code>/dev/null</code> sends it into a void. Nothing comes back.
+The skull is a fitting symbol for where data goes to die. See also the
+<a href="#annotation-10-null">/dev/null</a> entry.</p>
+<p>It could also be a nod to Unix
+<a href="https://en.wikipedia.org/wiki/Daemon_(computing)">daemons</a>, background
+processes that run without a terminal. The gargoyle-like appearance of the
+spigot fits the daemon imagery.</p>
+]]></content:encoded></item><item><title>spawn</title><link>/markers/23-spawn/</link><guid>/markers/23-spawn/</guid><description>An operation in which a new child process is created</description><content:encoded><![CDATA[<p>Spawning means creating a new child process. In Unix, this is traditionally
+done with <code>fork</code> and <code>exec</code>: <code>fork</code> creates a copy of the current process,
+then the <em>child</em> calls <code>exec</code> to replace itself with a different program. The
+parent typically calls <code>wait</code> to wait for the child to finish.</p>
+<p>POSIX also defines <code>posix_spawn</code>, which combines the two steps into one call.
+It can be more efficient on systems where <code>fork</code> is expensive &ndash; for example,
+hardware without an MMU, or very large parent processes where even setting up
+copy-on-write mappings is slow.</p>
+]]></content:encoded></item><item><title>spells</title><link>/markers/31-spells/</link><guid>/markers/31-spells/</guid><description>The wizard's incantations — and the Unix spell-checker</description><content:encoded><![CDATA[<p>On the poster, &ldquo;spells&rdquo; plays on the wizard imagery: the user as
+magician, the shell commands as incantations. There&rsquo;s also a literal
+Unix command by that name.</p>
+<p><a href="https://en.wikipedia.org/wiki/Spell_(Unix)"><code>spell</code></a> is the classic
+Unix spell-checker. Stephen C. Johnson wrote the original for Version 6
+Unix in 1975, and Doug McIlroy rewrote it soon after. McIlroy had to fit an
+English dictionary into a PDP-11 with tens of kilobytes of memory, so
+he compressed the word list into a Bloom-filter-like structure of
+hash codes. It was short, fast, and accurate enough to be
+useful. Jon Bentley&rsquo;s <em>Programming Pearls</em> tells the story well.</p>
+<p>Related tools: <code>look</code> (binary-search a sorted word list by prefix) and
+<code>ispell</code> / <code>aspell</code> (interactive checkers that replaced <code>spell</code> on most
+systems).</p>
+]]></content:encoded></item><item><title>spool</title><link>/markers/16-spool/</link><guid>/markers/16-spool/</guid><description>/usr/spool — where jobs waited their turn</description><content:encoded><![CDATA[<p><code>/usr/spool</code> was the staging ground for anything a slow device had to
+work through at its own pace: print jobs queued for the line printer,
+outgoing mail waiting for delivery, UUCP transfers held until the next
+dial-up. On modern systems this directory has moved to <code>/var/spool</code>, but
+the pattern hasn&rsquo;t changed.</p>
+<p>&ldquo;Spool&rdquo; is often said to be a backronym for <em>Simultaneous Peripheral
+Operations On-Line</em>, likely coined after the word was already in use.
+The underlying idea is older than Unix: buffer work to disk so the slow
+device doesn&rsquo;t hold up the fast one.</p>
+]]></content:encoded></item><item><title>su</title><link>/markers/09-su/</link><guid>/markers/09-su/</guid><description>Switch to another user's shell</description><content:encoded><![CDATA[<p><a href="https://man7.org/linux/man-pages/man1/su.1.html"><code>su</code></a> — short for
+&ldquo;substitute user&rdquo; or &ldquo;switch user&rdquo; — starts a new shell running as a
+different user. With no argument it switches to root, which for a long
+time was <em>the</em> way to become the superuser on a Unix box. Most systems
+today prefer <code>sudo</code>, which scopes elevation to a single command instead
+of handing you a full root shell (see <a href="#annotation-25-root">#25</a>).</p>
+]]></content:encoded></item><item><title>tar</title><link>/markers/12-tar/</link><guid>/markers/12-tar/</guid><description>Pack files onto tape -- and still everywhere 45 years later</description><content:encoded><![CDATA[<p><a href="https://en.wikipedia.org/wiki/Tar_(computing)"><code>tar</code></a> &ndash; tape archive &ndash; was built
+for magnetic tape drives, which are strictly sequential: you write from one end to
+the other with no random access. That constraint shaped the format permanently. tar
+concatenates files one after another with a small header in front of each, and
+that&rsquo;s it. No index, no directory at the front. To list the contents of a
+<code>.tar.gz</code> you have to read the whole thing from the beginning.</p>
+<p>It shipped with Version 7 Unix in 1979, replacing <code>tp</code> (which had replaced <code>tap</code>).
+The format is almost unchanged since then, which is why people still reach
+for it today.</p>
+<p>Most people type <code>tar xvzf archive.tar.gz</code> without thinking about the flags:
+e<strong>x</strong>tract, <strong>v</strong>erbose, g<strong>z</strong>ip, <strong>f</strong>ile.</p>
+]]></content:encoded></item><item><title>tee</title><link>/markers/37-tee/</link><guid>/markers/37-tee/</guid><description>The T-junctions in the pipes, possibly a reference to the tee command</description><content:encoded><![CDATA[<p>The T-shaped pipe junctions in the poster may reference the
+<a href="https://man7.org/linux/man-pages/man1/tee.1.html"><code>tee</code></a> command. <code>tee</code> reads
+from standard input and writes to both standard output and one or more files at
+the same time, like a T-junction splitting a flow of water.</p>
+<p>This is handy for debugging pipelines (you can tap into the middle of a chain
+to see what&rsquo;s flowing through) or for logging (save a copy of the data while
+still passing it along): <code>make 2&gt;&amp;1 | tee build.log</code>.</p>
+]]></content:encoded></item><item><title>The c programming language</title><link>/markers/06-c/</link><guid>/markers/06-c/</guid><description>A key programming language in the creation of Unix</description><content:encoded>&lt;p>Dennis Ritchie created C at Bell Labs in the early 1970s, and Unix was
+rewritten in it shortly after. Before that, Unix was written in PDP-7 and later
+PDP-11 assembly, which meant it only ran on PDP machines. Rewriting it in C made
+it possible to port Unix to other hardware. You just needed a C compiler for
+the target platform. That portability is a big reason Unix spread through
+universities and eventually into commercial use.&lt;/p>
+</content:encoded></item><item><title>traps</title><link>/markers/34-traps/</link><guid>/markers/34-traps/</guid><description>Signals — the kernel's way of interrupting a process</description><content:encoded><![CDATA[<p><a href="https://en.wikipedia.org/wiki/Signal_(IPC)">Signals</a> (also called
+&ldquo;traps&rdquo;) are short, asynchronous notifications the kernel delivers to a
+process: &ldquo;your child exited&rdquo;, &ldquo;the user hit Ctrl-C&rdquo;, &ldquo;your terminal
+went away&rdquo;. A program can install a handler for most of them, or let
+the kernel&rsquo;s default action happen.</p>
+<p>A few that come up constantly:</p>
+<ul>
+<li><strong>SIGINT</strong> — what Ctrl-C sends. Polite request to stop; programs
+usually catch it to clean up first.</li>
+<li><strong>SIGTERM</strong> — the default from <code>kill &lt;pid&gt;</code>. Also polite, also
+catchable. <code>systemd</code>, <code>init</code>, and orchestration tools send SIGTERM
+first and wait.</li>
+<li><strong>SIGKILL</strong> — <code>kill -9</code>. Cannot be caught, blocked, or ignored. The
+kernel stops the process immediately. Use when nothing else works.</li>
+<li><strong>SIGHUP</strong> — originally &ldquo;the terminal hung up&rdquo;. Many daemons
+repurpose it to mean &ldquo;reread your config file&rdquo; because no one&rsquo;s
+dialing in anymore.</li>
+</ul>
+<p>The shell&rsquo;s <code>trap</code> builtin lets scripts install their own handlers:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>trap <span style="color:#e6db74">&#39;rm -f &#34;$tmpfile&#34;&#39;</span> EXIT INT TERM
+</span></span></code></pre></div><p>That line guarantees the temp file gets cleaned up whether the script
+finishes normally or gets interrupted.</p>
+]]></content:encoded></item><item><title>troff</title><link>/markers/17-troff/</link><guid>/markers/17-troff/</guid><description>A program for formatting documents in the Unix document processing system</description><content:encoded><![CDATA[<p><a href="https://en.wikipedia.org/wiki/Troff">Troff</a> is the typesetter of Unix&rsquo;s
+document-processing pipeline, written at Bell Labs in the 1970s.
+It stands for &ldquo;typesetter roff&rdquo; and descends from
+<a href="https://en.wikipedia.org/wiki/Roff_(software)"><code>roff</code></a>, where <code>roff</code> was
+a Unix version of one of the earliest text formatters,
+<a href="https://en.wikipedia.org/wiki/TYPSET_and_RUNOFF"><code>RUNOFF</code></a>.
+A typical troff distribution ships with macro packages for common document
+styles, including the one used for Unix <code>man</code> pages.</p>
+]]></content:encoded></item><item><title>uucp</title><link>/markers/20-uucp/</link><guid>/markers/20-uucp/</guid><description>A Unix program for file copy requests</description><content:encoded><![CDATA[<p><a href="https://en.wikipedia.org/wiki/UUCP"><code>uucp</code></a> (Unix-to-Unix Copy) was a suite
+of programs for copying files between Unix systems over phone lines using
+modems. Mike Lesk wrote the first version at Bell Labs in 1976. It was one
+of the earliest ways Unix machines could talk to each other.</p>
+<p>UUCP was the backbone of Usenet and early email between sites. Machines would
+dial each other on a schedule, exchange queued files and messages, then hang up.
+It wasn&rsquo;t fast, but it connected Unix systems years before the internet was
+widely available.</p>
+]]></content:encoded></item><item><title>wall</title><link>/markers/41-wall/</link><guid>/markers/41-wall/</guid><description>Broadcast a message to every logged-in user</description><content:encoded><![CDATA[<p><a href="https://man7.org/linux/man-pages/man1/wall.1.html"><code>wall</code></a> — &ldquo;write to
+all&rdquo; — prints a message on every terminal currently logged into the
+system. It reads from a file or stdin and pushes the contents out to
+everyone.</p>
+<p>The classic use is from root, right before a shutdown:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;System going down in 5 minutes. Save your work.&#34;</span> | wall
+</span></span></code></pre></div><p>On a multi-user timesharing machine in the 80s, that was how you gave
+people a heads-up before pulling the plug.</p>
+]]></content:encoded></item><item><title>whoami</title><link>/markers/27-whoami/</link><guid>/markers/27-whoami/</guid><description>Prints the effective user of the current shell</description><content:encoded><![CDATA[<p><a href="https://en.wikipedia.org/wiki/Whoami"><code>whoami</code></a> prints the effective
+user name of the current process. It first shipped in 2.9BSD. Handy
+after <code>su</code> when you&rsquo;ve lost track of which account you&rsquo;re on.</p>
+]]></content:encoded></item></channel></rss>

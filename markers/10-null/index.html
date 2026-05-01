@@ -1,0 +1,9 @@
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>null - Unix Magic Poster Annotations</title><link rel=icon type=image/x-icon href=../../favicon.ico><link rel=apple-touch-icon sizes=180x180 href=../../apple-touch-icon.png><script>(function(){try{var e=localStorage.getItem("theme");(e==="light"||e==="dark")&&document.documentElement.setAttribute("data-theme",e)}catch{}})()</script><link rel=stylesheet href=../../css/site.css></head><body><div class=single-container><div class=single-header><a href=../../ class=back-link>← home</a>
+<a href=../../#annotation-10-null class=back-link>open on poster →</a></div><div class=single-content><div class=title-block><span class=marker-number aria-hidden=true>10</span><div><h1>null</h1><div class=description>The device file that throws everything away</div></div></div><div class=single-body><p><code>/dev/null</code> is a <a href=https://en.wikipedia.org/wiki/Null_device>special device</a>
+that accepts any data written to it and returns success without storing
+a byte. Reading from it returns end-of-file immediately. It&rsquo;s the bit
+bucket.</p><p>It&rsquo;s a perfect illustration of Unix&rsquo;s &ldquo;everything is a file&rdquo; idea: the
+same <code>write(2)</code> call you&rsquo;d use on a regular file works here, so every
+tool that can produce output can also discard it without special-casing
+anything. The <code>2>/dev/null</code> idiom — &ldquo;throw the error messages away&rdquo; — is
+one of the shortest useful incantations in the shell.</p></div></div><div class=single-footer>-- EOF --</div></div></body></html>

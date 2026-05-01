@@ -1,0 +1,10 @@
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>root - Unix Magic Poster Annotations</title><link rel=icon type=image/x-icon href=../../favicon.ico><link rel=apple-touch-icon sizes=180x180 href=../../apple-touch-icon.png><script>(function(){try{var e=localStorage.getItem("theme");(e==="light"||e==="dark")&&document.documentElement.setAttribute("data-theme",e)}catch{}})()</script><link rel=stylesheet href=../../css/site.css></head><body><div class=single-container><div class=single-header><a href=../../ class=back-link>← home</a>
+<a href=../../#annotation-25-root class=back-link>open on poster →</a></div><div class=single-content><div class=title-block><span class=marker-number aria-hidden=true>25</span><div><h1>root</h1><div class=description>The all-powerful administrative account</div></div></div><div class=single-body><p><code>root</code> is the superuser — uid 0 in the kernel&rsquo;s eyes. Most permission
+checks in Unix short-circuit for uid 0, which is why root can read any
+file, kill any process, mount any filesystem, and bind to ports below
+1024 (the &ldquo;privileged&rdquo; range reserved for services like SSH and HTTP).</p><p>For a long time, administering a Unix box meant logging in as root and
+hoping you typed carefully. <code>sudo</code> changed that in the 80s by letting
+named users run specific commands with elevated privileges, leaving an
+audit trail and making &ldquo;full root shell&rdquo; a deliberate choice rather than
+the default workflow. Most modern systems discourage direct root
+logins entirely.</p></div></div><div class=single-footer>-- EOF --</div></div></body></html>

@@ -1,0 +1,15 @@
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Overflows - Unix Magic Poster Annotations</title><link rel=icon type=image/x-icon href=../../favicon.ico><link rel=apple-touch-icon sizes=180x180 href=../../apple-touch-icon.png><script>(function(){try{var e=localStorage.getItem("theme");(e==="light"||e==="dark")&&document.documentElement.setAttribute("data-theme",e)}catch{}})()</script><link rel=stylesheet href=../../css/site.css></head><body><div class=single-container><div class=single-header><a href=../../ class=back-link>← home</a>
+<a href=../../#annotation-36-overflows class=back-link>open on poster →</a></div><div class=single-content><div class=title-block><span class=marker-number aria-hidden=true>36</span><div><h1>Overflows</h1><div class=description>Buffer overflows — writing past the end of memory</div></div></div><div class=single-body><p>The liquid sloshing out of the shell looks like a visual pun on buffer
+overflows. A buffer overflow happens when a program writes past the end
+of a fixed-size memory region, spilling data into whatever sits next
+door.</p><p>There are two flavors that matter in practice. <strong>Stack overflows</strong> hit
+local variables and, critically, the saved return address of the
+current function. Overwrite that, and when the function returns control
+jumps wherever the attacker wants — that&rsquo;s the classic 1988 Morris worm
+trick against <code>fingerd</code>, and the basis of decades of exploits. <strong>Heap
+overflows</strong> hit <code>malloc</code>&rsquo;d memory and corrupt allocator metadata or
+adjacent objects; harder to weaponize but just as damaging.</p><p>C has no bounds checking, which is what makes this easy to get wrong.
+Modern mitigations — stack canaries, ASLR, non-executable stacks, safer
+string functions — make exploitation harder but don&rsquo;t eliminate the
+class. See <a href=https://en.wikipedia.org/wiki/Buffer_overflow>Buffer overflow</a>
+for the long version.</p></div></div><div class=single-footer>-- EOF --</div></div></body></html>

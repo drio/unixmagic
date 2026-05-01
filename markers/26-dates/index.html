@@ -1,0 +1,9 @@
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>dates - Unix Magic Poster Annotations</title><link rel=icon type=image/x-icon href=../../favicon.ico><link rel=apple-touch-icon sizes=180x180 href=../../apple-touch-icon.png><script>(function(){try{var e=localStorage.getItem("theme");(e==="light"||e==="dark")&&document.documentElement.setAttribute("data-theme",e)}catch{}})()</script><link rel=stylesheet href=../../css/site.css></head><body><div class=single-container><div class=single-header><a href=../../ class=back-link>← home</a>
+<a href=../../#annotation-26-dates class=back-link>open on poster →</a></div><div class=single-content><div class=title-block><span class=marker-number aria-hidden=true>26</span><div><h1>dates</h1><div class=description>Displaying and setting the system clock</div></div></div><div class=single-body><p><a href=https://man7.org/linux/man-pages/man1/date.1.html><code>date</code></a> prints or
+sets the system time. Under the hood, Unix stores time as a single
+count — seconds since 00:00:00 UTC on 1 January 1970, the &ldquo;Unix epoch&rdquo;.
+The epoch was picked because it was close enough to when these systems
+were built and round enough to be easy to reason about.</p><p>A signed 32-bit seconds counter overflows at 03:14:07 UTC on <strong>19 January 2038</strong>. That&rsquo;s
+the Y2038 problem, and it&rsquo;s real — a lot of embedded systems and
+filesystems still use 32-bit <code>time_t</code>. Modern Unixes use 64-bit <code>time_t</code>,
+which buys around 292 billion years of headroom, which is probably enough.</p></div></div><div class=single-footer>-- EOF --</div></div></body></html>
