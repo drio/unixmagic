@@ -7,12 +7,13 @@ position:
 description: "How Unix machines talked before the internet"
 ---
 
-[`uucp`](https://en.wikipedia.org/wiki/UUCP) (Unix-to-Unix Copy) was a suite
-of programs for copying files between Unix systems over phone lines using
-modems. Mike Lesk wrote the first version at Bell Labs in 1976. It was one
-of the earliest ways Unix machines could talk to each other.
+[`uucp`](https://en.wikipedia.org/wiki/UUCP) (Unix-to-Unix Copy) connected Unix
+machines years before most of them could reach the internet. It was a suite of
+programs for copying files between systems over phone lines using modems. Mike
+Lesk wrote the first version at Bell Labs in 1976, and it shipped with Version 7
+Unix in 1979.
 
-UUCP was the backbone of Usenet and early email between sites. Machines would
-dial each other on a schedule, exchange queued files and messages, then hang up.
-It wasn't fast, but it connected Unix systems years before the internet was
-widely available.
+UUCP carried Usenet and early email between sites. Machines dialed each other
+on a schedule, exchanged queued files and messages, then hung up. It wasn't
+fast, but mail could cross the country one phone call at a time, routed by
+"bang paths" like `foovax!barbox!user` that named every hop.
