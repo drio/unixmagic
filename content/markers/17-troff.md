@@ -4,7 +4,7 @@ number: "17"
 position:
   left: "70.5%"
   top: "82%"
-description: "A program for formatting documents in the Unix document processing system"
+description: "The typesetter that won Unix its first users"
 ---
 
 [Troff](https://en.wikipedia.org/wiki/Troff) is the typesetter in Unix's

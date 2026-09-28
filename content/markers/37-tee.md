@@ -4,7 +4,7 @@ number: "37"
 position:
   left: "71%"
   top: "19%"
-description: "The T-junctions in the pipes, possibly a reference to the tee command"
+description: "Split a pipeline's flow into a file"
 ---
 
 The T-shaped pipe junctions in the poster may reference the

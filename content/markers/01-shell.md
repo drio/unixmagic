@@ -4,7 +4,7 @@ number: "1"
 position:
   left: "40%"
   top: "69%"
-description: "A gateway to controlling the system"
+description: "The command line, and an ordinary program anyone could replace"
 date: 2025-02-13T12:00:00Z
 lastmod: 2025-02-13T12:00:00Z
 ---

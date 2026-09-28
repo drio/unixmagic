@@ -4,7 +4,7 @@ number: "30"
 position:
   left: "83%"
   top: "57%"
-description: "The gateway into the system"
+description: "The step between a terminal and a shell"
 ---
 
 `login` is the step between a terminal and a shell. It asks for your name and

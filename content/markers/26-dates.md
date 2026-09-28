@@ -4,7 +4,7 @@ number: "26"
 position:
   left: "84%"
   top: "46%"
-description: "Displaying and setting the system clock"
+description: "Seconds since 1970, and the 2038 problem"
 ---
 
 [`date`](https://man7.org/linux/man-pages/man1/date.1.html) prints or

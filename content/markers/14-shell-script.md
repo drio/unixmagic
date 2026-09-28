@@ -4,7 +4,7 @@ number: "14"
 position:
   left: "44.5%"
   top: "90%"
-description: "The shell language"
+description: "The shell as a programming language"
 ---
 
 A [shell script](https://en.wikipedia.org/wiki/Shell_script) is a text file

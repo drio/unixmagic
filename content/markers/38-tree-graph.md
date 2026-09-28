@@ -4,7 +4,7 @@ number: "38"
 position:
   left: "50%"
   top: "47%"
-description: "Navigating the filesystem"
+description: "Files and processes, both arranged as trees"
 ---
 
 The tree-like shape the wizard is manipulating is likely a reference to the

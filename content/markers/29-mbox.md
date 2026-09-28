@@ -4,7 +4,7 @@ number: "29"
 position:
   left: "89%"
   top: "32%"
-description: "The mail system format"
+description: "All your mail in one plain-text file"
 ---
 
 `mbox` is early Unix's mail format: all of a user's messages in one plain-text

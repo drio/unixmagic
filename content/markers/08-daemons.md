@@ -4,7 +4,7 @@ number: "8"
 position:
   left: "66%"
   top: "29%"
-description: "Service processes that run in the background and supervise the system or provide functionality to other processes"
+description: "Background processes that do the system's chores"
 ---
 
 [Daemons](https://en.wikipedia.org/wiki/Daemon_(computing)) are long-running

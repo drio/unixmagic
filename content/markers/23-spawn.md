@@ -4,7 +4,7 @@ number: "23"
 position:
   left: "66%"
   top: "39%"
-description: "An operation in which a new child process is created"
+description: "Starting a new program in a child process"
 ---
 
 Spawning means creating a new child process. In Unix, this is traditionally

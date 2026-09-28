@@ -4,7 +4,7 @@ number: "40"
 position:
   left: "21%"
   top: "10%"
-description: "A program that outputs ASCII art"
+description: "Giant letters for the shared printer"
 ---
 
 The poster's title is set in big block letters, much like the output of the
