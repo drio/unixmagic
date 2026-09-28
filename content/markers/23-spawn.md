@@ -4,15 +4,16 @@ number: "23"
 position:
   left: "66%"
   top: "39%"
-description: "An operation in which a new child process is created"
+description: "Starting a new program in a child process"
 ---
 
-Spawning means creating a new child process. In Unix, this is traditionally
-done with `fork` and `exec`: `fork` creates a copy of the current process,
-then the *child* calls `exec` to replace itself with a different program. The
-parent typically calls `wait` to wait for the child to finish.
+Spawning means starting a child process that runs a different program. Unix
+splits it in two: `fork` copies the current process, then the child calls
+`exec` to become the new program. The parent usually calls `wait` to collect
+the child's exit status. [#13](#annotation-13-fork) explains why the split
+matters.
 
-POSIX also defines `posix_spawn`, which combines the two steps into one call.
-It can be more efficient on systems where `fork` is expensive -- for example,
-hardware without an MMU, or very large parent processes where even setting up
-copy-on-write mappings is slow.
+POSIX also defines `posix_spawn`, which does both steps in one call, the way
+VMS and Windows always have. It helps where `fork` is expensive: on hardware
+without an MMU, which can't do copy-on-write, or when the parent is so large
+that even setting up copy-on-write mappings is slow.

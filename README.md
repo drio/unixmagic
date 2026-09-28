@@ -29,6 +29,9 @@ days: how did this functionality compare to other systems at the time? What
 made it special? This project isn't just about explaining what things are,
 but why they mattered — technically and culturally.
 
+A good entry opens with why the thing mattered, then gives the details. Check
+historical claims against a source and link to it.
+
 Below: the original poster, and a custom puzzle drio had made featuring the
 poster's artwork.
 
