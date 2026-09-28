@@ -7,13 +7,8 @@ position:
 description: "The drain where data goes to die — /dev/null"
 ---
 
-The skull-like spigot connected to the shell most likely represents
-`/dev/null`, the special Unix device that discards all data written to it.
-Redirecting output to `/dev/null` sends it into a void. Nothing comes back.
-The skull is a fitting symbol for where data goes to die. See also the
-[/dev/null](#annotation-10-null) entry.
+The skull-like spigot on the shell most likely stands for `/dev/null`:
+whatever flows into it is gone for good (see [#10](#annotation-10-null)).
 
-It could also be a nod to Unix
-[daemons](https://en.wikipedia.org/wiki/Daemon_(computing)), background
-processes that run without a terminal. The gargoyle-like appearance of the
-spigot fits the daemon imagery.
+It could also be a nod to the [daemons](#annotation-08-daemons) that run in
+the background. The spigot's gargoyle-like face fits that imagery too.
