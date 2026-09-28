@@ -7,10 +7,18 @@ position:
 description: "The gateway into the system"
 ---
 
-`login` authenticates the user, sets up the environment by changing to the
-user's home directory, and spawns a shell running as that user (with their
-`uid` and `gid`).
+`login` is the step between a terminal and a shell. It asks for your name and
+password, checks them against `/etc/passwd`, changes to your home directory,
+switches the process to your `uid` and `gid`, and replaces itself with your
+shell.
 
-Standard input and output are attached to a terminal — a **pseudo-terminal**
-when you're in a graphical session or connected over `ssh`, or a **physical
-terminal** back when people actually dialed in.
+In Version 7 the whole chain was one process taking on new programs. `init`
+forked a `getty` for each terminal line listed in `/etc/ttys`. `getty` set up
+the line, printed `login:`, and `exec`ed `login` with the name you typed, and
+`login` in turn `exec`ed your shell. Your shell ended up with the process ID
+`init` had given `getty`, a neat example of the fork/exec split (see
+[#13](#annotation-13-fork)).
+
+Those terminals were physical, wired to serial lines or reached by modem.
+Today you usually get a **pseudo-terminal** from a terminal emulator or from
+`sshd`, which does `login`'s checks itself.
