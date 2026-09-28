@@ -1,0 +1,12 @@
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>whoami - Unix Magic Poster Annotations</title><link rel=icon type=image/x-icon href=../../favicon.ico><link rel=apple-touch-icon sizes=180x180 href=../../apple-touch-icon.png><script>(function(){try{var e=localStorage.getItem("theme");(e==="light"||e==="dark")&&document.documentElement.setAttribute("data-theme",e)}catch{}})()</script><link rel=stylesheet href=../../css/site.css></head><body><div class=single-container><div class=single-header><a href=../../ class=back-link>← home</a>
+<a href=../../#annotation-27-whoami class=back-link>open on poster →</a></div><div class=single-content><div class=title-block><span class=marker-number aria-hidden=true>27</span><div><h1>whoami</h1><div class=description>Prints the effective user of the current shell</div></div></div><div class=single-body><p><a href=https://en.wikipedia.org/wiki/Whoami><code>whoami</code></a> prints the name of the user
+the current process runs as. Bill Joy added it in 2.9BSD as a short form of
+<code>who am i</code>, but today the two answer different questions, and the difference
+shows up right after <a href=#annotation-09-su><code>su</code></a>.</p><p><code>who am i</code> looks your terminal up in the login records, so it reports who
+logged in. <code>whoami</code> asks the kernel for the process&rsquo;s effective user ID. After
+<code>su</code>, they disagree:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-sh data-lang=sh><span style=display:flex><span>$ su
+</span></span><span style=display:flex><span><span style=color:#75715e># who am i</span>
+</span></span><span style=display:flex><span>alice    pts/0    ...
+</span></span><span style=display:flex><span><span style=color:#75715e># whoami</span>
+</span></span><span style=display:flex><span>root
+</span></span></code></pre></div></div></div><div class=single-footer>-- EOF --</div></div></body></html>

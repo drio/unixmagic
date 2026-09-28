@@ -1,0 +1,16 @@
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>fork - Unix Magic Poster Annotations</title><link rel=icon type=image/x-icon href=../../favicon.ico><link rel=apple-touch-icon sizes=180x180 href=../../apple-touch-icon.png><script>(function(){try{var e=localStorage.getItem("theme");(e==="light"||e==="dark")&&document.documentElement.setAttribute("data-theme",e)}catch{}})()</script><link rel=stylesheet href=../../css/site.css></head><body><div class=single-container><div class=single-header><a href=../../ class=back-link>← home</a>
+<a href=../../#annotation-13-fork class=back-link>open on poster →</a></div><div class=single-content><div class=title-block><span class=marker-number aria-hidden=true>13</span><div><h1>fork</h1><div class=description>The system call that creates a new process</div></div></div><div class=single-body><p><a href=https://en.wikipedia.org/wiki/Fork_(system_call)><code>fork(2)</code></a> is how Unix
+makes a new process: the kernel duplicates the calling process, and now
+there are two of them running the same code. They only differ in the
+return value of <code>fork</code> itself — zero in the child, the child&rsquo;s PID in the
+parent — which is how each copy knows who it is.</p><p>What made this radical was how <em>cheap</em> it could be. Early
+Unix leaned on it for everything, and modern kernels use copy-on-write so
+the duplicated address space costs almost nothing until one side writes
+to it. The shell runs every command by forking and then calling <code>exec</code>
+in the child to replace itself with the target program. That fork/exec
+split is unusual — VMS and Windows went with a single &ldquo;spawn&rdquo; call that
+creates a process already running a different program — but it&rsquo;s what
+lets the shell set up redirections, pipes, and environment changes in
+the child after <code>fork</code> and before <code>exec</code>, using ordinary code. Most of
+Unix&rsquo;s composability comes from that split.</p><p>Melvin Conway described the idea under the name &ldquo;fork&rdquo; in <em>A
+Multiprocessor System Design</em> in the early 1960s, years before Unix existed.</p></div></div><div class=single-footer>-- EOF --</div></div></body></html>

@@ -1,0 +1,13 @@
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>diff - Unix Magic Poster Annotations</title><link rel=icon type=image/x-icon href=../../favicon.ico><link rel=apple-touch-icon sizes=180x180 href=../../apple-touch-icon.png><script>(function(){try{var e=localStorage.getItem("theme");(e==="light"||e==="dark")&&document.documentElement.setAttribute("data-theme",e)}catch{}})()</script><link rel=stylesheet href=../../css/site.css></head><body><div class=single-container><div class=single-header><a href=../../ class=back-link>← home</a>
+<a href=../../#annotation-33-diff class=back-link>open on poster →</a></div><div class=single-content><div class=title-block><span class=marker-number aria-hidden=true>33</span><div><h1>diff</h1><div class=description>Compare two files and show exactly what changed</div></div></div><div class=single-body><p><a href=https://en.wikipedia.org/wiki/Diff><code>diff</code></a> compares two files line by line and
+shows what was added, removed, or changed. Doug McIlroy and James Hunt wrote it at
+Bell Labs, and it shipped with Fifth Edition Unix in 1974. Its output, the patch,
+became a universal unit of change.</p><p>Before diff, reconciling two versions of a source file meant reading them side by
+side. diff automated that, and once Larry Wall&rsquo;s
+<a href=https://man7.org/linux/man-pages/man1/patch.1.html><code>patch(1)</code></a> arrived in 1985,
+you could mail someone a diff and they could apply it to their own copy of the
+file.</p><p>Hunt and McIlroy described the algorithm in a 1976 paper. It finds the longest
+common subsequence of the two files&rsquo; lines, which is expensive to compute
+naively, and they made it fast enough for the hardware of the time. Most tools
+today use Eugene Myers&rsquo;s 1986 algorithm instead; it&rsquo;s the default in both GNU
+diff and git.</p></div></div><div class=single-footer>-- EOF --</div></div></body></html>

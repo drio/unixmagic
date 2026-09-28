@@ -1,0 +1,12 @@
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>login - Unix Magic Poster Annotations</title><link rel=icon type=image/x-icon href=../../favicon.ico><link rel=apple-touch-icon sizes=180x180 href=../../apple-touch-icon.png><script>(function(){try{var e=localStorage.getItem("theme");(e==="light"||e==="dark")&&document.documentElement.setAttribute("data-theme",e)}catch{}})()</script><link rel=stylesheet href=../../css/site.css></head><body><div class=single-container><div class=single-header><a href=../../ class=back-link>← home</a>
+<a href=../../#annotation-30-login class=back-link>open on poster →</a></div><div class=single-content><div class=title-block><span class=marker-number aria-hidden=true>30</span><div><h1>login</h1><div class=description>The step between a terminal and a shell</div></div></div><div class=single-body><p><code>login</code> is the step between a terminal and a shell. It asks for your name and
+password, checks them against <code>/etc/passwd</code>, changes to your home directory,
+switches the process to your <code>uid</code> and <code>gid</code>, and replaces itself with your
+shell.</p><p>In Version 7 the whole chain was one process taking on new programs. <code>init</code>
+forked a <code>getty</code> for each terminal line listed in <code>/etc/ttys</code>. <code>getty</code> set up
+the line, printed <code>login:</code>, and <code>exec</code>ed <code>login</code> with the name you typed, and
+<code>login</code> in turn <code>exec</code>ed your shell. Your shell ended up with the process ID
+<code>init</code> had given <code>getty</code>, a neat example of the fork/exec split (see
+<a href=#annotation-13-fork>#13</a>).</p><p>Those terminals were physical, wired to serial lines or reached by modem.
+Today you usually get a <strong>pseudo-terminal</strong> from a terminal emulator or from
+<code>sshd</code>, which does <code>login</code>&rsquo;s checks itself.</p></div></div><div class=single-footer>-- EOF --</div></div></body></html>

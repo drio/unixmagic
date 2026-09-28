@@ -1,0 +1,9 @@
+<!doctype html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><title>mbox - Unix Magic Poster Annotations</title><link rel=icon type=image/x-icon href=../../favicon.ico><link rel=apple-touch-icon sizes=180x180 href=../../apple-touch-icon.png><script>(function(){try{var e=localStorage.getItem("theme");(e==="light"||e==="dark")&&document.documentElement.setAttribute("data-theme",e)}catch{}})()</script><link rel=stylesheet href=../../css/site.css></head><body><div class=single-container><div class=single-header><a href=../../ class=back-link>← home</a>
+<a href=../../#annotation-29-mbox class=back-link>open on poster →</a></div><div class=single-content><div class=title-block><span class=marker-number aria-hidden=true>29</span><div><h1>mbox</h1><div class=description>All your mail in one plain-text file</div></div></div><div class=single-body><p><code>mbox</code> is early Unix&rsquo;s mail format: all of a user&rsquo;s messages in one plain-text
+file, each starting with a line that begins <code>From </code>, each new one appended to
+the end. Because a mailbox was just a file, any tool could read it. <code>grep</code>
+searched your mail, and system programs could notify you by appending one more
+message.</p><p>Incoming mail lived in <code>/usr/spool/mail/&lt;username></code> on Version 7 (<code>/usr/mail</code> on
+System III and V). The name <code>mbox</code> came from a second file: when you saved a
+message you had read, <code>mail</code> put it in <code>mbox</code> in your home directory.</p><p>The simple format has one well-known cost. A body line that begins with <code>From </code>looks like the start of a new message, so V7&rsquo;s <code>mail</code> wrote it as <code>>From </code>instead. Many mail programs still do this, which is why old archives are full
+of stray <code>></code> characters.</p></div></div><div class=single-footer>-- EOF --</div></div></body></html>
