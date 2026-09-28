@@ -12,7 +12,7 @@ One leak is harmless; they accumulate.
 Long-running processes — daemons, editors, shells open for weeks — slowly
 eat the machine until something swaps, slows, or dies.
 
-This mattered a lot on early Unix. C had no garbage collector, `malloc` and
+Early Unix was especially exposed. C had no garbage collector, `malloc` and
 `free` were entirely the programmer's responsibility, and the machines of
 the 1970s and 80s had megabytes of RAM, not gigabytes. A leaky `inetd` or
 print spooler could crash a timesharing system overnight.
